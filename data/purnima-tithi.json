@@ -1,0 +1,456 @@
+{
+  "dataType": "PurnimaTithi",
+  "timezone": "Asia/Kolkata",
+  "yearRange": "2022-2028",
+  "years": {
+    "2022": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2022-01-17 03:18",
+        "end": "2022-01-18 05:18"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2022-02-15 21:43",
+        "end": "2022-02-16 22:26"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2022-03-17 13:30",
+        "end": "2022-03-18 12:47"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2022-04-16 02:25",
+        "end": "2022-04-17 00:25"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2022-05-15 12:46",
+        "end": "2022-05-16 09:44"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2022-06-13 21:03",
+        "end": "2022-06-14 17:21"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2022-07-13 04:01",
+        "end": "2022-07-14 00:07"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2022-08-11 10:39",
+        "end": "2022-08-12 07:05"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2022-09-09 18:08",
+        "end": "2022-09-10 15:29"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2022-10-09 03:42",
+        "end": "2022-10-10 02:24"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2022-11-07 16:16",
+        "end": "2022-11-08 16:32"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2022-12-07 08:01",
+        "end": "2022-12-08 09:38"
+      }
+    ],
+    "2023": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2023-01-06 02:14",
+        "end": "2023-01-07 04:37"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2023-02-04 21:30",
+        "end": "2023-02-05 23:58"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2023-03-06 16:17",
+        "end": "2023-03-07 18:10"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2023-04-05 09:19",
+        "end": "2023-04-06 10:04"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2023-05-04 23:44",
+        "end": "2023-05-05 23:04"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2023-06-03 11:17",
+        "end": "2023-06-04 09:11"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2023-07-02 20:21",
+        "end": "2023-07-03 17:08"
+      },
+      {
+        "tithi": "Adhika Purnima",
+        "start": "2023-08-01 03:52",
+        "end": "2023-08-02 00:01"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2023-08-30 10:58",
+        "end": "2023-08-31 07:05"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2023-09-28 18:49",
+        "end": "2023-09-29 15:27"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2023-10-28 04:17",
+        "end": "2023-10-29 01:54"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2023-11-26 15:53",
+        "end": "2023-11-27 14:46"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2023-12-26 05:47",
+        "end": "2023-12-27 06:03"
+      }
+    ],
+    "2024": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2024-01-24 21:50",
+        "end": "2024-01-25 23:24"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2024-02-23 15:34",
+        "end": "2024-02-24 18:00"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2024-03-24 09:55",
+        "end": "2024-03-25 12:30"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2024-04-23 03:26",
+        "end": "2024-04-24 05:18"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2024-05-22 18:48",
+        "end": "2024-05-23 19:23"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2024-06-21 07:32",
+        "end": "2024-06-22 06:37"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2024-07-20 18:00",
+        "end": "2024-07-21 15:47"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2024-08-19 03:05",
+        "end": "2024-08-19 23:55"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2024-09-17 11:44",
+        "end": "2024-09-18 08:04"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2024-10-16 20:41",
+        "end": "2024-10-17 16:56"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2024-11-15 06:19",
+        "end": "2024-11-16 02:58"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2024-12-14 16:59",
+        "end": "2024-12-15 14:31"
+      }
+    ],
+    "2025": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2025-01-13 05:03",
+        "end": "2025-01-14 03:56"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2025-02-11 18:56",
+        "end": "2025-02-12 19:23"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2025-03-13 10:36",
+        "end": "2025-03-14 12:24"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2025-04-12 03:22",
+        "end": "2025-04-13 05:52"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2025-05-11 20:02",
+        "end": "2025-05-12 22:25"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2025-06-10 11:36",
+        "end": "2025-06-11 13:13"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2025-07-10 01:37",
+        "end": "2025-07-11 02:06"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2025-08-08 14:12",
+        "end": "2025-08-09 13:25"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2025-09-07 01:41",
+        "end": "2025-09-07 23:38"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2025-10-06 12:24",
+        "end": "2025-10-07 09:17"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2025-11-04 22:36",
+        "end": "2025-11-05 18:49"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2025-12-04 08:38",
+        "end": "2025-12-05 04:44"
+      }
+    ],
+    "2026": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2026-01-02 18:54",
+        "end": "2026-01-03 15:32"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2026-02-01 05:53",
+        "end": "2026-02-02 03:39"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2026-03-02 17:56",
+        "end": "2026-03-03 17:07"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2026-04-01 07:06",
+        "end": "2026-04-02 07:41"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2026-04-30 21:13",
+        "end": "2026-05-01 22:53"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2026-05-30 11:58",
+        "end": "2026-05-31 14:15"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2026-06-29 03:06",
+        "end": "2026-06-30 05:26"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2026-07-28 18:19",
+        "end": "2026-07-29 20:05"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2026-08-27 09:09",
+        "end": "2026-08-28 09:48"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2026-09-25 23:07",
+        "end": "2026-09-26 22:19"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2026-10-25 11:56",
+        "end": "2026-10-26 09:41"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2026-11-23 23:42",
+        "end": "2026-11-24 20:23"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2026-12-23 10:47",
+        "end": "2026-12-24 06:58"
+      }
+    ],
+    "2027": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2027-01-21 21:30",
+        "end": "2027-01-22 17:47"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2027-02-20 08:00",
+        "end": "2027-02-21 04:53"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2027-03-21 18:22",
+        "end": "2027-03-22 16:13"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2027-04-20 04:51",
+        "end": "2027-04-21 03:57"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2027-05-19 16:03",
+        "end": "2027-05-20 16:29"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2027-06-18 04:35",
+        "end": "2027-06-19 06:14"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2027-07-17 18:48",
+        "end": "2027-07-18 21:14"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2027-08-16 10:29",
+        "end": "2027-08-17 12:58"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2027-09-15 02:48",
+        "end": "2027-09-16 04:33"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2027-10-14 18:49",
+        "end": "2027-10-15 19:17"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2027-11-13 09:55",
+        "end": "2027-11-14 08:55"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2027-12-12 23:55",
+        "end": "2027-12-13 21:38"
+      }
+    ],
+    "2028": [
+      {
+        "tithi": "Paush Purnima",
+        "start": "2028-01-11 12:46",
+        "end": "2028-01-12 09:33"
+      },
+      {
+        "tithi": "Magha Purnima",
+        "start": "2028-02-10 00:17",
+        "end": "2028-02-10 20:33"
+      },
+      {
+        "tithi": "Hutasani Purnima",
+        "start": "2028-03-10 10:21",
+        "end": "2028-03-11 06:36"
+      },
+      {
+        "tithi": "Purnima",
+        "start": "2028-04-08 19:11",
+        "end": "2028-04-09 15:56"
+      },
+      {
+        "tithi": "Buddha Purnima, Vaishakha Purnima",
+        "start": "2028-05-08 03:33",
+        "end": "2028-05-09 01:18"
+      },
+      {
+        "tithi": "Deva Snana Purnima, Jyeshta Purnima",
+        "start": "2028-06-06 12:30",
+        "end": "2028-06-07 11:38"
+      },
+      {
+        "tithi": "Guru Purnima",
+        "start": "2028-07-05 23:04",
+        "end": "2028-07-06 23:40"
+      },
+      {
+        "tithi": "Narali Purnima, Jandhyala Purnima, Sravana Purnima",
+        "start": "2028-08-04 11:51",
+        "end": "2028-08-05 13:39"
+      },
+      {
+        "tithi": "Bhadrapada Purnima",
+        "start": "2028-09-03 02:52",
+        "end": "2028-09-04 05:17"
+      },
+      {
+        "tithi": "Sharad Purnima",
+        "start": "2028-10-02 19:34",
+        "end": "2028-10-03 21:54"
+      },
+      {
+        "tithi": "Kartik Purnima",
+        "start": "2028-11-01 13:08",
+        "end": "2028-11-02 14:47"
+      },
+      {
+        "tithi": "Margashirsha Purnima",
+        "start": "2028-12-01 06:41",
+        "end": "2028-12-02 07:10"
+      },
+      {
+        "tithi": "Paush Purnima",
+        "start": "2028-12-30 23:14",
+        "end": "2028-12-31 22:18"
+      }
+    ]
+  }
+}

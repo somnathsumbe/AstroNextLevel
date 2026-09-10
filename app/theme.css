@@ -1,0 +1,176 @@
+/* Shared theme tokens. Components consume the same variables across the app. */
+:root {
+  --astro-primary: #2f80ed;
+  --astro-sidebar: #091929;
+  --astro-header: #081725;
+  --astro-accent: #e8b85c;
+  --astro-accent-soft: #f3cc7c;
+  --astro-panel: #0f2238;
+  --astro-page: #071321;
+  --astro-link: #83b9f2;
+  --astro-success: #4bd49b;
+  --astro-contrast: #f5f8fb;
+}
+
+[data-theme='professional-blue'] {
+  --astro-primary: #2f80ed;
+  --astro-sidebar: #102b4c;
+  --astro-header: #0d223d;
+  --astro-accent: #66aaf5;
+  --astro-accent-soft: #9acaff;
+  --astro-panel: #122d4b;
+  --astro-page: #081827;
+  --astro-link: #8fc4ff;
+  --astro-success: #46d39a;
+}
+
+[data-theme='astro-purple'] {
+  --astro-primary: #8b5cf6;
+  --astro-sidebar: #21183e;
+  --astro-header: #17132e;
+  --astro-accent: #c4a7ff;
+  --astro-accent-soft: #ddcfff;
+  --astro-panel: #2a2050;
+  --astro-page: #110d25;
+  --astro-link: #cbb7ff;
+  --astro-success: #58d6a0;
+}
+
+[data-theme='dark-navy'] {
+  --astro-primary: #315f8d;
+  --astro-sidebar: #091929;
+  --astro-header: #081725;
+  --astro-accent: #e8b85c;
+  --astro-accent-soft: #f3cc7c;
+  --astro-panel: #0f2238;
+  --astro-page: #071321;
+  --astro-link: #83b9d9;
+  --astro-success: #4bd49b;
+}
+
+[data-theme='emerald-green'] {
+  --astro-primary: #179b72;
+  --astro-sidebar: #092a27;
+  --astro-header: #071f20;
+  --astro-accent: #50d6a2;
+  --astro-accent-soft: #89edc6;
+  --astro-panel: #103c37;
+  --astro-page: #061817;
+  --astro-link: #7de2bf;
+  --astro-success: #78e29f;
+}
+
+[data-theme='teal'] {
+  --astro-primary: #129c9a;
+  --astro-sidebar: #082c35;
+  --astro-header: #071f28;
+  --astro-accent: #4dd6d0;
+  --astro-accent-soft: #8cebe7;
+  --astro-panel: #103c49;
+  --astro-page: #06181f;
+  --astro-link: #85e5e1;
+  --astro-success: #74dfa5;
+}
+
+[data-theme='sunset-orange'] {
+  --astro-primary: #c45c2b;
+  --astro-sidebar: #321b18;
+  --astro-header: #251514;
+  --astro-accent: #f28b52;
+  --astro-accent-soft: #ffb17c;
+  --astro-panel: #492820;
+  --astro-page: #1b1011;
+  --astro-link: #ffad7e;
+  --astro-success: #7ddb9d;
+}
+
+[data-theme='light-minimal'] {
+  --astro-primary: #2563a8;
+  --astro-sidebar: #e8eef5;
+  --astro-header: #ffffff;
+  --astro-accent: #b7791f;
+  --astro-accent-soft: #d69e2e;
+  --astro-panel: #ffffff;
+  --astro-page: #f4f7fa;
+  --astro-link: #1d5da0;
+  --astro-success: #14866a;
+  --astro-contrast: #17212b;
+}
+
+[data-theme='dark-mode'] {
+  --astro-primary: #64748b;
+  --astro-sidebar: #111827;
+  --astro-header: #0b1120;
+  --astro-accent: #cbd5e1;
+  --astro-accent-soft: #f1f5f9;
+  --astro-panel: #1e293b;
+  --astro-page: #020617;
+  --astro-link: #c5d3e5;
+  --astro-success: #6ee7b7;
+}
+
+html[data-theme] body { background: var(--astro-page); color: var(--astro-contrast); }
+html[data-theme] .site-header { background: var(--astro-header); }
+html[data-theme] .sidebar { background: var(--astro-sidebar); }
+html[data-theme] .site-footer { background: var(--astro-header); }
+html[data-theme] .main-content { background: radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--astro-primary) 22%, transparent), transparent 35%); }
+html[data-theme] .metric-card,
+html[data-theme] .analytics-card,
+html[data-theme] .filter-panel,
+html[data-theme] .data-panel,
+html[data-theme] .summary-card { background: linear-gradient(140deg, color-mix(in srgb, var(--astro-panel) 96%, white 4%), var(--astro-panel)); }
+html[data-theme] .brand-star,
+html[data-theme] .header-context,
+html[data-theme] .eyebrow,
+html[data-theme] .filter-title i,
+html[data-theme] .outline-action i,
+html[data-theme] .breadcrumb-line i,
+html[data-theme] .location-note i,
+html[data-theme] .summary-icon.gold,
+html[data-theme] .metric-icon.gold { color: var(--astro-accent); }
+html[data-theme] .login-submit,
+html[data-theme] .gold-action { background: var(--astro-accent); color: #101820; }
+html[data-theme] .login-submit:hover,
+html[data-theme] .gold-action:hover { background: var(--astro-accent-soft); }
+html[data-theme] .sidebar-link:hover,
+html[data-theme] .sidebar-link.active { border-left-color: var(--astro-accent); background: linear-gradient(90deg, color-mix(in srgb, var(--astro-accent) 15%, transparent), transparent); }
+html[data-theme] .sidebar-link.active i,
+html[data-theme] .sidebar-link:hover i { color: var(--astro-accent); }
+html[data-theme] .festival-badge { color: var(--astro-accent); background: color-mix(in srgb, var(--astro-accent) 13%, transparent); border-color: color-mix(in srgb, var(--astro-accent) 25%, transparent); }
+html[data-theme] .chart-area path { stroke: var(--astro-accent); }
+html[data-theme] a:not(.brand-mark):not(.login-logo) { color: var(--astro-link); }
+html[data-theme] .input-wrap:focus-within,
+html[data-theme] .filter-panel input:focus,
+html[data-theme] .filter-panel select:focus { border-color: var(--astro-accent); }
+html[data-theme] .theme-trigger { color: var(--astro-accent); border-color: color-mix(in srgb, var(--astro-accent) 45%, transparent); }
+
+[data-theme='light-minimal'] .sidebar a { color: #41566b; }
+[data-theme='light-minimal'] .sidebar-section { color: #647b8f; }
+[data-theme='light-minimal'] .sidebar-link:hover,
+[data-theme='light-minimal'] .sidebar-link.active { color: #17212b; }
+[data-theme='light-minimal'] .metric-label,
+[data-theme='light-minimal'] .filter-panel label { color: #52687b; }
+[data-theme='light-minimal'] .filter-panel input,
+[data-theme='light-minimal'] .filter-panel select,
+[data-theme='light-minimal'] .pagination-controls select { background: #f8fafc; color: #17212b; border-color: #cbd5e1; }
+
+.theme-switcher { position: relative; margin-left: 8px; }
+.theme-trigger { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid var(--line); color: var(--muted); padding: 8px 10px; font: 10px 'DM Mono', monospace; letter-spacing: .04em; transition: .2s; }
+.theme-trigger:hover, .theme-trigger:focus-visible { color: var(--astro-accent); border-color: var(--astro-accent); outline: 0; }
+.theme-menu { position: absolute; top: calc(100% + 12px); right: 0; z-index: 1200; width: 238px; padding: 15px; background: var(--astro-panel); border: 1px solid color-mix(in srgb, var(--astro-accent) 35%, var(--line)); box-shadow: 0 18px 45px rgba(0, 0, 0, .38); }
+.theme-menu-heading { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 7px; }
+.theme-menu-heading strong { display: block; color: var(--astro-contrast); font-size: 12px; margin-top: 5px; }
+.theme-menu-heading > i { color: var(--astro-accent); }
+.theme-option { display: flex; align-items: center; gap: 9px; width: 100%; padding: 8px 5px; border: 0; background: transparent; color: var(--muted); text-align: left; font-size: 11px; }
+.theme-option:hover, .theme-option:focus-visible { color: var(--astro-contrast); background: color-mix(in srgb, var(--astro-accent) 10%, transparent); outline: 0; }
+.theme-option.selected { color: var(--astro-contrast); }
+.theme-option > i { color: var(--astro-accent); margin-left: auto; }
+.theme-swatch { width: 13px; height: 13px; flex: 0 0 13px; border: 2px solid rgba(255, 255, 255, .55); border-radius: 50%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
+.theme-reset { width: 100%; margin-top: 7px; padding: 10px 5px 2px; border: 0; border-top: 1px solid var(--line); background: transparent; color: var(--muted); text-align: left; font: 10px 'DM Mono', monospace; }
+.theme-reset:hover, .theme-reset:focus-visible { color: var(--astro-accent); outline: 0; }
+.theme-reset i { margin-right: 6px; }
+
+@media (max-width: 575.98px) {
+  .theme-switcher { margin-left: 4px; }
+  .theme-menu { position: fixed; top: 67px; right: 12px; width: min(238px, calc(100vw - 24px)); }
+}

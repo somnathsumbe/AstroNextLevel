@@ -1,0 +1,242 @@
+{
+  "dataType": "PurnimaPastRecords",
+  "calendar": "Vikrama Samvata",
+  "timezone": "Asia/Kolkata",
+  "yearRange": "2020-2030",
+  "years": {
+    "2026": [
+      {
+        "name": "Pausha Purnima Vrat",
+        "date": "January 3, 2026, Saturday",
+        "begins": {
+          "date": "Jan 02",
+          "time": "06:53 PM"
+        },
+        "ends": {
+          "date": "Jan 03",
+          "time": "03:32 PM"
+        }
+      },
+      {
+        "name": "Magha Purnima Vrat",
+        "date": "February 1, 2026, Sunday",
+        "begins": {
+          "date": "Feb 01",
+          "time": "05:52 AM"
+        },
+        "ends": {
+          "date": "Feb 02",
+          "time": "03:38 AM"
+        }
+      },
+      {
+        "name": "Phalguna Purnima Vrat",
+        "date": "March 3, 2026, Tuesday",
+        "begins": {
+          "date": "Mar 02",
+          "time": "05:55 PM"
+        },
+        "ends": {
+          "date": "Mar 03",
+          "time": "05:07 PM"
+        }
+      },
+      {
+        "name": "Chaitra Purnima Vrat",
+        "date": "April 1, 2026, Wednesday",
+        "begins": {
+          "date": "Apr 01",
+          "time": "07:06 AM"
+        },
+        "ends": {
+          "date": "Apr 02",
+          "time": "07:41 AM"
+        }
+      },
+      {
+        "name": "Chaitra Purnima",
+        "date": "April 2, 2026, Thursday",
+        "begins": {
+          "date": "Apr 01",
+          "time": "07:06 AM"
+        },
+        "ends": {
+          "date": "Apr 02",
+          "time": "07:41 AM"
+        }
+      },
+      {
+        "name": "Vaishakha Purnima Vrat",
+        "date": "May 1, 2026, Friday",
+        "begins": {
+          "date": "Apr 30",
+          "time": "09:12 PM"
+        },
+        "ends": {
+          "date": "May 01",
+          "time": "10:52 PM"
+        }
+      },
+      {
+        "name": "Adhika Purnima Vrat",
+        "date": "May 30, 2026, Saturday",
+        "begins": {
+          "date": "May 30",
+          "time": "11:57 AM"
+        },
+        "ends": {
+          "date": "May 31",
+          "time": "02:14 PM"
+        }
+      },
+      {
+        "name": "Jyeshtha Adhika Purnima",
+        "date": "May 31, 2026, Sunday",
+        "begins": {
+          "date": "May 30",
+          "time": "11:57 AM"
+        },
+        "ends": {
+          "date": "May 31",
+          "time": "02:14 PM"
+        }
+      },
+      {
+        "name": "Jyeshtha Purnima Vrat",
+        "date": "June 29, 2026, Monday",
+        "begins": {
+          "date": "Jun 29",
+          "time": "03:06 AM"
+        },
+        "ends": {
+          "date": "Jun 30",
+          "time": "05:26 AM"
+        }
+      },
+      {
+        "name": "Ashadha Purnima Vrat",
+        "date": "July 29, 2026, Wednesday",
+        "begins": {
+          "date": "Jul 28",
+          "time": "06:18 PM"
+        },
+        "ends": {
+          "date": "Jul 29",
+          "time": "08:05 PM"
+        }
+      },
+      {
+        "name": "Shravana Purnima Vrat",
+        "date": "August 27, 2026, Thursday",
+        "begins": {
+          "date": "Aug 27",
+          "time": "09:08 AM"
+        },
+        "ends": {
+          "date": "Aug 28",
+          "time": "09:48 AM"
+        }
+      },
+      {
+        "name": "Shravana Purnima",
+        "date": "August 28, 2026, Friday",
+        "begins": {
+          "date": "Aug 27",
+          "time": "09:08 AM"
+        },
+        "ends": {
+          "date": "Aug 28",
+          "time": "09:48 AM"
+        }
+      },
+      {
+        "name": "Bhadrapada Purnima Vrat",
+        "date": "September 26, 2026, Saturday",
+        "begins": {
+          "date": "Sep 25",
+          "time": "11:06 PM"
+        },
+        "ends": {
+          "date": "Sep 26",
+          "time": "10:18 PM"
+        }
+      },
+      {
+        "name": "Ashwina Purnima Vrat",
+        "date": "October 25, 2026, Sunday",
+        "begins": {
+          "date": "Oct 25",
+          "time": "11:55 AM"
+        },
+        "ends": {
+          "date": "Oct 26",
+          "time": "09:41 AM"
+        }
+      },
+      {
+        "name": "Ashwina Purnima",
+        "date": "October 26, 2026, Monday",
+        "begins": {
+          "date": "Oct 25",
+          "time": "11:55 AM"
+        },
+        "ends": {
+          "date": "Oct 26",
+          "time": "09:41 AM"
+        }
+      },
+      {
+        "name": "Kartika Purnima Vrat",
+        "date": "November 24, 2026, Tuesday",
+        "begins": {
+          "date": "Nov 23",
+          "time": "11:42 PM"
+        },
+        "ends": {
+          "date": "Nov 24",
+          "time": "08:23 PM"
+        }
+      },
+      {
+        "name": "Margashirsha Purnima Vrat",
+        "date": "December 23, 2026, Wednesday",
+        "begins": {
+          "date": "Dec 23",
+          "time": "10:47 AM"
+        },
+        "ends": {
+          "date": "Dec 24",
+          "time": "06:57 AM"
+        }
+      }
+    ],
+    "2027": [
+      {
+        "name": "Pausha Purnima Vrat",
+        "date": "January 22, 2027, Friday",
+        "begins": {"date": "Jan 21", "time": "09:29 PM"},
+        "ends": {"date": "Jan 22", "time": "05:46 PM"}
+      },
+      {
+        "name": "Magha Purnima Vrat",
+        "date": "February 20, 2027, Saturday",
+        "begins": {"date": "Feb 20", "time": "07:59 AM"},
+        "ends": {"date": "Feb 21", "time": "04:52 AM"}
+      }
+    ],
+    "2025": [
+      {
+        "name": "Pausha Purnima Vrat",
+        "date": "January 13, 2025, Monday",
+        "begins": {"date": "Jan 13", "time": "05:03 AM"},
+        "ends": {"date": "Jan 14", "time": "03:56 AM"}
+      },
+      {
+        "name": "Magha Purnima Vrat",
+        "date": "February 12, 2025, Wednesday",
+        "begins": {"date": "Feb 11", "time": "06:55 PM"},
+        "ends": {"date": "Feb 12", "time": "07:22 PM"}
+      }
+    ]
+  }
+}

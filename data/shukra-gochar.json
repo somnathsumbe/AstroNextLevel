@@ -1,0 +1,38 @@
+{
+  "planet": "Shukra",
+  "gochar": {
+    "2026": [
+      { "date": "2026-01-13", "day": "Tuesday", "event": "enters", "rashi": "Makara", "time": "03:56 AM", "vakri": false },
+      { "date": "2026-02-06", "day": "Friday", "event": "enters", "rashi": "Kumbha", "time": "01:09 AM", "vakri": false },
+      { "date": "2026-03-02", "day": "Monday", "event": "enters", "rashi": "Meena", "time": "12:54 AM", "vakri": false },
+      { "date": "2026-03-26", "day": "Thursday", "event": "enters", "rashi": "Mesha", "time": "05:07 AM", "vakri": false },
+      { "date": "2026-04-19", "day": "Sunday", "event": "enters", "rashi": "Vrishabha", "time": "03:45 PM", "vakri": false },
+      { "date": "2026-05-14", "day": "Thursday", "event": "enters", "rashi": "Mithuna", "time": "10:51 AM", "vakri": false },
+      { "date": "2026-06-08", "day": "Monday", "event": "enters", "rashi": "Karka", "time": "05:40 PM", "vakri": false },
+      { "date": "2026-07-04", "day": "Saturday", "event": "enters", "rashi": "Simha", "time": "07:11 PM", "vakri": false },
+      { "date": "2026-08-01", "day": "Saturday", "event": "enters", "rashi": "Kanya", "time": "09:24 AM", "vakri": false },
+      { "date": "2026-09-02", "day": "Wednesday", "event": "enters", "rashi": "Tula", "time": "01:40 PM", "vakri": false },
+      { "date": "2026-10-03", "day": "Saturday", "event": "vakri", "rashi": "Tula", "time": "12:45 PM", "vakri": true },
+      { "date": "2026-11-06", "day": "Friday", "event": "enters", "rashi": "Kanya", "time": "01:14 AM", "vakri": true },
+      { "date": "2026-11-14", "day": "Saturday", "event": "ends_vakri", "rashi": "Kanya", "time": "05:57 AM", "vakri": false },
+      { "date": "2026-11-22", "day": "Sunday", "event": "enters", "rashi": "Tula", "time": "05:10 PM", "vakri": false }
+    ],
+    "2027": [
+      { "date": "2027-01-01", "day": "Friday", "event": "enters", "rashi": "Vrischika", "time": "11:18 PM", "vakri": false },
+      { "date": "2027-01-29", "day": "Friday", "event": "enters", "rashi": "Dhanu", "time": "06:37 PM", "vakri": false },
+      { "date": "2027-02-24", "day": "Wednesday", "event": "enters", "rashi": "Makara", "time": "03:12 PM", "vakri": false },
+      { "date": "2027-03-21", "day": "Sunday", "event": "enters", "rashi": "Kumbha", "time": "06:48 PM", "vakri": false },
+      { "date": "2027-04-15", "day": "Thursday", "event": "enters", "rashi": "Meena", "time": "03:17 PM", "vakri": false },
+      { "date": "2027-05-10", "day": "Monday", "event": "enters", "rashi": "Mesha", "time": "08:45 AM", "vakri": false },
+      { "date": "2027-06-04", "day": "Friday", "event": "enters", "rashi": "Vrishabha", "time": "12:37 AM", "vakri": false },
+      { "date": "2027-06-28", "day": "Monday", "event": "enters", "rashi": "Mithuna", "time": "02:35 PM", "vakri": false },
+      { "date": "2027-07-23", "day": "Friday", "event": "enters", "rashi": "Karka", "time": "01:42 AM", "vakri": false },
+      { "date": "2027-08-16", "day": "Monday", "event": "enters", "rashi": "Simha", "time": "09:30 AM", "vakri": false },
+      { "date": "2027-09-09", "day": "Thursday", "event": "enters", "rashi": "Kanya", "time": "02:36 PM", "vakri": false },
+      { "date": "2027-10-03", "day": "Sunday", "event": "enters", "rashi": "Tula", "time": "06:20 PM", "vakri": false },
+      { "date": "2027-10-27", "day": "Wednesday", "event": "enters", "rashi": "Vrischika", "time": "09:53 PM", "vakri": false },
+      { "date": "2027-11-21", "day": "Sunday", "event": "enters", "rashi": "Dhanu", "time": "02:04 AM", "vakri": false },
+      { "date": "2027-12-15", "day": "Wednesday", "event": "enters", "rashi": "Makara", "time": "08:06 AM", "vakri": false }
+    ]
+  }
+}

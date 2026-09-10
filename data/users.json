@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "admin",
+    "name": "Administrator",
+    "role": "admin",
+    "email": "admin@astromarket.com",
+    "status": "active"
+  }
+]

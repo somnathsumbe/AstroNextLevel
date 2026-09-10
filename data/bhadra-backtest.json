@@ -1,0 +1,662 @@
+{
+  "dataType": "BhadraPastRecords",
+  "market": "NSE",
+  "index": "NIFTY 50",
+  "marketHours": {
+    "start": "09:15",
+    "end": "15:30",
+    "timezone": "Asia/Kolkata"
+  },
+  "summary": {
+    "totalBhadraDays": 64,
+    "datesWithNiftyData": 41,
+    "dateRange": {
+      "from": "2025-01-03",
+      "to": "2026-08-27"
+    }
+  },
+  "records": [
+    {
+      "date": "2026-08-27",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": null
+    },
+    {
+      "date": "2026-08-23",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "15:10",
+        "end": "15:30"
+      },
+      "nifty": null
+    },
+    {
+      "date": "2026-08-16",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": null
+    },
+    {
+      "date": "2026-08-11",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:22"
+      },
+      "nifty": {
+        "open": 24575,
+        "high": 24577,
+        "low": 24429,
+        "close": 24472,
+        "changePercent": -0.42
+      }
+    },
+    {
+      "date": "2026-08-05",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "09:26"
+      },
+      "nifty": {
+        "open": 24669,
+        "high": 24678,
+        "low": 24498,
+        "close": 24625,
+        "changePercent": -0.18
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24216,
+        "high": 24262,
+        "low": 24136,
+        "close": 24188,
+        "changePercent": -0.12
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "13:47",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24307,
+        "high": 24459,
+        "low": 24287,
+        "close": 24430,
+        "changePercent": 0.51
+      }
+    },
+    {
+      "date": "2026-07-03",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "11:20"
+      },
+      "nifty": {
+        "open": 24376,
+        "high": 24378,
+        "low": 24252,
+        "close": 24271,
+        "changePercent": -0.43
+      }
+    },
+    {
+      "date": "2026-06-29",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24062,
+        "high": 24120,
+        "low": 23925,
+        "close": 23946,
+        "changePercent": -0.48
+      }
+    },
+    {
+      "date": "2026-06-25",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24126,
+        "high": 24262,
+        "low": 24039,
+        "close": 24056,
+        "changePercent": -0.29
+      }
+    },
+    {
+      "date": "2026-06-18",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24074,
+        "high": 24189,
+        "low": 24037,
+        "close": 24168,
+        "changePercent": 0.39
+      }
+    },
+    {
+      "date": "2026-06-10",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "13:52",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23234,
+        "high": 23384,
+        "low": 23217,
+        "close": 23342,
+        "changePercent": 0.47
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23416,
+        "high": 23448,
+        "low": 23195,
+        "close": 23224,
+        "changePercent": -0.82
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "11:07"
+      },
+      "nifty": {
+        "open": 23457,
+        "high": 23684,
+        "low": 23397,
+        "close": 23677,
+        "changePercent": 0.94
+      }
+    },
+    {
+      "date": "2026-05-15",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23731,
+        "high": 23775,
+        "low": 23663,
+        "close": 23757,
+        "changePercent": 0.11
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "14:52"
+      },
+      "nifty": {
+        "open": 23723,
+        "high": 23758,
+        "low": 23578,
+        "close": 23595,
+        "changePercent": -0.54
+      }
+    },
+    {
+      "date": "2026-05-08",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "12:22",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24234,
+        "high": 24254,
+        "low": 24138,
+        "close": 24208,
+        "changePercent": -0.10
+      }
+    },
+    {
+      "date": "2026-04-27",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23945,
+        "high": 24068,
+        "low": 23936,
+        "close": 24018,
+        "changePercent": 0.30
+      }
+    },
+    {
+      "date": "2026-04-16",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "09:25"
+      },
+      "nifty": {
+        "open": 24385,
+        "high": 24401,
+        "low": 24103,
+        "close": 24197,
+        "changePercent": -0.77
+      }
+    },
+    {
+      "date": "2026-04-01",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22899,
+        "high": 22941,
+        "low": 22809,
+        "close": 22932,
+        "changePercent": 0.14
+      }
+    },
+    {
+      "date": "2026-03-25",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "13:50",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23064,
+        "high": 23465,
+        "low": 23063,
+        "close": 23306,
+        "changePercent": 1.05
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:23",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23493,
+        "high": 23657,
+        "low": 23347,
+        "close": 23581,
+        "changePercent": 0.37
+      }
+    },
+    {
+      "date": "2026-03-10",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "12:40"
+      },
+      "nifty": {
+        "open": 24281,
+        "high": 24304,
+        "low": 24080,
+        "close": 24262,
+        "changePercent": -0.08
+      }
+    },
+    {
+      "date": "2026-03-06",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24656,
+        "high": 24701,
+        "low": 24416,
+        "close": 24450,
+        "changePercent": -0.84
+      }
+    },
+    {
+      "date": "2026-02-27",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "11:32",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 25460,
+        "high": 25476,
+        "low": 25141,
+        "close": 25179,
+        "changePercent": -1.10
+      }
+    },
+    {
+      "date": "2026-02-24",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 25642,
+        "high": 25642,
+        "low": 25328,
+        "close": 25425,
+        "changePercent": -0.85
+      }
+    },
+    {
+      "date": "2026-02-12",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "12:22"
+      },
+      "nifty": {
+        "open": 25907,
+        "high": 25907,
+        "low": 25752,
+        "close": 25807,
+        "changePercent": -0.38
+      }
+    },
+    {
+      "date": "2026-02-04",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "12:19",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 25675,
+        "high": 25819,
+        "low": 25564,
+        "close": 25776,
+        "changePercent": 0.39
+      }
+    },
+    {
+      "date": "2026-01-29",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "13:55"
+      },
+      "nifty": {
+        "open": 25345,
+        "high": 25458,
+        "low": 25160,
+        "close": 25419,
+        "changePercent": 0.29
+      }
+    },
+    {
+      "date": "2026-01-22",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "14:40",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 25344,
+        "high": 25436,
+        "low": 25169,
+        "close": 25290,
+        "changePercent": -0.21
+      }
+    },
+    {
+      "date": "2026-01-13",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:18"
+      },
+      "nifty": {
+        "open": 25897,
+        "high": 25900,
+        "low": 25603,
+        "close": 25732,
+        "changePercent": -0.64
+      }
+    },
+    {
+      "date": "2026-01-09",
+      "year": 2026,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 25840,
+        "high": 25941,
+        "low": 25623,
+        "close": 25683,
+        "changePercent": -0.61
+      }
+    },
+    {
+      "date": "2025-03-21",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23168,
+        "high": 23403,
+        "low": 23133,
+        "close": 23350,
+        "changePercent": 0.79
+      }
+    },
+    {
+      "date": "2025-03-17",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22353,
+        "high": 22577,
+        "low": 22353,
+        "close": 22509,
+        "changePercent": 0.70
+      }
+    },
+    {
+      "date": "2025-03-13",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "10:35",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22542,
+        "high": 22558,
+        "low": 22377,
+        "close": 22397,
+        "changePercent": -0.64
+      }
+    },
+    {
+      "date": "2025-03-06",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "10:50",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22476,
+        "high": 22556,
+        "low": 22246,
+        "close": 22545,
+        "changePercent": 0.30
+      }
+    },
+    {
+      "date": "2025-03-03",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22195,
+        "high": 22262,
+        "low": 22005,
+        "close": 22119,
+        "changePercent": -0.34
+      }
+    },
+    {
+      "date": "2025-02-19",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 22847,
+        "high": 23050,
+        "low": 22815,
+        "close": 22933,
+        "changePercent": 0.37
+      }
+    },
+    {
+      "date": "2025-02-05",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "13:31"
+      },
+      "nifty": {
+        "open": 23802,
+        "high": 23807,
+        "low": 23680,
+        "close": 23696,
+        "changePercent": -0.44
+      }
+    },
+    {
+      "date": "2025-01-24",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23184,
+        "high": 23347,
+        "low": 23050,
+        "close": 23092,
+        "changePercent": -0.40
+      }
+    },
+    {
+      "date": "2025-01-20",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:58",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23290,
+        "high": 23391,
+        "low": 23171,
+        "close": 23345,
+        "changePercent": 0.23
+      }
+    },
+    {
+      "date": "2025-01-13",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 23195,
+        "high": 23341,
+        "low": 23047,
+        "close": 23086,
+        "changePercent": -0.47
+      }
+    },
+    {
+      "date": "2025-01-10",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "09:15",
+        "end": "10:19"
+      },
+      "nifty": {
+        "open": 23552,
+        "high": 23597,
+        "low": 23344,
+        "close": 23432,
+        "changePercent": -0.51
+      }
+    },
+    {
+      "date": "2025-01-03",
+      "year": 2025,
+      "bhadraDuringMarket": {
+        "start": "12:25",
+        "end": "15:30"
+      },
+      "nifty": {
+        "open": 24196,
+        "high": 24196,
+        "low": 23976,
+        "close": 24005,
+        "changePercent": -0.79
+      }
+    }
+  ]
+}

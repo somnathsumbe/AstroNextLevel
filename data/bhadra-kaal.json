@@ -1,0 +1,22 @@
+{
+  "year": 2026,
+  "month": "August",
+  "location": {
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India",
+    "timezone": "IST",
+    "utcOffset": "+05:30"
+  },
+  "bhadraKaal": [
+    { "date": "2026-08-01", "day": "Saturday", "startDateTime": "2026-08-01T10:53:00+05:30", "endDateTime": "2026-08-01T23:07:00+05:30", "segments": [] },
+    { "date": "2026-08-04", "day": "Tuesday", "startDateTime": "2026-08-04T22:03:00+05:30", "endDateTime": "2026-08-05T09:27:00+05:30", "segments": [] },
+    { "date": "2026-08-08", "day": "Saturday", "startDateTime": "2026-08-08T03:21:00+05:30", "endDateTime": "2026-08-08T13:59:00+05:30", "segments": [] },
+    { "date": "2026-08-11", "day": "Tuesday", "startDateTime": "2026-08-11T04:54:00+05:30", "endDateTime": "2026-08-11T15:23:00+05:30", "segments": [] },
+    { "date": "2026-08-16", "day": "Sunday", "startDateTime": "2026-08-16T05:05:00+05:30", "endDateTime": "2026-08-16T16:53:00+05:30", "segments": [] },
+    { "date": "2026-08-19", "day": "Wednesday", "startDateTime": "2026-08-19T19:20:00+05:30", "endDateTime": "2026-08-20T08:16:00+05:30", "segments": [] },
+    { "date": "2026-08-23", "day": "Sunday", "startDateTime": "2026-08-23T15:11:00+05:30", "endDateTime": "2026-08-24T04:19:00+05:30", "segments": [] },
+    { "date": "2026-08-27", "day": "Thursday", "startDateTime": "2026-08-27T09:09:00+05:30", "endDateTime": "2026-08-27T21:32:00+05:30", "segments": [] },
+    { "date": "2026-08-30", "day": "Sunday", "startDateTime": "2026-08-30T21:17:00+05:30", "endDateTime": "2026-08-31T08:51:00+05:30", "segments": [] }
+  ]
+}

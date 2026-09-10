@@ -1,0 +1,29 @@
+[
+  {
+    "year": 2026,
+    "events": [
+      { "date": "2026-01-16", "day": "Friday", "planet": "Mangal", "event": "enters", "rashi": "Makara", "time": "04:25 AM", "vakri": false },
+      { "date": "2026-02-23", "day": "Monday", "planet": "Mangal", "event": "enters", "rashi": "Kumbha", "time": "11:47 AM", "vakri": false },
+      { "date": "2026-04-02", "day": "Thursday", "planet": "Mangal", "event": "enters", "rashi": "Meena", "time": "03:26 PM", "vakri": false },
+      { "date": "2026-05-11", "day": "Monday", "planet": "Mangal", "event": "enters", "rashi": "Mesha", "time": "12:35 PM", "vakri": false },
+      { "date": "2026-06-20", "day": "Saturday", "planet": "Mangal", "event": "enters", "rashi": "Vrishabha", "time": "11:55 PM", "vakri": false },
+      { "date": "2026-08-02", "day": "Sunday", "planet": "Mangal", "event": "enters", "rashi": "Mithuna", "time": "10:46 PM", "vakri": false },
+      { "date": "2026-09-18", "day": "Friday", "planet": "Mangal", "event": "enters", "rashi": "Karka", "time": "04:29 PM", "vakri": false },
+      { "date": "2026-11-12", "day": "Thursday", "planet": "Mangal", "event": "enters", "rashi": "Simha", "time": "08:11 PM", "vakri": false }
+    ]
+  },
+  {
+    "year": 2027,
+    "events": [
+      { "date": "2027-01-10", "day": "Sunday", "planet": "Mangal", "event": "vakri", "rashi": "Simha", "time": "06:29 PM", "vakri": true },
+      { "date": "2027-03-10", "day": "Wednesday", "planet": "Mangal", "event": "enters", "rashi": "Karka", "time": "12:29 AM", "vakri": true },
+      { "date": "2027-04-01", "day": "Thursday", "planet": "Mangal", "event": "ends_vakri", "rashi": "Karka", "time": "07:38 PM", "vakri": false },
+      { "date": "2027-04-26", "day": "Monday", "planet": "Mangal", "event": "enters", "rashi": "Simha", "time": "11:30 AM", "vakri": false },
+      { "date": "2027-07-05", "day": "Monday", "planet": "Mangal", "event": "enters", "rashi": "Kanya", "time": "04:25 AM", "vakri": false },
+      { "date": "2027-08-24", "day": "Tuesday", "planet": "Mangal", "event": "enters", "rashi": "Tula", "time": "09:43 AM", "vakri": false },
+      { "date": "2027-10-08", "day": "Friday", "planet": "Mangal", "event": "enters", "rashi": "Vrischika", "time": "01:21 AM", "vakri": false },
+      { "date": "2027-11-18", "day": "Thursday", "planet": "Mangal", "event": "enters", "rashi": "Dhanu", "time": "08:39 AM", "vakri": false },
+      { "date": "2027-12-27", "day": "Monday", "planet": "Mangal", "event": "enters", "rashi": "Makara", "time": "12:57 PM", "vakri": false }
+    ]
+  }
+]

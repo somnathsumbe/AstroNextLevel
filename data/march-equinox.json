@@ -1,0 +1,22 @@
+{
+  "tithi": "March Equinox",
+  "location": "Mumbai, Maharashtra, India",
+  "entries": [
+    { "year": 2020, "date": "20 Mar", "softwareTime": "10:00", "indianTime": "🌙 सकाळी 10:00" },
+    { "year": 2021, "date": "20 Mar", "softwareTime": "15:00", "indianTime": "🌙 दुपारी 3:00" },
+    { "year": 2022, "date": "20 Mar", "softwareTime": "21:00", "indianTime": "🌙 रात्री 9:00" },
+    { "year": 2023, "date": "21 Mar", "softwareTime": "03:00", "indianTime": "🌙 पहाटे 3:00" },
+    { "year": 2024, "date": "20 Mar", "softwareTime": "09:00", "indianTime": "🌙 सकाळी 9:00" },
+    { "year": 2025, "date": "20 Mar", "softwareTime": "15:00", "indianTime": "🌙 दुपारी 3:00" },
+    { "year": 2026, "date": "20 Mar", "softwareTime": "21:00", "indianTime": "🌙 रात्री 9:00" },
+    { "year": 2027, "date": "21 Mar", "softwareTime": "02:00", "indianTime": "🌙 रात्री 2:00" },
+    { "year": 2028, "date": "20 Mar", "softwareTime": "08:00", "indianTime": "🌅 सकाळी 8:00" },
+    { "year": 2029, "date": "20 Mar", "softwareTime": "14:00", "indianTime": "☀️ दुपारी 2:00" },
+    { "year": 2030, "date": "20 Mar", "softwareTime": "20:00", "indianTime": "🌙 रात्री 8:00" },
+    { "year": 2031, "date": "21 Mar", "softwareTime": "01:00", "indianTime": "🌙 रात्री 1:00" },
+    { "year": 2032, "date": "20 Mar", "softwareTime": "07:00", "indianTime": "🌅 सकाळी 7:00" },
+    { "year": 2033, "date": "20 Mar", "softwareTime": "13:00", "indianTime": "☀️ दुपारी 1:00" },
+    { "year": 2034, "date": "20 Mar", "softwareTime": "19:00", "indianTime": "🌆 संध्याकाळी 7:00" },
+    { "year": 2035, "date": "21 Mar", "softwareTime": "01:00", "indianTime": "🌙 रात्री 1:00" }
+  ]
+}
