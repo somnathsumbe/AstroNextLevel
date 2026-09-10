@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import rawData from '@/src/data/weekly-market-tracking.json';
 import { exportMarketCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, isWeekend, monthName } from '@/src/lib/date-utils';
@@ -79,7 +80,7 @@ export default function JupiterVenusTrackingPage() {
           <div className="eyebrow">MARKET TOOL</div>
           <h1 className="page-title">Jupiter Venus Tracking</h1>
           <p className="page-subtitle">Jupiter/Venus Degree Crossing &amp; Market Observation</p>
-          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <a href="/dashboard">Dashboard</a> <span>/</span> Jupiter Venus Tracking</nav>
+          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <Link href="/dashboard">Dashboard</Link> <span>/</span> Jupiter Venus Tracking</nav>
         </div>
         <div className="page-actions">
           <button className="outline-action" type="button" onClick={() => setShowUsage(true)}><i className="bi bi-question-circle" /> Use / How to Use</button>

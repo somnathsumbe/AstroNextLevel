@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { getLoggedUser } from '@/lib/auth';
+import { getRoutePath } from '@/lib/site-path';
 
 export default function AuthGate({ children }) {
-  const pathname = usePathname();
+  const pathname = getRoutePath(usePathname());
   const router = useRouter();
   const [ready, setReady] = useState(pathname === '/login');
 

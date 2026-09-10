@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import rawData from '@/src/data/planet-stock-mapping.json';
 import { formatSectorName, normalizeSectors, stockKey, uniqueStockCount } from '@/src/lib/planet-stock-mapping';
 import type { PlanetStockMappingDataset, SelectedStock, Stock } from '@/src/types/planet-stock-mapping';
@@ -98,7 +99,7 @@ export default function PlanetStockMappingPage() {
           <div className="eyebrow">FINANCIAL ASTROLOGY</div>
           <h1 className="page-title">Planet Stock Mapping</h1>
           <p className="page-subtitle">Financial Astrology Stock Analysis - {DATA.year}</p>
-          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <a href="/dashboard">Dashboard</a> <span>/</span> Planet Stock Mapping</nav>
+          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <Link href="/dashboard">Dashboard</Link> <span>/</span> Planet Stock Mapping</nav>
         </div>
       </header>
 

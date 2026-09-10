@@ -7,8 +7,11 @@ import Footer from '@/components/layout/Footer';
 import AuthGate from '@/components/AuthGate';
 
 export const metadata = {
-  title: 'Astro Market Analysis',
-  description: 'Astrology and market analysis application',
+  title: 'AstroNextLevel | Astro Market Analysis',
+  description: 'Astrology and market analysis application for studying planetary cycles and market movements.',
+  icons: {
+    icon: '/AstroNextLevel/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {

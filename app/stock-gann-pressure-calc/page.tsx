@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 
 const IST_ZONE = 'Asia/Kolkata';
 const DAY_MS = 86_400_000;
@@ -171,7 +172,7 @@ export default function StockGannPressureCalcPage() {
 
   return (
     <main className="container-fluid tool-page stock-gann-page">
-      <header className="page-heading-row"><div><div className="eyebrow">STOCK TOOL</div><h1 className="page-title">Stock Gann Pressure Calculator</h1><p className="page-subtitle">Probable Gann pressure dates and stock momentum observation zones</p><nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <a href="/dashboard">Dashboard</a> <span>/</span> Stock Gann Pressure Calculator</nav></div><div className="page-actions"><button className="outline-action" type="button" onClick={() => setShowUsage(true)}><i className="bi bi-lightbulb" /> Use</button></div></header>
+      <header className="page-heading-row"><div><div className="eyebrow">STOCK TOOL</div><h1 className="page-title">Stock Gann Pressure Calculator</h1><p className="page-subtitle">Probable Gann pressure dates and stock momentum observation zones</p><nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <Link href="/dashboard">Dashboard</Link> <span>/</span> Stock Gann Pressure Calculator</nav></div><div className="page-actions"><button className="outline-action" type="button" onClick={() => setShowUsage(true)}><i className="bi bi-lightbulb" /> Use</button></div></header>
 
       <form className="filter-panel stock-gann-form" onSubmit={calculate}>
         <div className="filter-title"><span><i className="bi bi-calculator" /> Gann Pressure Parameters</span><span className="location-note">Mumbai, India - IST (+05:30)</span></div>

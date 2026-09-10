@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import rawData from '@/src/data/sun-jupiter-tracking.json';
 import { exportSunJupiterCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, getNextMonday, getWeekFriday, getWeekMonday, monthName, isWeekend } from '@/src/lib/date-utils';
@@ -111,7 +112,7 @@ export default function SunJupiterTrackingPage() {
           <h1 className="page-title">Weekly Market Tracking</h1>
           <p className="page-subtitle">Sun-Jupiter Degree Crossing &amp; Weekly Trend Analysis</p>
           <div className="calculator-meta"><span><i className="bi bi-globe2" /> {DATA.coordinateSystem}</span><span><i className="bi bi-clock" /> {DATA.timezone}</span><span><i className="bi bi-calendar3" /> {selectedYear}</span></div>
-          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <a href="/dashboard">Dashboard</a> <span>/</span> Sun-Jupiter Tracking</nav>
+          <nav className="breadcrumb-line" aria-label="Breadcrumb"><i className="bi bi-house" /> <Link href="/dashboard">Dashboard</Link> <span>/</span> Sun-Jupiter Tracking</nav>
         </div>
         <div className="page-actions">
           <button className="outline-action" type="button" onClick={() => setShowUsage(true)}><i className="bi bi-lightbulb" /> Use</button>

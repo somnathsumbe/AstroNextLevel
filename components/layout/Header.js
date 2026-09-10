@@ -5,9 +5,10 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getLoggedUser, logout } from '@/lib/auth';
 import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
+import { getRoutePath } from '@/lib/site-path';
 
 export default function Header() {
-  const pathname = usePathname();
+  const pathname = getRoutePath(usePathname());
   const router = useRouter();
   const [user, setUser] = useState(null);
 

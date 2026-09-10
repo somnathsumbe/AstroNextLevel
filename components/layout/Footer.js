@@ -1,9 +1,10 @@
  'use client';
 
 import { usePathname } from 'next/navigation';
+import { getRoutePath } from '@/lib/site-path';
 
 export default function Footer() {
-  const pathname = usePathname();
+  const pathname = getRoutePath(usePathname());
   if (pathname === '/login') return null;
 
   return (

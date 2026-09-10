@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { getRoutePath } from '@/lib/site-path';
 
 const menus = [
   {
@@ -48,7 +49,7 @@ function sectionForPath(pathname) {
 }
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const pathname = getRoutePath(usePathname());
   const [open, setOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState(() => Object.fromEntries(menus.map((section) => [section.title, false])));
 

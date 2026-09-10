@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function RegisterPage() {
   return (
     <div className="container py-5">
@@ -24,7 +26,7 @@ export default function RegisterPage() {
             </form>
 
             <div className="text-center mt-3">
-              <a href="/login">Back to Login</a>
+              <Link href="/login">Back to Login</Link>
             </div>
           </div>
         </div>

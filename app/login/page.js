@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { authenticate } from '@/lib/auth';
 
 export default function LoginPage() {
@@ -48,7 +49,7 @@ export default function LoginPage() {
       <div className="login-stars" />
       <div className="login-container">
         <div className="login-intro">
-          <a className="login-logo" href="/login"><span className="brand-star">✦</span><span><strong>ASTRO</strong><small>MARKET ANALYTICS</small></span></a>
+          <Link className="login-logo" href="/login"><span className="brand-star">✦</span><span><strong>ASTRO</strong><small>MARKET ANALYTICS</small></span></Link>
           <p className="eyebrow">PLANETARY INTELLIGENCE PLATFORM</p>
           <h1>Read the sky.<br /><em>Read the market.</em></h1>
           <p className="login-copy">A precision workspace for studying planetary cycles alongside NSE and BSE market movements.</p>
