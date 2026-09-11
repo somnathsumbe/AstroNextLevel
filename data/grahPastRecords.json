@@ -1,0 +1,65 @@
+[
+  {
+    "planet": "Jupiter",
+    "marathiName": "Guru",
+    "icon": "🟡",
+    "totalRecords": 118,
+    "niftyDataRecords": 64,
+    "niftyDataBase": 100,
+    "avgPointsMove": 245.86
+  },
+  {
+    "planet": "Sun",
+    "marathiName": "Surya",
+    "icon": "☀️",
+    "totalRecords": 75,
+    "niftyDataRecords": 53,
+    "niftyDataBase": 75,
+    "avgPointsMove": 206.78
+  },
+  {
+    "planet": "Moon",
+    "marathiName": "Chandra",
+    "icon": "🌙",
+    "totalRecords": 91,
+    "niftyDataRecords": 63,
+    "niftyDataBase": 91,
+    "avgPointsMove": 227.39
+  },
+  {
+    "planet": "Mercury",
+    "marathiName": "Budh",
+    "icon": "☿️",
+    "totalRecords": 100,
+    "niftyDataRecords": 70,
+    "niftyDataBase": 100,
+    "avgPointsMove": 203.55
+  },
+  {
+    "planet": "Venus",
+    "marathiName": "Shukra",
+    "icon": "🟢",
+    "totalRecords": 79,
+    "niftyDataRecords": 54,
+    "niftyDataBase": 79,
+    "avgPointsMove": 237.81
+  },
+  {
+    "planet": "Mars",
+    "marathiName": "Mangal",
+    "icon": "🔴",
+    "totalRecords": 102,
+    "niftyDataRecords": 71,
+    "niftyDataBase": 100,
+    "avgPointsMove": 229.85
+  },
+  {
+    "planet": "Saturn",
+    "marathiName": "Shani",
+    "icon": "🪐",
+    "totalRecords": 65,
+    "niftyDataRecords": 55,
+    "niftyDataBase": 65,
+    "avgPointsMove": 199.35
+  }
+]

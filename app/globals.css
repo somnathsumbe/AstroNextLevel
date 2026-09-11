@@ -191,3 +191,232 @@ html[data-theme] .bhadra-table.table tbody tr:hover td { background: color-mix(i
 @media (max-width: 767.98px) { .next-mangal-card { padding: 18px; }.observation-grid { grid-template-columns: 1fr; } }
 .weekly-filter-actions { justify-content: flex-start; margin-top: 0; }.next-degree-card { margin-bottom: 19px; padding: 21px 24px; border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 30%, var(--line)); border-left: 3px solid var(--astro-accent, var(--gold)); background: linear-gradient(125deg, color-mix(in srgb, var(--astro-panel, #0f2238) 92%, var(--astro-accent, var(--gold)) 8%), var(--astro-panel, #0f2238)); }.next-degree-card h2 { font-size: 18px; margin: 7px 0; }.next-degree-card h2 i { color: var(--astro-accent, var(--gold)); font-size: 15px; }.next-degree-card p { color: var(--muted); font-size: 12px; margin: 0; }.degree-badge { display: inline-block; padding: 4px 7px; color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 13%, transparent); border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 25%, transparent); font: 10px 'DM Mono', monospace; }.weekly-table tbody tr.weekend-row td { background: rgba(220,53,69,.055); }.weekly-table tbody tr.weekend-row:hover td { background: rgba(220,53,69,.1); }.weekly-observation { margin-top: 18px; }.weekly-observation .data-panel-heading > i { color: var(--astro-accent, var(--gold)); font-size: 20px; }
 @media (max-width: 767.98px) { .dashboard-welcome { display: block; }.dashboard-date { margin-top: 18px; text-align: left; }.astro-section-heading { align-items: flex-start; }.astro-date-label { margin-top: 5px; }.astro-event-card { min-height: 0; }.upcoming-event-row { gap: 9px; padding: 13px 11px; }.upcoming-date { width: 51px; font-size: 9px; }.upcoming-title { font-size: 11px; } }
+
+.grah-records-page { min-width: 0; max-width: 100%; overflow-x: hidden; }
+.grah-summary-panel, .grah-record-card, .grah-detail-panel { background: linear-gradient(145deg, color-mix(in srgb, var(--astro-panel, #0f2238) 97%, white 3%), var(--astro-panel, #0f2238)); border: 1px solid var(--line); }
+.grah-summary-panel { margin-bottom: 25px; padding: 21px; }
+.grah-summary-panel > div:first-child { color: var(--astro-accent, var(--gold)); }
+.grah-summary-item { min-height: 78px; padding: 14px; border-left: 2px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 55%, var(--line)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 6%, transparent); }
+.grah-summary-item span, .grah-summary-item strong { display: block; }
+.grah-summary-item span { color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.grah-summary-item strong { margin-top: 7px; color: var(--astro-contrast, var(--white)); font-size: 20px; }
+.grah-summary-note strong { color: var(--astro-accent, var(--gold)); font-size: 14px; }
+.grah-record-card { display: flex; flex-direction: column; min-height: 270px; padding: 21px; border-top: 2px solid var(--astro-accent, var(--gold)); border-radius: 6px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.grah-record-card:hover { border-color: var(--astro-accent, var(--gold)); box-shadow: 0 12px 30px rgba(0, 0, 0, .2); transform: translateY(-3px); }
+.grah-planet-icon { display: grid; place-items: center; width: 45px; height: 45px; flex: 0 0 45px; border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 30%, var(--line)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 10%, transparent); font-size: 24px; line-height: 1; }
+.grah-planet-icon-large { width: 60px; height: 60px; flex-basis: 60px; font-size: 32px; }
+.grah-record-stats, .grah-detail-stats { display: grid; gap: 13px; }
+.grah-record-stats div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.grah-record-stats dt, .grah-detail-stats dt { color: var(--muted); font: 10px 'DM Mono', monospace; text-transform: uppercase; }
+.grah-record-stats dd, .grah-detail-stats dd { margin: 0; color: var(--astro-contrast, var(--white)); font-size: 17px; font-weight: 700; }
+.grah-record-stats dd span { color: var(--muted); font-size: 12px; font-weight: 400; }
+.grah-view-button, .grah-back-button { border: 1px solid var(--astro-accent, var(--gold)); color: var(--astro-accent, var(--gold)); font-size: 11px; }
+.grah-view-button:hover, .grah-back-button:hover { background: var(--astro-accent, var(--gold)); color: #101820; }
+.grah-view-button span, .grah-back-button span { margin-left: 6px; }
+.grah-count { color: var(--muted); font: 10px 'DM Mono', monospace; }
+.grah-detail-panel { max-width: 820px; margin: 5px auto 0; padding: clamp(21px, 4vw, 38px); }
+.grah-detail-stats { display: flex; }
+.grah-detail-stats > div { padding: 14px; border: 1px solid var(--line); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 5%, transparent); }
+.grah-detail-stats dd { margin-top: 6px; color: var(--astro-accent, var(--gold)); font-size: 22px; }
+.grah-placeholder, .grah-empty-state { display: flex; align-items: center; gap: 10px; padding: 18px; border: 1px dashed color-mix(in srgb, var(--astro-accent, var(--gold)) 40%, var(--line)); color: var(--muted); font-size: 12px; }
+.grah-placeholder i, .grah-empty-state i { color: var(--astro-accent, var(--gold)); font-size: 20px; }
+.grah-empty-state { min-height: 150px; flex-direction: column; justify-content: center; text-align: center; }
+.grah-empty-state strong { color: var(--astro-contrast, var(--white)); }
+.grah-disclaimer { margin: 25px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.grah-disclaimer i { margin-right: 6px; color: var(--astro-accent, var(--gold)); }
+
+@media (max-width: 575.98px) {
+	.grah-summary-panel { padding: 17px; }
+	.grah-summary-item { min-height: 86px; padding: 12px; }
+	.grah-summary-item strong { font-size: 17px; }
+	.grah-summary-note strong { font-size: 12px; }
+}
+
+.grah-page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.grah-page-header .page-title { margin-top: 8px; }
+.grah-page-header .page-subtitle { margin-bottom: 0; }
+.grah-header-meta { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
+.grah-header-meta span, .grah-history-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; color: var(--muted); border: 1px solid var(--line); font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.grah-header-meta i { color: var(--astro-accent, var(--gold)); }
+.grah-back-link { display: inline-flex; align-items: center; gap: 7px; color: var(--astro-accent, var(--gold)); font: 10px 'DM Mono', monospace; text-decoration: none; }
+.grah-back-link:hover, .grah-back-link:focus-visible { color: var(--astro-accent-soft, var(--gold-soft)); text-decoration: underline; }
+.grah-kpi-card, .grah-analysis-card, .grah-section-panel, .grah-insight-card, .grah-detail-hero, .grah-detail-kpi, .grah-placeholder-panel { min-width: 0; border: 1px solid var(--line); background: var(--astro-panel, var(--panel)); }
+.grah-kpi-card { display: flex; flex-direction: column; justify-content: center; min-height: 120px; padding: 17px; }
+.grah-kpi-card > i { margin-bottom: 13px; color: var(--astro-accent, var(--gold)); font-size: 17px; }
+.grah-kpi-card span, .grah-detail-kpi span { color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .07em; text-transform: uppercase; }
+.grah-kpi-card strong { display: block; overflow-wrap: anywhere; margin-top: 8px; color: var(--astro-contrast, var(--white)); font-size: clamp(16px, 2vw, 22px); }
+.grah-analysis-card { display: flex; flex-direction: column; min-height: 370px; padding: 20px; border-radius: 6px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.grah-analysis-card:hover { border-color: color-mix(in srgb, var(--astro-accent, var(--gold)) 65%, var(--line)); box-shadow: 0 12px 26px rgba(0, 0, 0, .2); transform: translateY(-3px); }
+.grah-analysis-card:focus-within { border-color: var(--astro-accent, var(--gold)); }
+.grah-card-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-width: 0; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.grah-card-header h3 { color: var(--astro-contrast, var(--white)); }
+.grah-history-badge { padding: 5px 7px; color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 9%, transparent); border-color: color-mix(in srgb, var(--astro-accent, var(--gold)) 30%, var(--line)); font-size: 8px; white-space: nowrap; }
+.grah-primary-metric { padding: 22px 0 18px; }
+.grah-primary-metric strong { display: block; color: var(--astro-accent, var(--gold)); font-size: clamp(30px, 4vw, 40px); font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+.grah-primary-metric span { display: block; margin-top: 9px; color: var(--muted); font: 10px 'DM Mono', monospace; text-transform: uppercase; }
+.grah-primary-metric i, .grah-mini-stats i { margin-left: 3px; color: var(--astro-accent, var(--gold)); }
+.grah-mini-stats { margin-bottom: 20px; }
+.grah-mini-stats > div { padding: 11px 12px; background: color-mix(in srgb, var(--astro-accent, var(--gold)) 5%, transparent); }
+.grah-mini-stats dt { color: var(--muted); font: 9px 'DM Mono', monospace; text-transform: uppercase; }
+.grah-mini-stats dd { margin: 7px 0 0; color: var(--astro-contrast, var(--white)); font-size: 16px; font-weight: 700; }
+.grah-availability { margin-bottom: 19px; color: var(--muted); font: 9px 'DM Mono', monospace; }
+.grah-availability strong { color: var(--astro-accent, var(--gold)); font-weight: 500; }
+.grah-availability .progress, .grah-ranking-list .progress { height: 5px; margin-top: 9px; overflow: hidden; background: color-mix(in srgb, var(--astro-contrast, var(--white)) 9%, transparent); border-radius: 10px; }
+.grah-availability .progress-bar, .grah-ranking-list .progress-bar { background: var(--astro-accent, var(--gold)); }
+.grah-primary-button { min-height: 40px; color: #101820; background: var(--astro-accent, var(--gold)); border-color: var(--astro-accent, var(--gold)); font-size: 11px; font-weight: 700; }
+.grah-primary-button:hover, .grah-primary-button:focus-visible { color: #101820; background: var(--astro-accent-soft, var(--gold-soft)); border-color: var(--astro-accent-soft, var(--gold-soft)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--astro-accent, var(--gold)) 25%, transparent); }
+.grah-primary-button span { margin-left: 5px; font-size: 15px; }
+.grah-section-panel { margin-bottom: 24px; padding: 21px; }
+.grah-section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.grah-section-heading h2 { margin: 7px 0 4px; color: var(--astro-contrast, var(--white)); font-size: 19px; }
+.grah-section-heading p { margin: 0; color: var(--muted); font-size: 11px; }
+.grah-section-heading > i { color: var(--astro-accent, var(--gold)); font-size: 19px; }
+.grah-ranking-list { display: grid; gap: 15px; padding-left: 0; list-style: none; }
+.grah-ranking-list li { min-width: 0; }
+.grah-ranking-label { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin-bottom: 5px; }
+.grah-ranking-label span { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.grah-ranking-label b { color: var(--astro-contrast, var(--white)); font-size: 12px; }
+.grah-ranking-label small { color: var(--muted); font: 9px 'DM Mono', monospace; }
+.grah-ranking-label strong { color: var(--astro-accent, var(--gold)); font-size: 12px; }
+.grah-insight-card { min-height: 145px; margin-bottom: 14px; padding: 19px; border-left: 3px solid var(--astro-accent, var(--gold)); }
+.grah-insight-card h3 { margin: 12px 0 5px; color: var(--astro-contrast, var(--white)); font-size: 19px; }
+.grah-insight-card h3 span { margin-right: 4px; }
+.grah-insight-card > strong { color: var(--astro-accent, var(--gold)); font-size: 14px; }
+.grah-insight-card p { margin: 10px 0 0; color: var(--muted); font-size: 10px; }
+.grah-insight-low { border-left-color: #8ba1b2; }
+.grah-insight-low > strong { color: #b9c8d2; }
+.grah-disclaimer { margin: 0; color: var(--muted); background: color-mix(in srgb, var(--astro-panel, var(--panel)) 92%, var(--astro-accent, var(--gold)) 8%); border-color: color-mix(in srgb, var(--astro-accent, var(--gold)) 30%, var(--line)); font-size: 11px; line-height: 1.6; }
+.grah-disclaimer h2 { margin: 0 0 10px; color: var(--astro-contrast, var(--white)); font-size: 14px; }
+.grah-disclaimer h2 i { margin-right: 6px; color: var(--astro-accent, var(--gold)); }
+.grah-disclaimer p { margin-bottom: 9px; }
+.grah-disclaimer hr { border-color: var(--line); opacity: 1; }
+.grah-detail-hero { display: flex; align-items: center; max-width: 860px; margin: 0 auto 18px; padding: 24px; border-left: 3px solid var(--astro-accent, var(--gold)); }
+.grah-detail-hero h2 { margin: 10px 0 3px; color: var(--astro-contrast, var(--white)); font-size: 28px; }
+.grah-detail-hero p { margin: 0; color: var(--muted); font-size: 12px; }
+.grah-detail-kpi { min-height: 100px; padding: 16px; }
+.grah-detail-kpi strong { display: block; margin-top: 9px; color: var(--astro-accent, var(--gold)); font-size: 22px; overflow-wrap: anywhere; }
+.grah-placeholder-panel { max-width: 860px; margin: 0 auto; padding: 21px; }
+.grah-placeholder-panel .grah-empty-state { min-height: 170px; }
+.grah-empty-state { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 30px 20px; color: var(--muted); text-align: center; }
+.grah-empty-state i { color: var(--astro-accent, var(--gold)); font-size: 20px; }
+.grah-empty-state strong { color: var(--astro-contrast, var(--white)); }
+.grah-loading-state { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 220px; color: var(--muted); font: 11px 'DM Mono', monospace; }
+.grah-loading-state .spinner-border { color: var(--astro-accent, var(--gold)); }
+.grah-invalid-state { flex-direction: column; min-height: 300px; border: 1px solid var(--line); background: var(--astro-panel, var(--panel)); }
+.grah-simple-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; }
+.grah-simple-card { display: flex; min-height: 188px; flex-direction: column; padding: 17px 13px; border: 1px solid var(--line); border-radius: 7px; background: var(--astro-panel, var(--panel)); text-align: center; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.grah-simple-card:hover { border-color: color-mix(in srgb, var(--astro-accent, var(--gold)) 60%, var(--line)); box-shadow: 0 10px 24px rgba(0, 0, 0, .18); transform: translateY(-3px); }
+.grah-simple-card-header { display: flex; min-height: 78px; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px; }
+.grah-simple-icon { color: var(--astro-accent, var(--gold)); font-size: 28px; line-height: 1; }
+.grah-simple-card h3 { color: var(--astro-contrast, var(--white)); font-size: 11px; font-weight: 700; line-height: 1.35; }
+.grah-simple-card h3 span { color: var(--muted); font-weight: 500; }
+.grah-simple-metric { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
+.grah-simple-metric strong { display: block; color: var(--astro-accent, var(--gold)); font-size: 18px; line-height: 1; }
+.grah-simple-metric span { display: block; margin-top: 7px; color: var(--muted); font: 8px 'DM Mono', monospace; line-height: 1.35; text-transform: uppercase; }
+.grah-simple-stats { display: flex; justify-content: center; gap: 8px; margin-top: 13px; color: var(--muted); font: 8px 'DM Mono', monospace; line-height: 1.35; }
+.grah-simple-stats span + span { padding-left: 8px; border-left: 1px solid var(--line); }
+
+@media (max-width: 1199.98px) { .grah-simple-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 767.98px) { .grah-simple-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+@media (max-width: 380px) { .grah-simple-grid { grid-template-columns: 1fr; } }
+.grah-reversal-preview { margin-bottom: 24px; padding: 21px; border: 1px solid var(--line); background: var(--astro-panel, var(--panel)); }
+.grah-reversal-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; align-items: center; padding: 15px; border: 1px solid var(--line); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 5%, transparent); }
+.grah-reversal-row > div { min-width: 0; }
+.grah-reversal-row strong, .grah-reversal-row small, .grah-reversal-row span { display: block; }
+.grah-reversal-row strong { color: var(--astro-contrast, var(--white)); font-size: 13px; }
+.grah-reversal-row small, .grah-reversal-row span { color: var(--muted); font: 9px 'DM Mono', monospace; }
+.grah-reversal-row small { margin-top: 5px; }
+.grah-reversal-row div:not(:first-child) strong { margin-top: 6px; color: var(--astro-accent, var(--gold)); }
+.grah-reversal-state { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 74px; color: var(--muted); font-size: 11px; }
+.grah-reversal-state .spinner-border { color: var(--astro-accent, var(--gold)); }
+.grah-filter-label { display: block; margin-bottom: 6px; color: var(--muted); font: 9px 'DM Mono', monospace; text-transform: uppercase; }
+.grah-filter-input { min-height: 38px; color: var(--astro-contrast, var(--white)); background: color-mix(in srgb, var(--astro-page, var(--navy)) 85%, white 2%); border-color: var(--line); font-size: 11px; }
+.grah-filter-input:focus { color: var(--astro-contrast, var(--white)); background: var(--astro-page, var(--navy)); border-color: var(--astro-accent, var(--gold)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--astro-accent, var(--gold)) 15%, transparent); }
+.grah-result-count { display: block; padding: 11px 0; color: var(--muted); font: 9px 'DM Mono', monospace; text-align: right; }
+.grah-reversal-table { --bs-table-bg: transparent; --bs-table-color: var(--astro-contrast, var(--white)); --bs-table-border-color: var(--line); --bs-table-hover-bg: color-mix(in srgb, var(--astro-accent, var(--gold)) 6%, transparent); margin: 0; font-size: 11px; }
+.grah-reversal-table th { color: var(--muted); background: color-mix(in srgb, var(--astro-page, var(--navy)) 65%, transparent); font: 9px 'DM Mono', monospace; letter-spacing: .05em; text-transform: uppercase; }
+.grah-reversal-table td, .grah-reversal-table th { padding: 11px 10px; vertical-align: middle; white-space: nowrap; }
+.grah-reversal-table td small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+.grah-reversal-table td:nth-child(4), .grah-reversal-table td:nth-child(5), .grah-reversal-table td:nth-child(6) { color: var(--astro-accent, var(--gold)); }
+.grah-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; color: var(--muted); font: 9px 'DM Mono', monospace; }
+.grah-pagination .subtle-action { margin: 0; padding: 7px 9px; font-size: 9px; }
+@media (max-width: 575.98px) { .grah-reversal-preview { padding: 17px; }.grah-reversal-row { grid-template-columns: 1fr 1fr; gap: 14px; }.grah-reversal-row > div:first-child { grid-column: 1 / -1; } }
+
+@media (max-width: 767.98px) {
+	.grah-page-header { display: block; margin-bottom: 24px; }
+	.grah-header-meta { justify-content: flex-start; margin-top: 17px; }
+	.grah-section-panel, .grah-placeholder-panel { padding: 17px; }
+	.grah-ranking-label span { display: block; }
+	.grah-ranking-label small { display: block; margin-top: 3px; }
+	.grah-detail-hero { padding: 19px; }
+}
+
+@media (max-width: 380px) {
+	.grah-header-meta span { flex: 1 1 auto; justify-content: center; }
+	.grah-kpi-card { padding: 13px; }
+	.grah-kpi-card strong { font-size: 14px; }
+}
+
+.reversal-page { min-width: 0; max-width: 100%; overflow-x: hidden; }
+.reversal-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 22px; margin-bottom: 25px; }
+.reversal-header .page-title { margin-top: 8px; }
+.reversal-header .page-subtitle { margin-bottom: 0; }
+.reversal-header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.study-toggle { display: inline-flex; align-items: center; gap: 7px; padding: 9px 11px; color: var(--astro-accent, var(--gold)); border: 1px solid var(--line); font: 10px 'DM Mono', monospace; cursor: pointer; }
+.study-toggle input { accent-color: var(--astro-accent, var(--gold)); }
+.reversal-quick-nav { display: flex; gap: 6px; margin: -8px 0 18px; overflow-x: auto; padding-bottom: 3px; scrollbar-width: thin; }
+.reversal-quick-nav a { flex: 0 0 auto; padding: 7px 10px; color: var(--muted); border: 1px solid var(--line); font: 9px 'DM Mono', monospace; text-decoration: none; }
+.reversal-quick-nav a:hover, .reversal-quick-nav a:focus-visible { color: var(--astro-accent, var(--gold)); border-color: var(--astro-accent, var(--gold)); }
+.reversal-info { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; color: var(--muted); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 7%, transparent); border-color: color-mix(in srgb, var(--astro-accent, var(--gold)) 28%, var(--line)); font-size: 11px; line-height: 1.6; }
+.reversal-info strong { flex: 0 0 auto; color: var(--astro-contrast, var(--white)); }
+.reversal-info strong i { color: var(--astro-accent, var(--gold)); margin-right: 5px; }
+.reversal-date-nav { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 22px; }
+.reversal-date-nav > div { display: flex; align-items: center; gap: 10px; min-width: 220px; justify-content: center; padding: 8px 12px; border: 1px solid var(--line); }
+.reversal-date-nav input { width: 18px; opacity: .01; position: absolute; }
+.reversal-date-nav strong, .reversal-date-nav small { display: block; }
+.reversal-date-nav strong { color: var(--astro-contrast, var(--white)); font-size: 14px; }
+.reversal-date-nav small { color: var(--muted); font: 9px 'DM Mono', monospace; }
+.reversal-stat-card { display: flex; min-height: 110px; flex-direction: column; justify-content: center; padding: 17px; border: 1px solid var(--line); background: var(--astro-panel, var(--panel)); }
+.reversal-stat-card i { margin-bottom: 11px; color: var(--astro-accent, var(--gold)); font-size: 17px; }
+.reversal-stat-card span { color: var(--muted); font: 9px 'DM Mono', monospace; text-transform: uppercase; }
+.reversal-stat-card strong { display: block; overflow-wrap: anywhere; margin-top: 7px; color: var(--astro-contrast, var(--white)); font-size: 20px; }
+.reversal-section { scroll-margin-top: 20px; margin-bottom: 24px; padding: 21px; border: 1px solid var(--line); background: color-mix(in srgb, var(--astro-panel, var(--panel)) 96%, white 4%); }
+.reversal-section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 17px; }
+.reversal-section-heading h2 { margin: 7px 0 0; color: var(--astro-contrast, var(--white)); font-size: 19px; }
+.next-reversal-card { display: grid; grid-template-columns: 1fr 1.5fr auto; align-items: center; gap: 22px; min-height: 150px; padding: 20px; border-left: 3px solid var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 7%, transparent); }
+.next-reversal-identity { display: flex; align-items: center; gap: 13px; }
+.next-reversal-identity > span { display: flex; align-items: center; gap: 10px; }
+.next-reversal-identity > span > span { display: flex; flex-direction: column; }
+.next-reversal-identity b { color: var(--astro-contrast, var(--white)); font-size: 16px; }
+.next-reversal-identity small, .today-planet-card small, .latest-planet-card small { display: block; color: var(--muted); font: 9px 'DM Mono', monospace; }
+.next-reversal-identity > strong { margin-left: auto; color: var(--astro-accent, var(--gold)); font-size: 27px; }
+.reversal-planet-icon { display: inline-grid; place-items: center; width: 35px; height: 35px; flex: 0 0 35px; color: var(--astro-accent, var(--gold)); border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 35%, var(--line)); font-size: 20px; }
+.reversal-timeline { display: flex; align-items: center; gap: 13px; min-width: 0; }
+.reversal-timeline > div:not(.timeline-line) { text-align: center; }
+.reversal-timeline strong, .reversal-timeline span { display: block; }
+.reversal-timeline strong { color: var(--astro-accent, var(--gold)); font-size: 17px; }
+.reversal-timeline span { margin-top: 4px; color: var(--muted); font: 8px 'DM Mono', monospace; }
+.timeline-line { position: relative; flex: 1; height: 2px; background: color-mix(in srgb, var(--astro-accent, var(--gold)) 45%, var(--line)); }
+.timeline-line i { position: absolute; top: -4px; width: 10px; height: 10px; border: 2px solid var(--astro-accent, var(--gold)); border-radius: 50%; background: var(--astro-panel, var(--panel)); }
+.timeline-line i:first-child { left: 0; }.timeline-line i:last-of-type { right: 0; }
+.timeline-line small { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); color: var(--muted); font: 8px 'DM Mono', monospace; white-space: nowrap; }
+.status-badge { align-self: start; white-space: nowrap; }
+.today-planet-card { display: flex; width: 100%; min-height: 156px; flex-direction: column; align-items: flex-start; gap: 9px; padding: 17px; color: inherit; border: 1px solid var(--line); background: transparent; text-align: left; transition: .2s ease; }
+.today-planet-card:hover, .today-planet-card:focus-visible, .today-planet-card.selected { border-color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 7%, transparent); outline: 0; }
+.today-planet-card > span:first-child { display: flex; align-items: center; gap: 9px; }
+.today-planet-card > span:first-child > span { display: flex; flex-direction: column; }.today-planet-card b { color: var(--astro-contrast, var(--white)); font-size: 13px; }.today-degree { color: var(--astro-accent, var(--gold)); font-size: 24px; }.today-planet-card > span:not(:first-child) { color: var(--astro-contrast, var(--white)); font-size: 12px; }.today-planet-card .no-record { color: var(--muted); font: 10px 'DM Mono', monospace; }
+.planet-selector { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }.planet-selector button { min-height: 75px; padding: 8px; color: var(--muted); border: 1px solid var(--line); background: transparent; font-size: 19px; }.planet-selector button span, .planet-selector button small { display: block; }.planet-selector button span { margin-top: 4px; font-size: 10px; }.planet-selector button small { margin-top: 4px; color: var(--muted); font: 8px 'DM Mono', monospace; }.planet-selector button:hover, .planet-selector button.active { color: var(--astro-accent, var(--gold)); border-color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 8%, transparent); }
+.degree-meter-label { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font: 10px 'DM Mono', monospace; }.degree-meter-label strong, .degree-category { color: var(--astro-accent, var(--gold)); }.degree-meter { position: relative; height: 7px; margin: 18px 8px 11px; background: color-mix(in srgb, var(--astro-contrast, var(--white)) 15%, transparent); }.degree-meter i { position: absolute; top: -5px; width: 17px; height: 17px; transform: translateX(-50%); border: 3px solid var(--astro-accent, var(--gold)); border-radius: 50%; background: var(--astro-panel, var(--panel)); }.degree-category { font: 10px 'DM Mono', monospace; }
+.near30-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }.near30-grid button, .search-results button { display: flex; align-items: center; gap: 9px; padding: 12px; color: inherit; border: 1px solid var(--line); background: transparent; text-align: left; }.near30-grid button:hover, .search-results button:hover { border-color: var(--astro-accent, var(--gold)); }.near30-grid button > span:nth-child(2) { display: flex; flex-direction: column; }.near30-grid b { color: var(--astro-contrast, var(--white)); font-size: 11px; }.near30-grid strong { margin-left: auto; color: var(--astro-accent, var(--gold)); }.near30-grid span:last-child, .search-results span { color: var(--muted); font: 9px 'DM Mono', monospace; }.study-note { margin: 13px 0 0; color: var(--muted); font-size: 10px; }
+.change-card { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); align-items: center; gap: 14px; padding: 17px; border-left: 3px solid var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 5%, transparent); }.change-card > div:not(:first-child) span, .change-card > div:not(:first-child) strong, .change-card > div:not(:first-child) small { display: block; }.change-card span, .change-card small { color: var(--muted); font: 9px 'DM Mono', monospace; }.change-card > div:not(:first-child) strong { margin-top: 6px; color: var(--astro-contrast, var(--white)); font-size: 17px; }
+.last-seven-list { display: grid; gap: 7px; }.last-seven-list button { display: grid; grid-template-columns: 85px 1fr; gap: 12px; padding: 11px; color: inherit; border: 1px solid var(--line); background: transparent; text-align: left; }.last-seven-list button:hover { border-color: var(--astro-accent, var(--gold)); }.last-seven-list strong { color: var(--astro-accent, var(--gold)); font-size: 11px; }.last-seven-list span { color: var(--muted); font-size: 10px; }
+.latest-planet-card { display: flex; min-height: 130px; flex-direction: column; gap: 9px; padding: 15px; border: 1px solid var(--line); }.latest-planet-card > span:first-child { display: flex; align-items: center; gap: 8px; }.latest-planet-card > span:first-child > span { display: flex; flex-direction: column; }.latest-planet-card b { color: var(--astro-contrast, var(--white)); font-size: 12px; }.latest-planet-card > strong { color: var(--astro-accent, var(--gold)); font-size: 20px; }.latest-planet-card > span:last-child { color: var(--muted); font: 9px 'DM Mono', monospace; }
+.journey-list { display: grid; gap: 8px; }.journey-list > div { display: grid; grid-template-columns: 90px 60px 1fr; align-items: center; gap: 10px; color: var(--muted); font: 10px 'DM Mono', monospace; }.journey-list strong { color: var(--astro-accent, var(--gold)); }.journey-list i { height: 5px; background: var(--astro-accent, var(--gold)); }
+.monthly-bars { display: grid; gap: 9px; }.monthly-bars > div { display: grid; grid-template-columns: 80px 1fr 30px; gap: 9px; align-items: center; color: var(--muted); font: 10px 'DM Mono', monospace; }.monthly-bars .progress { height: 6px; background: color-mix(in srgb, var(--astro-contrast, var(--white)) 10%, transparent); }.monthly-bars .progress-bar { background: var(--astro-accent, var(--gold)); }.monthly-bars strong { color: var(--astro-accent, var(--gold)); }
+.search-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }.search-results button { justify-content: space-between; }.search-results strong { color: var(--astro-accent, var(--gold)); font-size: 11px; }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }.compare-grid article { display: flex; flex-direction: column; gap: 8px; padding: 17px; border: 1px solid var(--line); }.compare-grid article > span:first-child { display: flex; align-items: center; gap: 8px; }.compare-grid article > span:first-child > span { display: flex; flex-direction: column; }.compare-grid b { color: var(--astro-contrast, var(--white)); }.compare-grid article > strong { color: var(--astro-accent, var(--gold)); font-size: 24px; }.compare-grid article > span:not(:first-child), .compare-grid small { color: var(--muted); font: 10px 'DM Mono', monospace; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }.calendar-grid button { min-height: 58px; padding: 7px; color: var(--muted); border: 1px solid var(--line); background: transparent; text-align: left; }.calendar-grid button:hover, .calendar-grid button.selected { color: var(--astro-accent, var(--gold)); border-color: var(--astro-accent, var(--gold)); }.calendar-grid strong, .calendar-grid span { display: block; }.calendar-grid strong { color: var(--astro-contrast, var(--white)); }.calendar-grid span { margin-top: 5px; font: 8px 'DM Mono', monospace; }
+.reversal-history-table { --bs-table-bg: transparent; --bs-table-color: var(--astro-contrast, var(--white)); --bs-table-border-color: var(--line); font-size: 11px; }.reversal-history-table th { color: var(--muted); font: 9px 'DM Mono', monospace; text-transform: uppercase; }.reversal-history-table th, .reversal-history-table td { padding: 11px 9px; white-space: nowrap; }.reversal-history-table td:nth-child(5), .reversal-history-table td:nth-child(6), .reversal-history-table td:nth-child(7) { color: var(--astro-accent, var(--gold)); }
+.reversal-empty, .reversal-loading { display: flex; min-height: 260px; flex-direction: column; align-items: center; justify-content: center; gap: 9px; color: var(--muted); text-align: center; }.reversal-empty i { color: #efad70; font-size: 24px; }.reversal-loading .spinner-border { color: var(--astro-accent, var(--gold)); }.reversal-disclaimer { margin-top: 24px; color: var(--muted); background: color-mix(in srgb, var(--astro-panel, var(--panel)) 94%, var(--astro-accent, var(--gold)) 6%); border-color: var(--line); font-size: 11px; line-height: 1.6; }.reversal-disclaimer strong { color: var(--astro-contrast, var(--white)); }
+@media (max-width: 767.98px) { .reversal-header { display: block; }.reversal-header-actions { justify-content: flex-start; margin-top: 17px; }.reversal-info { display: block; }.reversal-info span { display: block; margin-top: 5px; }.reversal-date-nav { flex-wrap: wrap; }.reversal-date-nav > div { order: -1; width: 100%; }.next-reversal-card { grid-template-columns: 1fr; gap: 19px; }.next-reversal-identity > strong { margin-left: auto; }.status-badge { justify-self: start; }.planet-selector { grid-template-columns: repeat(4, minmax(0, 1fr)); }.near30-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.change-card { grid-template-columns: 1fr 1fr; }.change-card > div:first-child { grid-column: 1 / -1; }.search-results { grid-template-columns: 1fr; }.reversal-section { padding: 17px; }.reversal-section-heading h2 { font-size: 17px; } }
+@media (max-width: 430px) { .reversal-date-nav > button { flex: 1; padding-inline: 7px; }.planet-selector { grid-template-columns: repeat(2, minmax(0, 1fr)); }.last-seven-list button { grid-template-columns: 65px 1fr; }.compare-grid { grid-template-columns: 1fr; }.monthly-bars > div { grid-template-columns: 62px 1fr 22px; font-size: 9px; } }

@@ -31,6 +31,8 @@ const menus = [
       ['Shukra Gochar', '/shukra-gochar'],
       ['Sun-Jupiter Tracking', '/sun-jupiter-tracking'],
       ['Jupiter Venus Tracking', '/jupiter-venus-tracking'],
+      ['Grah Past Records', '/grah-past-records'],
+      ['Reversal Time', '/reversal-time'],
     ],
   },
   {
