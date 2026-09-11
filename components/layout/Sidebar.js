@@ -33,6 +33,7 @@ const menus = [
       ['Jupiter Venus Tracking', '/jupiter-venus-tracking'],
       ['Grah Past Records', '/grah-past-records'],
       ['Reversal Time', '/reversal-time'],
+      ['Rashi Nakshatra', '/rashi-nakshatra'],
     ],
   },
   {
