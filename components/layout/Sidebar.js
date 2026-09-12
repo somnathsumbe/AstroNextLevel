@@ -42,6 +42,7 @@ const menus = [
     items: [
       ['Degree Calculator', '/degree-calculator'],
       ['Stock Gann Pressure', '/stock-gann-pressure-calc'],
+      ['📊 Stocks Times', '/stocks-times'],
       ['Planet-Stock Mapping', '/planet-stock-mapping'],
     ],
   },
