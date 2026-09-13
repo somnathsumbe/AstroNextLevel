@@ -9,6 +9,12 @@ import { getIndiaTodayKey, isTodayPressureDate, normalizePressureRecords, pressu
 
 const initialFilters = { stock: 'all', planet: 'all', today: 'all', priority: 'all', search: '' };
 
+function getDataUrl() {
+  if (typeof window === 'undefined') return '/data/gann-pressure-dates.json';
+  const isGithubPages = window.location.pathname.includes('/AstroNextLevel');
+  return isGithubPages ? '/AstroNextLevel/data/gann-pressure-dates.json' : '/data/gann-pressure-dates.json';
+}
+
 function dateKeyFromValue(value) {
   const [year, month, day] = String(value).split('-').map(Number);
   if (!year || !month || !day) return '';
@@ -30,7 +36,9 @@ export default function TodayStockPage() {
   const todayKey = getIndiaTodayKey();
 
   useEffect(() => {
-    fetch('/data/gann-pressure-dates.json')
+    const dataUrl = getDataUrl();
+
+    fetch(dataUrl)
       .then((response) => {
         if (!response.ok) throw new Error('Unable to load pressure date data.');
         return response.json();
