@@ -260,10 +260,22 @@ export const STOCK_DATA = [
 export const ANGLES = [30, 45, 60, 90, 120, 135, 144, 180, 216, 225, 240, 270, 315, 360];
 export const IMPORTANT_ANGLES = new Set([45, 90, 135, 180, 225, 270, 315, 360]);
 export const STOCK_STORAGE_KEY = 'gann_stock_data';
-export const STOCK_DATA_VERSION = 'full-reference-dataset-v2';
+export const STOCK_DATA_VERSION = 'full-reference-dataset-v4-movement-values';
+
+const NORMAL_DAILY_MOVEMENT = {
+  '360ONE': '30-50 points', ABCAPITAL: '30-40 points', ANGELONE: '30-50 points', AUBANK: '30-45 points', AXISBANK: '30-45 points',
+  BAJAJFINSV: '35-55 points', BAJAJHLDNG: '50-80 points', BAJFINANCE: '30-45 points', BANDHANBNK: '30-40 points', BANKBARODA: '30-40 points',
+  BANKINDIA: '30-35 points', BSE: '50-80 points', CAMS: '30-40 points', CANBK: '30-35 points', CANFINHOME: '30-40 points', CDSL: '35-50 points',
+  CHOLAFIN: '30-50 points', CUB: '30-35 points', FEDERALBNK: '30-35 points', HDFCBANK: '30-45 points', HDFCLIFE: '30-40 points', HUDCO: '30-35 points',
+  ICICIGI: '35-50 points', ICICIPRULI: '30-40 points', IDFCFIRSTB: '30-35 points', IEX: '30-35 points', INDUSINDBK: '30-45 points', IREDA: '30-35 points',
+  IRFC: '30-35 points', JIOFIN: '30-40 points', KFINTECH: '30-45 points', KOTAKBANK: '30-35 points', LICHSGFIN: '30-35 points', LICI: '30-35 points', LTF: '30-35 points',
+  MANAPPURAM: '30-40 points', MFSL: '35-50 points', MOTILALOFS: '30-45 points', MUTHOOTFIN: '50-80 points', 'NAM-INDIA': '30-45 points', NUVAMA: '40-60 points',
+  PAYTM: '40-70 points', PFC: '30-40 points', PNB: '30-35 points', PNBHOUSING: '35-50 points', POLICYBZR: '40-60 points', RBLBANK: '30-40 points', RECLTD: '30-40 points',
+  SAMMAANCAP: '30-35 points', SBICARD: '30-40 points', SBILIFE: '35-50 points', SBIN: '30-45 points', SHRIRAMFIN: '30-45 points', UNIONBANK: '30-35 points', YESBANK: '30-35 points',
+};
 
 export function normalizeStockData(stocks) {
-  return Array.from(new Map(stocks.map((stock) => [stock.stock, stock])).values());
+  return Array.from(new Map(stocks.map((stock) => [stock.stock, { ...stock, normalDailyMovement: stock.normalDailyMovement || NORMAL_DAILY_MOVEMENT[stock.stock] || 'Not provided' }])).values());
 }
 
 export function readStockData() {

@@ -75,12 +75,15 @@ function calculatePressureDates(
       angle,
       pressureDate,
       priority: IMPORTANT_ANGLES.has(angle) ? "IMPORTANT" : "SECONDARY",
-      window: `${windowDays} Day${windowDays === 1 ? "" : "s"}`,
       indiaTime: referenceTime || DEFAULT_TIME,
       stock: stock.stock,
       sector: stock.sector,
+      normalDailyMovement: stock.normalDailyMovement || "—",
+      planet: stock.planet || "Not provided",
+      planetIcon: stock.planetIcon || "—",
       referenceDate,
       referenceType,
+      referenceValue: referenceType === "Major Low" ? stock.low : stock.high,
       timeframe,
     };
   });
@@ -100,10 +103,13 @@ function exportExcel(rows) {
     "Pressure Date",
     "Day",
     "Priority",
-    "Window",
+      "Reference Value",
     "Angle",
     "India Time",
     "Stock",
+    "Movement",
+    "Planet",
+    "Planet Icon",
     "Sector",
     "Reference Date",
     "Reference Type",
@@ -113,10 +119,13 @@ function exportExcel(rows) {
     formatDate(row.pressureDate),
     dayName(row.pressureDate),
     row.priority,
-    row.window,
+      row.referenceValue,
     `${row.angle}°`,
     row.indiaTime,
     row.stock,
+    row.normalDailyMovement,
+    row.planet,
+    row.planetIcon,
     row.sector,
     row.referenceDate,
     row.referenceType,
@@ -150,9 +159,15 @@ export default function StocksTimesPage() {
   const [newStock, setNewStock] = useState({
     stock: "",
     sector: "",
-    d_0: "",
+    referenceDateHigh: "",
     high: "",
+    referenceDateLow: "",
+    low: "",
+    planet: "",
+    planetIcon: "",
+    normalDailyMovement: "",
   });
+  const [jsonStockInput, setJsonStockInput] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [calculating, setCalculating] = useState(false);
@@ -258,11 +273,15 @@ export default function StocksTimesPage() {
   }
   function addStock(event) {
     event.preventDefault();
+    if (jsonStockInput.trim()) {
+      addJsonStock(event);
+      return;
+    }
     const symbol = newStock.stock.trim().toUpperCase();
     if (
       !symbol ||
       !newStock.sector.trim() ||
-      !newStock.d_0 ||
+      !newStock.referenceDateHigh ||
       newStock.high === "" ||
       Number.isNaN(Number(newStock.high))
     ) {
@@ -278,20 +297,49 @@ export default function StocksTimesPage() {
       {
         stock: symbol,
         sector: newStock.sector.trim(),
-        referenceDateHigh: newStock.d_0,
+        referenceDateHigh: newStock.referenceDateHigh,
         high: Number(newStock.high),
         referenceTypeHigh: "Major High",
-        referenceDateLow: "VERIFY_REQUIRED",
-        low: null,
+        referenceDateLow: newStock.referenceDateLow || "VERIFY_REQUIRED",
+        low: newStock.low === "" ? null : Number(newStock.low),
         referenceTypeLow: "Major Low",
+        planet: newStock.planet || "",
+        planetIcon: newStock.planetIcon || "",
+        normalDailyMovement: newStock.normalDailyMovement.trim() || "Not provided",
       },
     ].sort((a, b) => a.stock.localeCompare(b.stock));
-    setStocks(next);
-    saveStockData(next);
+    const enrichedNext = normalizeStockData(next);
+    setStocks(enrichedNext);
+    saveStockData(enrichedNext);
     setShowAddStock(false);
-    setNewStock({ stock: "", sector: "", d_0: "", high: "" });
+    setNewStock({ stock: "", sector: "", referenceDateHigh: "", high: "", referenceDateLow: "", low: "", planet: "", planetIcon: "", normalDailyMovement: "" });
     setMessage("Stock added successfully");
     setError("");
+  }
+  function addJsonStock(event) {
+    event.preventDefault();
+    setError("");
+    try {
+      const parsed = JSON.parse(jsonStockInput);
+      const records = Array.isArray(parsed) ? parsed : [parsed];
+      if (!records.length || records.some((record) => !record || typeof record !== "object")) throw new Error("JSON must contain a stock object or array of stock objects.");
+      const invalid = records.find((record) => !String(record.stock || "").trim() || !String(record.sector || "").trim() || record.referenceDateHigh === undefined || record.high === undefined || Number.isNaN(Number(record.high)));
+      if (invalid) throw new Error("Each JSON stock requires stock, sector, referenceDateHigh and numeric high.");
+      const importedRecords = records.map((record) => ({ ...record, stock: String(record.stock).trim().toUpperCase(), high: Number(record.high), low: record.low === undefined || record.low === "" ? null : Number(record.low), referenceTypeHigh: record.referenceTypeHigh || "Major High", referenceDateLow: record.referenceDateLow || "VERIFY_REQUIRED", referenceTypeLow: record.referenceTypeLow || "Major Low", planetIcon: record.planetIcon || "", normalDailyMovement: record.normalDailyMovement || "Not provided" }));
+      const normalizedImportedRecords = normalizeStockData(importedRecords);
+      const importedSymbols = new Set(normalizedImportedRecords.map((record) => record.stock));
+      const next = [...stocks.filter((stock) => !importedSymbols.has(stock.stock)), ...normalizedImportedRecords];
+      const enrichedNext = normalizeStockData(next);
+      setStocks(enrichedNext); saveStockData(enrichedNext); setStockSymbol(normalizedImportedRecords[0].stock); setReferenceType("Major High"); setReferenceDate(inputDate(normalizedImportedRecords[0].referenceDateHigh)); setJsonStockInput(""); setShowAddStock(false); setMessage(`${normalizedImportedRecords.length} stock${normalizedImportedRecords.length === 1 ? "" : "s"} added/updated successfully`);
+    } catch (jsonError) {
+      setError(jsonError.message || "Invalid stock JSON.");
+    }
+  }
+  function openAddStock() {
+    setNewStock({ stock: "", sector: "", referenceDateHigh: "", high: "", referenceDateLow: "", low: "", planet: "", planetIcon: "", normalDailyMovement: "" });
+    setJsonStockInput("");
+    setError("");
+    setShowAddStock(true);
   }
   return (
     <main className="container-fluid tool-page stocks-times-page">
@@ -327,7 +375,7 @@ export default function StocksTimesPage() {
           <button
             className="gold-action"
             type="button"
-            onClick={() => setShowAddStock(true)}
+            onClick={openAddStock}
           >
             <i className="bi bi-plus-lg" /> Add Stock
           </button>
@@ -511,14 +559,17 @@ export default function StocksTimesPage() {
                   <thead>
                     <tr>
                       <th>#</th>
+                      <th>Stock</th>
+                      <th>Movement</th>
+                      <th>Planet</th>
+                      <th>Planet Icon</th>
                       <th>Pressure Date</th>
                       <th>Day</th>
                       <th>Priority</th>
-                      <th>Window</th>
                       <th>Angle</th>
                       <th>India Time</th>
-                      <th>Stock</th>
                       <th>Sector</th>
+                      <th>Reference Value</th>
                       <th>Reference Date</th>
                       <th>Reference Type</th>
                     </tr>
@@ -534,6 +585,10 @@ export default function StocksTimesPage() {
                         key={row.id}
                       >
                         <td>{index + 1}</td>
+                        <td>{row.stock}</td>
+                        <td>{row.normalDailyMovement}</td>
+                        <td>{row.planet}</td>
+                        <td aria-label={`${row.planet} icon`}>{row.planetIcon}</td>
                         <td>
                           <strong>{formatDate(row.pressureDate)}</strong>
                         </td>
@@ -545,11 +600,10 @@ export default function StocksTimesPage() {
                             {row.priority}
                           </span>
                         </td>
-                        <td>{row.window}</td>
                         <td>{row.angle}°</td>
                         <td>{row.indiaTime}</td>
-                        <td>{row.stock}</td>
                         <td>{row.sector}</td>
+                        <td>{row.referenceValue ?? "—"}</td>
                         <td>{displayReferenceDate(row.referenceDate)}</td>
                         <td>{row.referenceType}</td>
                       </tr>
@@ -612,14 +666,14 @@ export default function StocksTimesPage() {
                   />
                 </div>
                 <div className="col-6">
-                  <label htmlFor="new-date">Reference Date *</label>
+                  <label htmlFor="new-reference-high">Reference Date High *</label>
                   <input
-                    id="new-date"
+                    id="new-reference-high"
                     className="form-control"
                     type="date"
-                    value={newStock.d_0}
+                    value={newStock.referenceDateHigh}
                     onChange={(event) =>
-                      setNewStock({ ...newStock, d_0: event.target.value })
+                      setNewStock({ ...newStock, referenceDateHigh: event.target.value })
                     }
                   />
                 </div>
@@ -636,6 +690,28 @@ export default function StocksTimesPage() {
                     }
                   />
                 </div>
+                <div className="col-6">
+                  <label htmlFor="new-reference-low">Reference Date Low</label>
+                  <input id="new-reference-low" className="form-control" type="date" value={newStock.referenceDateLow} onChange={(event) => setNewStock({ ...newStock, referenceDateLow: event.target.value })} />
+                </div>
+                <div className="col-6">
+                  <label htmlFor="new-low">Low</label>
+                  <input id="new-low" className="form-control" type="number" step="any" value={newStock.low} onChange={(event) => setNewStock({ ...newStock, low: event.target.value })} />
+                </div>
+                <div className="col-6">
+                  <label htmlFor="new-planet">Planet</label>
+                  <select id="new-planet" className="form-select" value={newStock.planet} onChange={(event) => { const icons = { Sun: "☀️", Moon: "🌙", Mars: "🔴", Mercury: "☿️", Jupiter: "🟡", Venus: "♀️", Saturn: "🪐", Rahu: "☊", Ketu: "☋" }; setNewStock({ ...newStock, planet: event.target.value, planetIcon: icons[event.target.value] || "" }); }}>
+                    <option value="">Select Planet</option><option>Sun</option><option>Moon</option><option>Mars</option><option>Mercury</option><option>Jupiter</option><option>Venus</option><option>Saturn</option><option>Rahu</option><option>Ketu</option>
+                  </select>
+                </div>
+                <div className="col-6">
+                  <label htmlFor="new-planet-icon">Planet Icon</label>
+                  <input id="new-planet-icon" className="form-control" value={newStock.planetIcon} onChange={(event) => setNewStock({ ...newStock, planetIcon: event.target.value })} />
+                </div>
+                <div className="col-12">
+                  <label htmlFor="new-movement">Movement</label>
+                  <input id="new-movement" className="form-control" placeholder="e.g. 40-60 points" value={newStock.normalDailyMovement} onChange={(event) => setNewStock({ ...newStock, normalDailyMovement: event.target.value })} />
+                </div>
               </div>
               <div className="modal-footer-actions">
                 <button
@@ -650,6 +726,12 @@ export default function StocksTimesPage() {
                 </button>
               </div>
             </form>
+            <div className="stocks-json-import">
+              <div className="modal-section-title">Or add from JSON</div>
+              <label htmlFor="stock-json-input">Stock JSON</label>
+              <textarea id="stock-json-input" className="form-control" rows="7" value={jsonStockInput} onChange={(event) => setJsonStockInput(event.target.value)} placeholder={'{\n  "stock": "BHARATFORG",\n  "referenceDateHigh": "10-08-2026",\n  "high": 2295.00,\n  "sector": "Automobile Ancillaries",\n  "planet": "Mars",\n  "planetIcon": "🔴",\n  "normalDailyMovement": "40-60 points"\n}'} />
+              <button className="subtle-action mt-2" type="button" onClick={addJsonStock} disabled={!jsonStockInput.trim()}><i className="bi bi-filetype-json" /> Add JSON Stock</button>
+            </div>
           </div>
         </div>
       )}

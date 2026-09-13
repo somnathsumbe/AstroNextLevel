@@ -119,6 +119,69 @@ html[data-theme] .month-navigation select { background: var(--astro-panel); colo
 }
 
 .stock-gann-page { min-width: 0; max-width: 100%; overflow-x: hidden; }
+.today-stock-page { min-width: 0; max-width: 100%; overflow-x: hidden; padding-bottom: 70px; }
+.gann-today-heading { align-items: center; }
+.gann-today-chip { padding: 9px 12px; color: var(--gold); border: 1px solid rgba(232,184,92,.25); background: rgba(232,184,92,.06); font: 10px 'DM Mono', monospace; white-space: nowrap; }
+.gann-today-chip i { margin-right: 6px; }
+.gann-summary-card { min-height: 148px; }
+.gann-today-filters { margin-bottom: 18px; }
+.gann-reset-action { align-items: end; }
+.gann-reset-action .subtle-action { min-height: 40px; }
+.gann-today-data { min-width: 0; overflow: hidden; }
+.gann-today-data .data-panel-heading { align-items: center; }
+.gann-today-data .data-panel-heading h2 { font-size: 17px; }
+.gann-result-note { color: var(--green); font: 10px 'DM Mono', monospace; }
+.gann-result-note i { margin-right: 6px; }
+.gann-today-table { min-width: 1220px; margin-bottom: 0; }
+.gann-today-table.table { --bs-table-bg: transparent; --bs-table-color: #a9bbc9; --bs-table-border-color: var(--line); --bs-table-hover-bg: rgba(232,184,92,.045); --bs-table-hover-color: var(--white); color: #a9bbc9; }
+.gann-today-table.table thead th { background: #0b2237; color: #6e899f; border-color: #29455d; font: 9px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.gann-today-table.table tbody td { background: transparent; color: #a9bbc9; border-color: var(--line); vertical-align: middle; white-space: nowrap; }
+.gann-today-table.table tbody tr:hover td { background: rgba(232,184,92,.045); color: var(--white); }
+.gann-today-table.table tbody tr.table-success td { --bs-table-bg-state: rgba(75,212,155,.1); --bs-table-color-state: var(--white); background: rgba(75,212,155,.1); }
+.gann-planet-cell { color: var(--white); }
+.gann-loading { min-height: 180px; }
+.gann-loading i { animation: gann-spin 1.2s linear infinite; }
+@keyframes gann-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 767.98px) {
+	.gann-today-heading { align-items: flex-start; }
+	.gann-today-chip { margin-top: 17px; width: fit-content; }
+	.gann-today-data .data-panel-heading { display: block; }
+	.gann-result-note { margin-top: 13px; }
+	.gann-today-table { min-width: 0; }
+	.gann-today-table,
+	.gann-today-table tbody,
+	.gann-today-table tr,
+	.gann-today-table td { display: block; width: 100%; }
+	.gann-today-table thead { display: none; }
+	.gann-today-table tr { margin-bottom: 12px; padding: 8px 12px; border: 1px solid var(--line); }
+	.gann-today-table td { display: grid; grid-template-columns: minmax(105px, 42%) 1fr; gap: 8px; align-items: center; min-height: 34px; padding: 7px 0; border: 0; white-space: normal; overflow-wrap: anywhere; }
+	.gann-today-table td::before { content: attr(data-label); color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+}
+.stocks-times-page .stock-times-form { padding: 14px 17px 13px; margin-bottom: 14px; }
+.stocks-times-page .stock-times-form .row { --bs-gutter-x: .75rem; --bs-gutter-y: .55rem; }
+.stocks-times-page .stock-times-form label,
+.stocks-add-modal label,
+.stocks-json-import label { display: block; margin-bottom: 5px; color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.stocks-times-page .stock-times-form .form-control,
+.stocks-times-page .stock-times-form .form-select,
+.stocks-add-modal .form-control,
+.stocks-add-modal .form-select,
+.stocks-json-import .form-control { min-height: 34px; padding: 6px 9px; border: 1px solid #27425a; border-radius: 2px; background-color: #081b2c; color: #dbe7ee; font-size: 11px; color-scheme: dark; }
+.stocks-times-page .stock-times-form .form-control:focus,
+.stocks-times-page .stock-times-form .form-select:focus,
+.stocks-add-modal .form-control:focus,
+.stocks-add-modal .form-select:focus,
+.stocks-json-import .form-control:focus { border-color: var(--gold); background-color: #081b2c; color: #fff; box-shadow: 0 0 0 .12rem rgba(232,184,92,.14); }
+.stocks-times-page .stock-times-form .filter-actions { margin-top: 10px; }
+.stocks-times-page .stock-times-form .gold-action,
+.stocks-times-page .stock-times-form .subtle-action { padding: 7px 11px; font-size: 10px; }
+.stocks-add-modal .form-control,
+.stocks-add-modal .form-select { min-height: 36px; }
+.stocks-json-import { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.stocks-json-import textarea { min-height: 145px; resize: vertical; color: var(--white) !important; -webkit-text-fill-color: var(--white); caret-color: var(--gold); font: 10px/1.5 'DM Mono', monospace; }
+.stocks-json-import textarea::placeholder { color: #7890a6; opacity: 1; }
+.stocks-json-import .modal-section-title { margin: 0 0 10px; color: var(--gold); font: 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
 .stock-gann-form h2 { color: var(--astro-contrast, var(--white)); font-size: 15px; margin: 0 0 15px; }
 .gann-zero-section, .stock-reference-section, .calculation-base, .angles-section { border: 1px solid var(--line); padding: 17px; margin-bottom: 18px; background: color-mix(in srgb, var(--astro-panel, #0f2238) 76%, transparent); }
 .gann-zero-section { border-left: 3px solid var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 7%, var(--astro-panel, #0f2238)); }
