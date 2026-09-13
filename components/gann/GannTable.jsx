@@ -1,5 +1,124 @@
-import { formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
+﻿import { formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
+
+function copyToClipboard(value) {
+  const text = String(value ?? '').trim();
+  if (!text || typeof navigator === 'undefined' || !navigator.clipboard || !navigator.clipboard.writeText) {
+    return;
+  }
+
+  navigator.clipboard.writeText(text);
+}
 
 export default function GannTable({ rows, total, todayKey, todayFilter }) {
-  return <section className="data-panel gann-today-data"><div className="data-panel-heading"><div><span className="eyebrow">PRESSURE DATE REGISTER</span><h2>Showing {rows.length.toLocaleString('en-IN')} of {total.toLocaleString('en-IN')} Pressure Dates</h2></div>{todayFilter === 'today' && <div className="gann-result-note"><i className="bi bi-check-circle" /> Today's Pressure Stocks: {new Set(rows.map((row) => row.stock)).size}</div>}</div>{rows.length === 0 ? <div className="state-panel"><i className="bi bi-search" /><strong>No pressure dates match these filters.</strong><span>Try resetting one or more filters.</span></div> : <div className="table-responsive"><table className="table analysis-table gann-today-table"><caption className="visually-hidden">Gann pressure date records</caption><thead><tr><th>#</th><th>Stock</th><th>Pressure Date</th><th>Angle</th><th>Day</th><th>Priority</th><th>Reference</th><th>High</th><th>Low Date</th><th>Low</th><th>Sector</th><th>Planet</th><th>Normal Daily Movement</th></tr></thead><tbody>{rows.map((row, index) => { const today = isTodayPressureDate(row.PressureDate, todayKey); return <tr className={today ? 'table-success' : ''} key={`${row.stock}-${row.PressureDate}-${row.angle}-${index}`}><td data-label="#">{index + 1}</td><td data-label="Stock"><strong>{row.stock}</strong></td><td data-label="Pressure Date"><strong>{row.PressureDate}</strong>{today && <span className="badge bg-success ms-1">TODAY</span>}</td><td data-label="Angle"><span className="degree-badge">{row.angle}°</span></td><td data-label="Day">{row.Day}</td><td data-label="Priority"><span className={`badge ${row.priority === 'High' ? 'bg-warning text-dark' : 'bg-secondary'}`}>{row.priority}</span></td><td data-label="Reference">{row.referenceTypeHigh}</td><td data-label="High">{formatNumber(row.high)}</td><td data-label="Low Date">{row.referenceDateLow}</td><td data-label="Low">{formatNumber(row.low)}</td><td data-label="Sector">{row.sector}</td><td data-label="Planet"><span className="gann-planet-cell">{planetIcon(row.planetIcon)} {row.planet}</span></td><td data-label="Normal Daily Movement">{row.normalDailyMovement}</td></tr>; })}</tbody></table></div>}</section>;
+  return (
+    <section className="data-panel gann-today-data">
+      <div className="data-panel-heading">
+        <div>
+          <span className="eyebrow">PRESSURE DATE REGISTER</span>
+          <h2>Showing {rows.length.toLocaleString('en-IN')} of {total.toLocaleString('en-IN')} Pressure Dates</h2>
+        </div>
+        {todayFilter === 'today' && (
+          <div className="gann-result-note">
+            <i className="bi bi-check-circle" /> Today's Pressure Stocks: {new Set(rows.map((row) => row.stock || row.Stock)).size}
+          </div>
+        )}
+      </div>
+
+      {rows.length === 0 ? (
+        <div className="state-panel">
+          <i className="bi bi-search" />
+          <strong>No pressure dates match these filters.</strong>
+          <span>Try resetting one or more filters.</span>
+        </div>
+      ) : (
+        <div className="table-responsive">
+          <table className="table analysis-table gann-today-table">
+            <caption className="visually-hidden">Gann pressure date records</caption>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Stock</th>
+                <th>Pressure Date</th>
+                <th>Angle</th>
+                <th>Day</th>
+                <th>Priority</th>
+                <th>Reference</th>
+                <th>High</th>
+                <th>High Date</th>
+                <th>Low Date</th>
+                <th>Low</th>
+                <th>Movement</th>
+                <th>Planet + Icon</th>
+                <th>Sector</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, index) => {
+                const today = isTodayPressureDate(row.PressureDate || row.pressureDate, todayKey);
+                const stockValue = row.stock || row.Stock || '';
+                const pressureDateValue = row.PressureDate || row.pressureDate || '';
+                const angleValue = row.angle ?? row.Angle ?? '';
+                const dayValue = row.Day || row.day || '';
+                const priorityValue = row.priority || row.Priority || 'Secondary';
+                const referenceTypeValue = row.referenceTypeHigh || row.ReferenceType || row.referenceType || '';
+                const highValue = row.high ?? row.High ?? row.ReferenceValue ?? '';
+                const referenceDateHighValue = row.referenceDateHigh || row.ReferenceDate || row.referenceDate || '';
+                const lowDateValue = row.referenceDateLow || row.LowDate || row.lowDate || row.referenceLowDate || '';
+                const lowValue = row.low ?? row.Low ?? '';
+                const sectorValue = row.sector || row.Sector || '';
+                const planetValue = row.planet || row.Planet || '';
+                const planetIconValue = row.planetIcon || row.PlanetIcon || '';
+                const movementValue = row.normalDailyMovement || row.Movement || '';
+
+                return (
+                  <tr className={today ? 'table-success' : ''} key={`${stockValue}-${pressureDateValue}-${angleValue}-${index}`}>
+                    <td data-label="#">{index + 1}</td>
+                    <td data-label="Stock">
+                      <div className="d-flex align-items-center gap-2">
+                        <strong className="stock-copy-label">{stockValue}</strong>
+                        <button
+                          type="button"
+                          className="btn btn-link btn-sm px-1 py-0 text-muted stock-copy-btn"
+                          title={`Copy ${stockValue}`}
+                          onClick={() => copyToClipboard(stockValue)}
+                          aria-label={`Copy ${stockValue}`}
+                        >
+                          <i className="bi bi-clipboard" />
+                        </button>
+                      </div>
+                    </td>
+                    <td data-label="Pressure Date">
+                      <strong>{pressureDateValue}</strong>
+                      {today && <span className="badge bg-success ms-1">TODAY</span>}
+                    </td>
+                    <td data-label="Angle"><span className="degree-badge">{angleValue}°</span></td>
+                    <td data-label="Day">{dayValue}</td>
+                    <td data-label="Priority">
+                      <span className={`badge ${priorityValue === 'High' ? 'bg-warning text-dark' : 'bg-secondary'}`}>
+                        {priorityValue}
+                      </span>
+                    </td>
+                    <td data-label="Reference">{referenceTypeValue}</td>
+                    <td data-label="High">{formatNumber(highValue)}</td>
+                    <td data-label="High Date">{referenceDateHighValue}</td>
+                    <td data-label="Low Date">{lowDateValue}</td>
+                    <td data-label="Low">{formatNumber(lowValue)}</td>
+                    <td data-label="Movement"><span className="movement-pill">{movementValue}</span></td>
+                    <td data-label="Planet + Icon">
+                      <div className="planet-badge-wrap">
+                        <span className="planet-name">{planetValue}</span>
+                        {planetIconValue && <span className="planet-icon">{planetIconValue}</span>}
+                        {!planetIconValue && planetIcon(planetValue) && <span className="planet-icon">{planetIcon(planetValue)}</span>}
+                      </div>
+                    </td>
+                    <td data-label="Sector"><span className="sector-pill">{sectorValue}</span></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
 }

@@ -138,6 +138,16 @@ html[data-theme] .month-navigation select { background: var(--astro-panel); colo
 .gann-today-table.table tbody td { background: transparent; color: #a9bbc9; border-color: var(--line); vertical-align: middle; white-space: nowrap; }
 .gann-today-table.table tbody tr:hover td { background: rgba(232,184,92,.045); color: var(--white); }
 .gann-today-table.table tbody tr.table-success td { --bs-table-bg-state: rgba(75,212,155,.1); --bs-table-color-state: var(--white); background: rgba(75,212,155,.1); }
+.gann-today-table .stock-copy-label { color: var(--white); font-weight: 600; }
+.gann-today-table .stock-copy-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border: 1px solid rgba(232,184,92,.25); border-radius: 6px; background: rgba(232,184,92,.06); color: var(--gold); transition: all .2s ease; }
+.gann-today-table .stock-copy-btn:hover { border-color: rgba(232,184,92,.55); background: rgba(232,184,92,.12); color: var(--white); transform: translateY(-1px); }
+.gann-today-table .stock-copy-btn i { font-size: 11px; }
+.gann-today-table .movement-pill,
+.gann-today-table .sector-pill { display: inline-flex; align-items: center; padding: 4px 8px; border: 1px solid rgba(180,208,228,.18); border-radius: 999px; background: rgba(148,190,231,.06); color: #dfeaf5; font: 10px 'DM Mono', monospace; letter-spacing: .03em; }
+.gann-today-table .planet-badge-wrap { display: inline-flex; align-items: center; gap: 7px; padding: 4px 9px; border: 1px solid rgba(232,184,92,.24); border-radius: 999px; background: linear-gradient(90deg, rgba(232,184,92,.08), rgba(116,161,209,.05)); }
+.gann-today-table .planet-name { color: var(--white); font-weight: 600; }
+.gann-today-table .planet-icon { display: inline-flex; align-items: center; justify-content: center; min-width: 16px; font-size: 11px; line-height: 1; filter: drop-shadow(0 0 4px rgba(232,184,92,.25)); }
+.gann-today-table .degree-badge { display: inline-block; min-width: 42px; padding: 4px 9px; border: 1px solid rgba(232,184,92,.22); border-radius: 999px; background: rgba(232,184,92,.07); color: var(--astro-accent, var(--gold)); font: 10px 'DM Mono', monospace; text-align: center; }
 .gann-planet-cell { color: var(--white); }
 .gann-loading { min-height: 180px; }
 .gann-loading i { animation: gann-spin 1.2s linear infinite; }
