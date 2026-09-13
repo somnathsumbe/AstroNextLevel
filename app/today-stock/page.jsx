@@ -5,9 +5,22 @@ import GannFilters from '@/components/gann/GannFilters';
 import GannHeader from '@/components/gann/GannHeader';
 import GannSummary from '@/components/gann/GannSummary';
 import GannTable from '@/components/gann/GannTable';
-import { getIndiaTodayKey, isTodayPressureDate, normalizePressureRecords } from '@/components/gann/GannUtils';
+import { getIndiaTodayKey, isTodayPressureDate, normalizePressureRecords, pressureDateKey } from '@/components/gann/GannUtils';
 
 const initialFilters = { stock: 'all', planet: 'all', today: 'all', priority: 'all', search: '' };
+
+function dateKeyFromValue(value) {
+  const [year, month, day] = String(value).split('-').map(Number);
+  if (!year || !month || !day) return '';
+  const date = new Date(year, month - 1, day);
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
+
+function relativeDateKey(baseKey, offsetDays) {
+  const baseDate = new Date(`${baseKey}T00:00:00+05:30`);
+  baseDate.setDate(baseDate.getDate() + offsetDays);
+  return dateKeyFromValue(`${baseDate.getFullYear()}-${String(baseDate.getMonth() + 1).padStart(2, '0')}-${String(baseDate.getDate()).padStart(2, '0')}`);
+}
 
 export default function TodayStockPage() {
   const [data, setData] = useState([]);
@@ -38,13 +51,23 @@ export default function TodayStockPage() {
     return result;
   }, {}), [data]);
 
-  const filteredData = useMemo(() => data.filter((item) =>
-    (filters.stock === 'all' || item.stock === filters.stock) &&
-    (filters.planet === 'all' || item.planet === filters.planet) &&
-    (filters.today === 'all' || isTodayPressureDate(item.PressureDate, todayKey)) &&
-    (filters.priority === 'all' || String(item.priority).toLowerCase() === String(filters.priority).toLowerCase()) &&
-    (!filters.search || String(item.stock || '').toLowerCase().includes(filters.search.trim().toLowerCase()))
-  ), [data, filters, todayKey]);
+  const filteredData = useMemo(() => data.filter((item) => {
+    const pressureDateValue = item.PressureDate || item.pressureDate || '';
+    const itemDateKey = pressureDateKey(pressureDateValue);
+    const matchesDateFilter = (() => {
+      if (filters.today === 'all') return true;
+      if (filters.today === 'lastday') return itemDateKey && itemDateKey === relativeDateKey(todayKey, -1);
+      if (filters.today === 'today') return itemDateKey && itemDateKey === todayKey;
+      if (filters.today === 'upcoming') return itemDateKey && itemDateKey === relativeDateKey(todayKey, 1);
+      return true;
+    })();
+
+    return (filters.stock === 'all' || item.stock === filters.stock) &&
+      (filters.planet === 'all' || item.planet === filters.planet) &&
+      matchesDateFilter &&
+      (filters.priority === 'all' || String(item.priority).toLowerCase() === String(filters.priority).toLowerCase()) &&
+      (!filters.search || String(item.stock || '').toLowerCase().includes(filters.search.trim().toLowerCase()));
+  }), [data, filters, todayKey]);
 
   const summary = useMemo(() => ({
     stocks: options.stocks.length,
