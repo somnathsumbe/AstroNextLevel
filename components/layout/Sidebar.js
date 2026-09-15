@@ -41,7 +41,6 @@ const menus = [
     icon: 'bi-graph-up-arrow',
     items: [
       ['Degree Calculator', '/degree-calculator'],
-      ['Stock Gann Pressure', '/stock-gann-pressure-calc'],
       ['Today Stock', '/today-stock'],
       ['📊 Stocks Times', '/stocks-times'],
     ],

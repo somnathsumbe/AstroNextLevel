@@ -118,7 +118,6 @@ html[data-theme] .month-navigation select { background: var(--astro-panel); colo
 	.sun-jupiter-page .sun-jupiter-observation-table td { font-size: 11px; }
 }
 
-.stock-gann-page { min-width: 0; max-width: 100%; overflow-x: hidden; }
 .today-stock-page { min-width: 0; max-width: 100%; overflow-x: hidden; padding-bottom: 70px; }
 .lunar-dates-panel { margin-bottom: 18px; padding: 20px 22px; border: 1px solid var(--line); background: rgba(13,34,55,.8); }
 .lunar-dates-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
@@ -207,54 +206,12 @@ html[data-theme] .month-navigation select { background: var(--astro-panel); colo
 .stocks-json-import textarea { min-height: 145px; resize: vertical; color: var(--white) !important; -webkit-text-fill-color: var(--white); caret-color: var(--gold); font: 10px/1.5 'DM Mono', monospace; }
 .stocks-json-import textarea::placeholder { color: #7890a6; opacity: 1; }
 .stocks-json-import .modal-section-title { margin: 0 0 10px; color: var(--gold); font: 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
-.stock-gann-form h2 { color: var(--astro-contrast, var(--white)); font-size: 15px; margin: 0 0 15px; }
-.gann-zero-section, .stock-reference-section, .calculation-base, .angles-section { border: 1px solid var(--line); padding: 17px; margin-bottom: 18px; background: color-mix(in srgb, var(--astro-panel, #0f2238) 76%, transparent); }
-.gann-zero-section { border-left: 3px solid var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 7%, var(--astro-panel, #0f2238)); }
-.calculation-base legend, .angles-section legend { float: none; width: auto; color: var(--astro-accent, var(--gold)); font: 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
-.radio-option, .angle-select-all { display: flex; align-items: center; gap: 8px; min-height: 40px; color: var(--astro-contrast, var(--white)); font-size: 12px; cursor: pointer; }
-.radio-option input, .angle-select-all input, .angle-option input { accent-color: var(--astro-accent, var(--gold)); }
-.angle-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); font: 10px 'DM Mono', monospace; margin-bottom: 12px; }
-.angle-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
-.angle-option { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 38px; padding: 5px 7px; color: var(--muted); border: 1px solid var(--line); font: 11px 'DM Mono', monospace; cursor: pointer; transition: .2s ease; }
-.angle-option:hover, .angle-option.selected { color: var(--astro-contrast, var(--white)); border-color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 12%, transparent); }
-.angle-option.important-angle { border-left: 2px solid #e97979; }
-.angle-option.important-angle.selected { color: #ffb0a9; }
-.calculate-gann-button { width: 100%; min-height: 44px; margin-top: 2px; }
-.calculation-summary { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-bottom: 19px; border: 1px solid var(--line); background: var(--line); }
-.calculation-summary div { min-width: 0; padding: 14px; background: var(--astro-panel, #0f2238); }
-.calculation-summary strong, .calculation-summary span { display: block; }
-.calculation-summary strong { color: var(--astro-accent, var(--gold)); font-size: 11px; margin-bottom: 7px; }
-.calculation-summary span { color: var(--muted); font-size: 10px; line-height: 1.5; }
-.gann-results .data-panel-heading { align-items: center; }
-.priority-important { color: #ffaaa5; background: rgba(220, 53, 69, .15); border: 1px solid rgba(220, 53, 69, .35); }
-.priority-secondary { color: #f0c36d; background: rgba(240, 180, 80, .12); border: 1px solid rgba(240, 180, 80, .25); }
-.gann-pressure-table tbody tr.important-result td { background: color-mix(in srgb, #b94242 8%, transparent); }
-.gann-pressure-table tbody tr.secondary-result td { background: color-mix(in srgb, #d49a3d 4%, transparent); }
-.gann-observation { margin-top: 18px; }
-.gann-usage-modal { max-height: min(720px, calc(100vh - 32px)); display: flex; flex-direction: column; }
-.gann-modal-body { overflow-y: auto; padding-right: 6px; }
 .modal-footer-actions { display: flex; justify-content: flex-end; padding-top: 15px; margin-top: 15px; border-top: 1px solid var(--line); }
 
 @media (max-width: 991.98px) {
-	.angle-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-	.calculation-summary { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 767.98px) {
-	.angle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-	.angle-toolbar { align-items: flex-start; flex-direction: column; }
-	.calculation-summary { grid-template-columns: 1fr; }
-	.calculation-summary div { padding: 12px 14px; }
-	.stock-gann-page .gann-results .data-panel-heading { display: block; }
-	.stock-gann-page .gann-results .month-navigation { margin-top: 15px; }
-	.stock-gann-page .gann-pressure-table,
-	.stock-gann-page .gann-pressure-table tbody,
-	.stock-gann-page .gann-pressure-table tr,
-	.stock-gann-page .gann-pressure-table td { display: block; width: 100%; }
-	.stock-gann-page .gann-pressure-table thead { display: none; }
-	.stock-gann-page .gann-pressure-table tr { margin-bottom: 12px; padding: 8px 12px; border: 1px solid var(--line); }
-	.stock-gann-page .gann-pressure-table td { display: grid; grid-template-columns: minmax(105px, 42%) 1fr; gap: 8px; align-items: center; min-height: 34px; padding: 7px 0; border: 0; white-space: normal; overflow-wrap: anywhere; }
-	.stock-gann-page .gann-pressure-table td::before { content: attr(data-label); color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
 }
 html[data-theme] .status-badge.trading-status { color: var(--astro-success); }
 @media (max-width: 767.98px) { .calculator-meta { display: grid; gap: 8px; }.calculator-meta .subtle-action { margin-left: 0; width: fit-content; }.month-navigation { margin-top: 16px; justify-content: flex-start; }.month-navigation select { flex: 1; }.degree-toast { right: 12px; left: 12px; bottom: 15px; min-width: 0; } }
