@@ -163,6 +163,11 @@ html[data-theme] .theme-trigger { color: var(--astro-accent); border-color: colo
 .theme-menu-heading > i { color: var(--astro-accent); }
 .theme-option { display: flex; align-items: center; gap: 9px; width: 100%; padding: 8px 5px; border: 0; background: transparent; color: var(--muted); text-align: left; font-size: 11px; }
 .theme-option:hover, .theme-option:focus-visible { color: var(--astro-contrast); background: color-mix(in srgb, var(--astro-accent) 10%, transparent); outline: 0; }
+.date-filter-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 38px; padding: 3px; border: 1px solid var(--line); background: color-mix(in srgb, var(--astro-panel) 88%, transparent); }
+.date-filter-controls span { flex: 1; color: var(--astro-contrast); font: 11px 'DM Mono', monospace; text-align: center; white-space: nowrap; }
+.date-filter-controls .btn { width: 32px; height: 30px; padding: 0; color: var(--astro-accent); border-color: color-mix(in srgb, var(--astro-accent) 45%, transparent); }
+.date-filter-controls .btn:hover, .date-filter-controls .btn:focus-visible { color: var(--astro-panel); background: var(--astro-accent); border-color: var(--astro-accent); }
+.filter-search-row { margin-top: 4px; }
 .theme-option.selected { color: var(--astro-contrast); }
 .theme-option > i { color: var(--astro-accent); margin-left: auto; }
 .theme-swatch { width: 13px; height: 13px; flex: 0 0 13px; border: 2px solid rgba(255, 255, 255, .55); border-radius: 50%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
