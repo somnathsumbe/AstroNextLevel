@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/AstroNextLevel' : '';
+const isStaticExport = process.env.GITHUB_PAGES === 'true';
+const basePath = isStaticExport ? '/AstroNextLevel' : '';
 
 const nextConfig = {
-  output: 'export',
+  ...(isStaticExport ? { output: 'export' } : {}),
   basePath,
-  assetPrefix: isProduction ? `${basePath}/` : undefined,
+  assetPrefix: isStaticExport ? `${basePath}/` : undefined,
   trailingSlash: false,
   images: {
     unoptimized: true,

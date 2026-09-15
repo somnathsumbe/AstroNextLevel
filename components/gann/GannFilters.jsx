@@ -55,6 +55,13 @@ export default function GannFilters({
             {options.priorities.map((priority) => <option key={priority} value={priority}>{priority}</option>)}
           </select>
         </div>
+        <div className="col-12 col-md-6 col-xl">
+          <label htmlFor="today-reference-filter">Reference Type</label>
+          <select id="today-reference-filter" className="form-select" value={values.referenceType} onChange={(event) => onChange("referenceType", event.target.value)}>
+            <option value="all">All References</option>
+            {options.referenceTypes.map((referenceType) => <option key={referenceType} value={referenceType}>{referenceType}</option>)}
+          </select>
+        </div>
       </div>
       <div className="row g-3 align-items-end filter-search-row">
         <div className="col-12 col-lg-8">

@@ -21,16 +21,9 @@ const initialFilters = {
   sector: "all",
   dateOffset: 0,
   priority: "all",
+  referenceType: "all",
   search: "",
 };
-
-function getDataUrl() {
-  if (typeof window === "undefined") return "/data/gann-pressure-dates.json";
-  const isGithubPages = window.location.pathname.includes("/AstroNextLevel");
-  return isGithubPages
-    ? "/AstroNextLevel/data/gann-pressure-dates.json"
-    : "/data/gann-pressure-dates.json";
-}
 
 function dateKeyFromValue(value) {
   const [year, month, day] = String(value).split("-").map(Number);
@@ -104,14 +97,12 @@ export default function TodayStockPage() {
   const [lunarDates, setLunarDates] = useState(getRecentLunarDates);
 
   useEffect(() => {
-    const dataUrl = getDataUrl();
-
-    fetch(dataUrl)
+    fetch("/api/stocks/today?all=1")
       .then((response) => {
         if (!response.ok) throw new Error("Unable to load pressure date data.");
         return response.json();
       })
-      .then((records) => setData(normalizePressureRecords(records)))
+      .then((payload) => setData(normalizePressureRecords(payload.data || [])))
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false));
   }, []);
@@ -129,6 +120,9 @@ export default function TodayStockPage() {
       ),
       priorities: [
         ...new Set(data.map((item) => item.priority).filter(Boolean)),
+      ].sort((a, b) => a.localeCompare(b)),
+      referenceTypes: [
+        ...new Set(data.map((item) => item.ReferenceType).filter(Boolean)),
       ].sort((a, b) => a.localeCompare(b)),
     }),
     [data],
@@ -161,6 +155,8 @@ export default function TodayStockPage() {
           (filters.stock === "all" || item.stock === filters.stock) &&
           (filters.planet === "all" || item.planet === filters.planet) &&
           (filters.sector === "all" || item.sector === filters.sector) &&
+          (filters.referenceType === "all" ||
+            item.ReferenceType === filters.referenceType) &&
           matchesDateFilter &&
           (filters.priority === "all" ||
             String(item.priority).toLowerCase() ===

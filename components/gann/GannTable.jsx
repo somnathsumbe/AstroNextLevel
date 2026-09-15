@@ -1,4 +1,5 @@
-﻿import { formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
+﻿import { useState } from 'react';
+import { formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
 
 function copyToClipboard(value) {
   const text = String(value ?? '').trim();
@@ -10,6 +11,17 @@ function copyToClipboard(value) {
 }
 
 export default function GannTable({ rows, total, todayKey, todayFilter }) {
+  const [copiedHighDate, setCopiedHighDate] = useState('');
+
+  async function copyHighDate(stock, date) {
+    const value = String(date ?? '').trim();
+    if (!value || typeof navigator === 'undefined' || !navigator.clipboard?.writeText) return;
+
+    await navigator.clipboard.writeText(value);
+    setCopiedHighDate(`${stock}-${value}`);
+    window.setTimeout(() => setCopiedHighDate(''), 1600);
+  }
+
   return (
     <section className="data-panel gann-today-data">
       <div className="data-panel-heading">
@@ -100,7 +112,18 @@ export default function GannTable({ rows, total, todayKey, todayFilter }) {
                     </td>
                     <td data-label="Reference">{referenceTypeValue}</td>
                     <td data-label="High">{formatNumber(highValue)}</td>
-                    <td data-label="High Date">{referenceDateHighValue}</td>
+                    <td data-label="High Date" className={copiedHighDate === `${stockValue}-${referenceDateHighValue}` ? 'high-date-copied' : ''}>
+                      <strong>{referenceDateHighValue}</strong>
+                      <button
+                        type="button"
+                        className="high-date-copy-btn"
+                        title={`Copy high date ${referenceDateHighValue}`}
+                        aria-label={`Copy high date ${referenceDateHighValue}`}
+                        onClick={() => copyHighDate(stockValue, referenceDateHighValue)}
+                      >
+                        <i className={`bi bi-${copiedHighDate === `${stockValue}-${referenceDateHighValue}` ? 'check2' : 'clipboard'}`} />
+                      </button>
+                    </td>
                     <td data-label="Low Date">{lowDateValue}</td>
                     <td data-label="Low">{formatNumber(lowValue)}</td>
                     <td data-label="Movement"><span className="movement-pill">{movementValue}</span></td>
