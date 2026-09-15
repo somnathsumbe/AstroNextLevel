@@ -6,7 +6,7 @@ const nextConfig = {
   ...(isStaticExport ? { output: 'export' } : {}),
   basePath,
   assetPrefix: isStaticExport ? `${basePath}/` : undefined,
-  trailingSlash: false,
+  trailingSlash: isStaticExport,
   images: {
     unoptimized: true,
   },
