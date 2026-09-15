@@ -32,6 +32,13 @@ function dateKeyFromValue(value) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
 
+function getStaticDataUrl() {
+  if (typeof window !== "undefined" && window.location.pathname.startsWith("/AstroNextLevel")) {
+    return "/AstroNextLevel/data/gann-pressure-dates.json";
+  }
+  return "/data/gann-pressure-dates.json";
+}
+
 function relativeDateKey(baseKey, offsetDays) {
   const baseDate = new Date(`${baseKey}T00:00:00+05:30`);
   baseDate.setDate(baseDate.getDate() + offsetDays);
@@ -99,10 +106,14 @@ export default function TodayStockPage() {
   useEffect(() => {
     fetch("/api/stocks/today?all=1")
       .then((response) => {
-        if (!response.ok) throw new Error("Unable to load pressure date data.");
+        if (!response.ok) return fetch(getStaticDataUrl());
         return response.json();
       })
-      .then((payload) => setData(normalizePressureRecords(payload.data || [])))
+      .then((payload) => {
+        if (!payload.ok && payload.status) throw new Error("Unable to load pressure date data.");
+        return payload.json ? payload.json() : payload;
+      })
+      .then((payload) => setData(normalizePressureRecords(payload.data || payload || [])))
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false));
   }, []);
