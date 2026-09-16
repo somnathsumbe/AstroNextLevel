@@ -11,5 +11,5 @@ export default function Home() {
     router.replace(getLoggedUser() ? '/dashboard' : '/login');
   }, [router]);
 
-  return <div className="auth-loading" aria-label="Redirecting" />;
+  return <main id="main-content" className="auth-loading" role="status" aria-live="polite" aria-label="Redirecting" />;
 }

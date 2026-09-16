@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import amavasyaData from '@/data/amavasya.json';
+import { amavasyaService } from '@/lib/data/services/astrology/amavasya.service';
+
+const amavasyaData = amavasyaService.getData();
 
 const MONTHS = ['All months', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const PAGE_SIZES = [10, 25, 50, 100];

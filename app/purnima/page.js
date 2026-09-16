@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import purnimaData from '@/data/purnima.json';
+import { purnimaService } from '@/lib/data/services/astrology/purnima.service';
+
+const purnimaData = purnimaService.getData();
 import { MONTHS, parsePurnimaDate, parseTiming, formatDate, formatTime, formatMonth, formatDay, isWeekend, nextMonday, durationBetween } from '@/lib/purnima-utils';
 
 const PAGE_SIZES = [10, 25, 50, 100];

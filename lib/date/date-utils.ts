@@ -1,7 +1,29 @@
 import { DAY_MS, DEFAULT_INDIA_TIME, INDIA_TIME_ZONE } from "@/lib/gann/constants";
 
+const MONTH_NAMES = new Map([
+  ["jan", 1], ["january", 1],
+  ["feb", 2], ["february", 2],
+  ["mar", 3], ["march", 3],
+  ["apr", 4], ["april", 4],
+  ["may", 5],
+  ["jun", 6], ["june", 6],
+  ["jul", 7], ["july", 7],
+  ["aug", 8], ["august", 8],
+  ["sep", 9], ["sept", 9], ["september", 9],
+  ["oct", 10], ["october", 10],
+  ["nov", 11], ["november", 11],
+  ["dec", 12], ["december", 12],
+]);
+
 function parseParts(value: string) {
-  const parts = String(value || "").trim().split(/[-/]/).map(Number);
+  const raw = String(value || "").trim();
+  const namedMonth = raw.match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+  if (namedMonth) {
+    const month = MONTH_NAMES.get(namedMonth[2].toLowerCase());
+    return month ? { year: Number(namedMonth[3]), month, day: Number(namedMonth[1]) } : null;
+  }
+
+  const parts = raw.split(/[-/]/).map(Number);
   if (parts.length !== 3 || parts.some((part) => !Number.isFinite(part))) return null;
   return parts[0] > 31 ? { year: parts[0], month: parts[1], day: parts[2] } : { year: parts[2], month: parts[1], day: parts[0] };
 }

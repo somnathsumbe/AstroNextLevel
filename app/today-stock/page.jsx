@@ -11,9 +11,14 @@ import {
   normalizePressureRecords,
   pressureDateKey,
 } from "@/components/gann/GannUtils";
-import amavasyaData from "@/data/amavasya.json";
-import purnimaData from "@/data/purnima.json";
+import { amavasyaService } from "@/lib/data/services/astrology/amavasya.service";
+import { purnimaService } from "@/lib/data/services/astrology/purnima.service";
 import { parsePurnimaDate } from "@/lib/purnima-utils";
+import { publicDataService } from "@/lib/data/services/public-data.service";
+import { stockService } from "@/lib/data/services/stock.service";
+
+const amavasyaData = amavasyaService.getData();
+const purnimaData = purnimaService.getData();
 
 const initialFilters = {
   stock: "all",
@@ -24,19 +29,13 @@ const initialFilters = {
   referenceType: "all",
   search: "",
 };
+const TABLE_PAGE_SIZE = 50;
 
 function dateKeyFromValue(value) {
   const [year, month, day] = String(value).split("-").map(Number);
   if (!year || !month || !day) return "";
   const date = new Date(year, month - 1, day);
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-}
-
-function getStaticDataUrl() {
-  if (typeof window !== "undefined" && window.location.pathname.startsWith("/AstroNextLevel")) {
-    return "/AstroNextLevel/data/gann-pressure-dates.json";
-  }
-  return "/data/gann-pressure-dates.json";
 }
 
 function relativeDateKey(baseKey, offsetDays) {
@@ -96,6 +95,7 @@ export default function TodayStockPage() {
   const [copiedDate, setCopiedDate] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [tablePage, setTablePage] = useState(1);
   const todayKey = getIndiaTodayKey();
   const selectedDateKey =
     filters.dateOffset === "all"
@@ -104,15 +104,8 @@ export default function TodayStockPage() {
   const [lunarDates, setLunarDates] = useState(getRecentLunarDates);
 
   useEffect(() => {
-    fetch("/api/stocks/today?all=1")
-      .then((response) => {
-        if (!response.ok) return fetch(getStaticDataUrl());
-        return response.json();
-      })
-      .then((payload) => {
-        if (!payload.ok && payload.status) throw new Error("Unable to load pressure date data.");
-        return payload.json ? payload.json() : payload;
-      })
+    stockService.getAllStockRecords()
+      .catch(() => publicDataService.getGannPressureData())
       .then((payload) => setData(normalizePressureRecords(payload.data || payload || [])))
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false));
@@ -180,6 +173,8 @@ export default function TodayStockPage() {
       }),
     [data, filters, selectedDateKey],
   );
+  const totalTablePages = Math.max(1, Math.ceil(filteredData.length / TABLE_PAGE_SIZE));
+  const visibleData = filteredData.slice((tablePage - 1) * TABLE_PAGE_SIZE, tablePage * TABLE_PAGE_SIZE);
 
   const summary = useMemo(
     () => ({
@@ -197,11 +192,17 @@ export default function TodayStockPage() {
 
   function updateFilter(key, value) {
     setFilters((current) => ({ ...current, [key]: value }));
+    setTablePage(1);
   }
 
   function toggleLunarDates() {
     setLunarDates(getRecentLunarDates());
     setShowLunarDates((current) => !current);
+  }
+
+  function resetFilters() {
+    setFilters(initialFilters);
+    setTablePage(1);
   }
 
   async function copyLunarDate(dateKey) {
@@ -220,7 +221,7 @@ export default function TodayStockPage() {
         icons={icons}
         dateLabel={selectedDateKey}
         onChange={updateFilter}
-        onReset={() => setFilters(initialFilters)}
+        onReset={resetFilters}
       />
       <section
         className="lunar-dates-panel"
@@ -314,12 +315,13 @@ export default function TodayStockPage() {
       )}
       {!loading && !error && (
         <GannTable
-          rows={filteredData}
+          rows={visibleData}
           total={data.length}
           todayKey={todayKey}
           todayFilter={filters.dateOffset === 0 ? "today" : ""}
         />
       )}
+      {!loading && !error && filteredData.length > TABLE_PAGE_SIZE && <div className="stock-table-pagination" aria-label="Stock pressure pagination"><span>Showing {(tablePage - 1) * TABLE_PAGE_SIZE + 1}–{Math.min(tablePage * TABLE_PAGE_SIZE, filteredData.length)} of {filteredData.length}</span><div><button className="subtle-action" type="button" disabled={tablePage === 1} onClick={() => setTablePage((page) => page - 1)} aria-label="Previous pressure records">Previous</button><span aria-live="polite">Page {tablePage} of {totalTablePages}</span><button className="subtle-action" type="button" disabled={tablePage === totalTablePages} onClick={() => setTablePage((page) => page + 1)} aria-label="Next pressure records">Next</button></div></div>}
     </main>
   );
 }

@@ -1,11 +1,14 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import mangalData from '@/data/mangal-gochar.json';
+import { mangalService } from '@/lib/data/services/astrology/mangal.service';
+import { getIndiaToday } from '@/lib/date/date-utils';
+
+const mangalData = mangalService.getData();
 import { MONTHS, buildMangalRow, dateKey, formatDisplayDate, parseDateOnly } from '@/lib/mangal-utils';
 
 const PAGE_SIZE = 10;
-const todayKey = () => new Date().toISOString().slice(0, 10);
+const todayKey = () => getIndiaToday();
 
 function downloadCsv(rows, year) {
   const headers = ['Date', 'Previous Date', 'Next Date', 'Day', 'Planet', 'Event', 'Rashi', 'Time', 'Vakri'];

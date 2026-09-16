@@ -8,12 +8,13 @@ import { getRoutePath } from '@/lib/site-path';
 export default function AuthGate({ children }) {
   const pathname = getRoutePath(usePathname());
   const router = useRouter();
-  const [ready, setReady] = useState(pathname === '/login');
+  const isPublicRoute = pathname === '/login' || pathname === '/register';
+  const [ready, setReady] = useState(isPublicRoute);
 
   useEffect(() => {
     const loggedUser = getLoggedUser();
 
-    if (pathname === '/login') {
+    if (isPublicRoute) {
       if (loggedUser) router.replace('/dashboard');
       setReady(true);
       return;
@@ -25,7 +26,7 @@ export default function AuthGate({ children }) {
     }
 
     setReady(true);
-  }, [pathname, router]);
+  }, [isPublicRoute, pathname, router]);
 
   if (!ready) {
     return <div className="auth-loading" aria-label="Loading application" />;

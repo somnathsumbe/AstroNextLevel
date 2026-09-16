@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { applyTheme, getPreferredTheme, saveUserPreferences } from '@/lib/settings';
 
 export const THEME_STORAGE_KEY = 'astro_theme';
 
@@ -15,19 +16,15 @@ const themes = [
   { id: 'dark-mode', label: 'Dark Mode', color: '#cbd5e1' },
 ];
 
-function applyTheme(themeName) {
-  document.documentElement.dataset.theme = themeName;
-}
-
 export default function ThemeSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState('dark-navy');
+  const [selectedTheme, setSelectedTheme] = useState(getPreferredTheme());
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY) || 'dark-navy';
-    setSelectedTheme(savedTheme);
-    applyTheme(savedTheme);
+    const initialTheme = getPreferredTheme();
+    setSelectedTheme(initialTheme);
+    applyTheme(initialTheme);
 
     function closeOnOutsideClick(event) {
       if (containerRef.current && !containerRef.current.contains(event.target)) setIsOpen(false);
@@ -40,11 +37,15 @@ export default function ThemeSwitcher() {
   function selectTheme(themeName) {
     setSelectedTheme(themeName);
     applyTheme(themeName);
+    saveUserPreferences({ theme: themeName });
     window.localStorage.setItem(THEME_STORAGE_KEY, themeName);
   }
 
   function resetTheme() {
-    selectTheme('dark-navy');
+    const defaultTheme = 'dark-navy';
+    setSelectedTheme(defaultTheme);
+    applyTheme(defaultTheme);
+    saveUserPreferences({ theme: defaultTheme });
     window.localStorage.removeItem(THEME_STORAGE_KEY);
   }
 

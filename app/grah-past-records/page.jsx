@@ -1,9 +1,11 @@
-import records from '@/data/grahPastRecords.json';
+import { grahService } from '@/lib/data/services/master/grah.service';
 import GrahPageHeader from '@/components/grah/GrahPageHeader';
 import GrahSummary from '@/components/grah/GrahSummary';
 import GrahCard from '@/components/grah/GrahCard';
 import ReversalTimeData from '@/components/grah/ReversalTimeData';
 import { getGrahSummary } from '@/utils/grahAnalysis';
+
+const records = grahService.getData();
 
 export default function GrahPastRecordsPage() {
   const summary = getGrahSummary(records);

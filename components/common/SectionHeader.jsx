@@ -1,0 +1,3 @@
+export default function SectionHeader({ eyebrow, title, icon, meta, action, titleId, className = '' }) {
+  return <div className={`astro-section-heading ui-section-header ${className}`.trim()}><div>{eyebrow && <span className="eyebrow">{eyebrow}</span>}<h2 id={titleId}>{icon && <i className={`bi ${icon}`} aria-hidden="true" />} {title}</h2></div>{action || (meta && <span className="astro-date-label">{meta}</span>)}</div>;
+}

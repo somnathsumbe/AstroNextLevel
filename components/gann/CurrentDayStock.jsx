@@ -2,51 +2,55 @@
 
 import { useEffect, useState } from "react";
 import GannTable from "./GannTable";
+import { publicDataService } from "@/lib/data/services/public-data.service";
+import { stockService } from "@/lib/data/services/stock.service";
+import ErrorState from "@/components/ui/ErrorState";
+import SectionHeader from "@/components/common/SectionHeader";
+import Skeleton from "@/components/ui/Skeleton";
 import {
   getIndiaTodayKey,
-  isTodayPressureDate,
   normalizePressureRecords,
+  pressureDateKey,
 } from "./GannUtils";
-
-function getStaticDataUrl() {
-  if (typeof window !== "undefined" && window.location.pathname.startsWith("/AstroNextLevel")) {
-    return "/AstroNextLevel/data/gann-pressure-dates.json";
-  }
-  return "/data/gann-pressure-dates.json";
-}
 
 export default function CurrentDayStock() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const todayKey = getIndiaTodayKey();
+  const [showingUpcoming, setShowingUpcoming] = useState(false);
 
   useEffect(() => {
-    fetch("/api/stocks/today?all=1")
-      .then((response) => {
-        if (!response.ok) return fetch(getStaticDataUrl());
-        return response.json();
+    stockService.getTodayStockRecords()
+      .catch(() => publicDataService.getGannPressureData())
+      .then(async (payload) => {
+        const todayRecords = normalizePressureRecords(payload.data || payload || []);
+        if (todayRecords.length) {
+          setData(todayRecords);
+          return;
+        }
+
+        const allPayload = await stockService.getAllStockRecords();
+        setData(normalizePressureRecords(allPayload.data || allPayload || []));
+        setShowingUpcoming(true);
       })
-      .then((payload) => {
-        if (!payload.ok && payload.status) throw new Error("Unable to load pressure date data.");
-        return payload.json ? payload.json() : payload;
-      })
-      .then((payload) => setData(normalizePressureRecords(payload.data || payload || [])))
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false));
   }, []);
 
-  const currentDayRows = data.filter((item) =>
-    isTodayPressureDate(item.PressureDate || item.pressureDate, todayKey),
-  );
+  const todayRows = data.filter((item) => pressureDateKey(item.PressureDate || item.pressureDate) === todayKey);
+  const upcomingDate = data
+    .map((item) => pressureDateKey(item.PressureDate || item.pressureDate))
+    .filter((date) => date >= todayKey)
+    .sort()[0];
+  const currentDayRows = todayRows.length
+    ? todayRows
+    : data.filter((item) => pressureDateKey(item.PressureDate || item.pressureDate) === upcomingDate);
 
   if (loading) {
     return (
       <section className="data-panel dashboard-current-day-stock">
-        <div className="state-panel gann-loading">
-          <i className="bi bi-arrow-repeat" />
-          <strong>Loading current day stocks...</strong>
-        </div>
+        <div className="dashboard-stock-loading" role="status"><Skeleton height="22px" width="190px" /><Skeleton className="mt-3" height="70px" /><Skeleton className="mt-2" height="70px" /></div>
       </section>
     );
   }
@@ -54,23 +58,19 @@ export default function CurrentDayStock() {
   if (error) {
     return (
       <section className="data-panel dashboard-current-day-stock">
-        <div className="calculator-error" role="alert">
-          <i className="bi bi-exclamation-circle" /> {error}
-        </div>
+        <ErrorState title="Unable to load current stocks" description={error || 'Current stock pressure data is unavailable.'} />
       </section>
     );
   }
 
   return (
     <div className="dashboard-current-day-stock">
-      <div className="astro-section-heading compact dashboard-current-day-stock-heading">
-        <h2><i className="bi bi-bar-chart-line" /> Current Day Stock</h2>
-      </div>
+      <SectionHeader className="compact dashboard-current-day-stock-heading" title={showingUpcoming && !todayRows.length ? "Upcoming Pressure Stocks" : "Current Day Stock"} icon="bi-bar-chart-line" />
       <GannTable
         rows={currentDayRows}
         total={currentDayRows.length}
         todayKey={todayKey}
-        todayFilter="today"
+        todayFilter={showingUpcoming && !todayRows.length ? "upcoming" : "today"}
       />
     </div>
   );

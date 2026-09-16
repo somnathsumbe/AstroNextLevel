@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071321" />
+    <title>Offline | Astro Market Analytics</title>
+    <style>
+      :root {
+        --navy: #071321;
+        --panel: #0f2238;
+        --line: rgba(150, 180, 205, 0.18);
+        --muted: #7890a6;
+        --gold: #e8b85c;
+        --white: #f5f8fb;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; background: var(--navy); color: var(--white); font-family: Arial, sans-serif; }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at 20% 20%, rgba(64, 121, 184, 0.25), transparent 28%), var(--navy);
+      }
+      .offline-shell {
+        width: min(540px, calc(100vw - 32px));
+        padding: 28px 24px;
+        border: 1px solid var(--line);
+        background: linear-gradient(120deg, rgba(16, 38, 61, 0.96), rgba(11, 28, 46, 0.96));
+        border-radius: 14px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      }
+      .offline-kicker {
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 14px 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+      }
+      p {
+        color: var(--muted);
+        margin: 0 0 20px;
+        line-height: 1.7;
+      }
+      .offline-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      button {
+        appearance: none;
+        border: 1px solid rgba(232, 184, 92, 0.4);
+        background: var(--gold);
+        color: #101820;
+        font-weight: 700;
+        padding: 11px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: transparent;
+        color: var(--white);
+        border-color: var(--line);
+      }
+      @media (max-width: 420px) {
+        .offline-shell { padding: 22px 18px; }
+        .offline-actions { display: grid; grid-template-columns: 1fr; }
+        button { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="offline-shell" aria-live="polite">
+      <div class="offline-kicker">Astro Market Analytics</div>
+      <h1>Offline mode</h1>
+      <p>
+        You are currently offline. Previously cached application shell and selected static resources remain available,
+        but the live market and your newest data may not be reachable until your connection is restored.
+      </p>
+      <div class="offline-actions">
+        <button type="button" onclick="window.location.reload()">Retry</button>
+        <button type="button" class="secondary" onclick="window.history.back()">Go back</button>
+      </div>
+    </main>
+  </body>
+</html>

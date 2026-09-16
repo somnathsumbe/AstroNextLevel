@@ -1,0 +1,4 @@
+export default function Input({ label, id, hint, error, className = '', ...props }) {
+  const describedBy = [hint && `${id}-hint`, error && `${id}-error`].filter(Boolean).join(' ') || undefined;
+  return <div className="ui-field"><label htmlFor={id}>{label}{props.required && <span aria-hidden="true"> *</span>}</label><input id={id} className={`ui-input ${error ? 'is-invalid' : ''} ${className}`.trim()} aria-invalid={Boolean(error)} aria-describedby={describedBy} {...props} />{hint && <small id={`${id}-hint`}>{hint}</small>}{error && <span id={`${id}-error`} className="ui-field-error" role="alert">{error}</span>}</div>;
+}

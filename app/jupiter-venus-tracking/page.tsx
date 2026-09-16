@@ -2,14 +2,15 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import rawData from '@/src/data/weekly-market-tracking.json';
+import { jupiterVenusService } from '@/lib/data/services/market/jupiter-venus.service';
+import { getIndiaToday } from '@/lib/date/date-utils';
 import { exportMarketCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, isWeekend, monthName } from '@/src/lib/date-utils';
 import type { MarketEvent, MarketRecord, MarketYear } from '@/src/types/weekly-market-tracking';
 
 const PAGE_SIZE = 10;
 const MONTHS = ['All Months', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const DATA = rawData as MarketYear[];
+const DATA = jupiterVenusService.getData() as MarketYear[];
 
 function toRecords(yearData: MarketYear): MarketRecord[] {
   return yearData.events.map((event: MarketEvent, index) => ({
@@ -60,7 +61,7 @@ export default function JupiterVenusTrackingPage() {
   }, [yearRecords, month, search]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
   const visibleRecords = filteredRecords.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
-  const nextEvent = yearRecords.filter((record) => dateKey(record.crossingDate) >= dateKey(new Date().toISOString().slice(0, 10))).sort((a, b) => dateKey(a.crossingDate) - dateKey(b.crossingDate))[0];
+  const nextEvent = yearRecords.filter((record) => dateKey(record.crossingDate) >= dateKey(getIndiaToday())).sort((a, b) => dateKey(a.crossingDate) - dateKey(b.crossingDate))[0];
   const degreeCounts = [0, 45, 90, 180].map((degree) => yearRecords.filter((record) => record.targetDegree === degree).length);
 
   function resetPage() { setPage(1); }

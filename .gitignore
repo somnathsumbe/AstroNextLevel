@@ -12,6 +12,9 @@ node_modules/
 # TypeScript
 *.tsbuildinfo
 
+# Test output
+coverage/
+
 # OS and editor files
 .DS_Store
 Thumbs.db

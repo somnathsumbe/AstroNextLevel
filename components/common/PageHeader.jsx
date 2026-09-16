@@ -1,0 +1,3 @@
+export default function PageHeader({ eyebrow, title, description, breadcrumb, actions, className = '' }) {
+  return <header className={`page-heading-row ui-page-header ${className}`.trim()}><div>{eyebrow && <div className="eyebrow">{eyebrow}</div>}<h1 className="page-title">{title}</h1>{description && <p className="page-subtitle">{description}</p>}{breadcrumb && <nav className="breadcrumb-line" aria-label="Breadcrumb">{breadcrumb}</nav>}</div>{actions && <div className="page-actions">{actions}</div>}</header>;
+}

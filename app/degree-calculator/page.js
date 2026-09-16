@@ -1,27 +1,25 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import marchEquinox from '@/data/march-equinox.json';
-import { addUtcDays, buildDegreeResults, dateInputValue, formatDate, monthName, parseUtcDate } from '@/lib/degree-utils';
+import { marchEquinoxService } from '@/lib/data/services/master/march-equinox.service';
+
+const marchEquinox = marchEquinoxService.getData();
+import {
+  getDefaultZeroDate,
+  getDegreeSummary,
+  getMonthOptions,
+  getNextReversalNotice,
+  getValidZeroDates,
+  parseMonth,
+  suppliedDate,
+  todayUtc,
+  validateZeroDate,
+} from '@/lib/calculators/degree-calculator';
+import { addUtcDays, buildDegreeResults, dateInputValue, formatDate, parseUtcDate } from '@/lib/degree-utils';
 
 const PAGE_SIZE = 10;
 const GANN_PAGE_SIZE = 5;
 const MONTHS = ['All months', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-function suppliedDate(entry) {
-  const [day, month] = entry.date.split(' ');
-  const monthNumber = new Date(`${month} 1, ${entry.year} UTC`).getUTCMonth() + 1;
-  return `${entry.year}-${String(monthNumber).padStart(2, '0')}-${day.padStart(2, '0')}`;
-}
-
-function parseMonth(value) {
-  return new Date(`${value} 1, 2026 UTC`).getUTCMonth();
-}
-
-function todayUtc() {
-  const now = new Date();
-  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-}
 
 function downloadCsv(rows) {
   const headers = ['#', 'Target Degree', 'Days', 'Calendar Date', 'Day', 'Market Status', 'Test Date', 'Actual Degree'];
@@ -35,8 +33,8 @@ function downloadCsv(rows) {
 }
 
 export default function DegreeCalculatorPage() {
-  const validZeroDates = useMemo(() => marchEquinox.entries.map(suppliedDate), []);
-  const defaultZeroDate = validZeroDates.includes('2026-03-20') ? '2026-03-20' : validZeroDates[validZeroDates.length - 1] || '2026-03-20';
+  const validZeroDates = useMemo(() => getValidZeroDates(marchEquinox.entries), []);
+  const defaultZeroDate = getDefaultZeroDate(marchEquinox.entries);
   const [zeroDate, setZeroDate] = useState(defaultZeroDate);
   const [calculatedZeroDate, setCalculatedZeroDate] = useState(defaultZeroDate);
   const [results, setResults] = useState(() => buildDegreeResults(parseUtcDate(defaultZeroDate)));
@@ -54,14 +52,12 @@ export default function DegreeCalculatorPage() {
   const gannRows = marchEquinox.entries;
   const gannTotalPages = Math.max(1, Math.ceil(gannRows.length / GANN_PAGE_SIZE));
   const visibleGannRows = gannRows.slice((gannPage - 1) * GANN_PAGE_SIZE, gannPage * GANN_PAGE_SIZE);
-  const nextReversal = results.find((result) => result.calendarDate >= todayUtc()) || results[0];
-  const tradingDays = results.filter((result) => result.marketStatus === 'TRADING DAY').length;
-  const weekendDays = results.length - tradingDays;
+  const { nextReversal, tradingDays, weekendDays } = getDegreeSummary(results);
 
   function showReversalToast(nextResults) {
-    const todayValue = dateInputValue(todayUtc());
-    const tomorrowValue = dateInputValue(addUtcDays(parseUtcDate(todayValue), 1));
-    const match = nextResults.find((result) => [todayValue, tomorrowValue].includes(dateInputValue(result.calendarDate)));
+    const currentDate = todayUtc();
+    const todayValue = dateInputValue(currentDate);
+    const match = getNextReversalNotice(nextResults, currentDate);
     if (!match) return;
     const storageKey = `astro_degree_notice_${dateInputValue(match.calendarDate)}`;
     if (window.sessionStorage.getItem(storageKey)) return;
@@ -73,7 +69,7 @@ export default function DegreeCalculatorPage() {
   function calculate(event) {
     event.preventDefault();
     setError('');
-    if (!validZeroDates.includes(zeroDate)) {
+    if (!validateZeroDate(zeroDate, validZeroDates)) {
       setError('Select a valid supplied March Equinox / Gann-Zilla date.');
       return;
     }
@@ -88,7 +84,7 @@ export default function DegreeCalculatorPage() {
   function shiftMonth(direction) {
     const current = month === 'All months' ? -1 : parseMonth(month);
     const next = current + direction;
-    setMonth(next < 0 || next > 11 ? 'All months' : MONTHS[next + 1]);
+    setMonth(next < 0 || next > 11 ? 'All months' : getMonthOptions()[next + 1]);
     setPage(1);
   }
 

@@ -1,63 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { getRoutePath } from '@/lib/site-path';
+import { getActiveNavigationSection, navigation } from '@/components/layout/navigation';
 
-const menus = [
-  {
-    title: 'Lunar & Calendar',
-    icon: 'bi-calendar3',
-    items: [
-      ['Amavasya', '/amavasya'],
-      ['Purnima', '/purnima'],
-    ],
-  },
-  {
-    title: 'Bhadra',
-    icon: 'bi-exclamation-triangle',
-    items: [
-      ['Bhadra Kaal', '/bhadra-kaal'],
-    ],
-  },
-  {
-    title: 'Planetary Analysis',
-    icon: 'bi-stars',
-    items: [
-      ['Mangal Gochar', '/mangal-gochar'],
-      ['Panchak', '/panchak'],
-      ['Pushya Nakshatra', '/pushya-nakshatra'],
-      ['Shukra Gochar', '/shukra-gochar'],
-      ['Sun-Jupiter Tracking', '/sun-jupiter-tracking'],
-      ['Jupiter Venus Tracking', '/jupiter-venus-tracking'],
-      ['Grah Past Records', '/grah-past-records'],
-      ['Reversal Time', '/reversal-time'],
-      ['Rashi Nakshatra', '/rashi-nakshatra'],
-    ],
-  },
-  {
-    title: 'Market Analysis',
-    icon: 'bi-graph-up-arrow',
-    items: [
-      ['Degree Calculator', '/degree-calculator'],
-      ['Gann Pressure Generator', '/market-analysis/stock-gann-pressure'],
-      ['Today Stock', '/today-stock'],
-      ['📊 Stocks Times', '/stocks-times'],
-    ],
-  },
-];
-
-function sectionForPath(pathname) {
-  return menus.find((section) => section.items.some(([, href]) => href === pathname))?.title || null;
+function isActivePath(pathname, href) {
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function Sidebar() {
   const pathname = getRoutePath(usePathname());
   const [open, setOpen] = useState(false);
-  const [expandedSections, setExpandedSections] = useState(() => Object.fromEntries(menus.map((section) => [section.title, false])));
-
-  const activeSection = sectionForPath(pathname);
+  const [collapsed, setCollapsed] = useState(false);
+  const activeSection = getActiveNavigationSection(pathname);
+  const [expandedSections, setExpandedSections] = useState(() => Object.fromEntries(navigation.map((section) => [section.title, true])));
 
   useEffect(() => {
     const toggle = () => setOpen((current) => !current);
@@ -66,30 +24,49 @@ export default function Sidebar() {
   }, []);
 
   useEffect(() => {
-    if (!activeSection) return;
-    setExpandedSections((current) => ({ ...current, [activeSection]: true }));
+    if (activeSection) setExpandedSections((current) => ({ ...current, [activeSection]: true }));
+    setOpen(false);
   }, [activeSection]);
 
-  if (pathname === '/login') return null;
-  
-  return (
-    <aside className={`sidebar ${open ? 'is-open' : ''}`}>
-      <nav aria-label="Main navigation" className="py-2 sidebar-menu is-expanded">
-        <Link href="/dashboard" className={`sidebar-link ${pathname === '/dashboard' ? 'active' : ''}`} onClick={() => setOpen(false)} aria-current={pathname === '/dashboard' ? 'page' : undefined}><i className="bi bi-grid-1x2-fill" /> Dashboard</Link>
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    document.body.classList.toggle('sidebar-open', open);
+    window.dispatchEvent(new CustomEvent('astro:sidebar-state', { detail: { open } }));
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      document.body.classList.remove('sidebar-open');
+    };
+  }, [open]);
 
-        {menus.map((section) => (
-          <div key={section.title}>
-            <button className="sidebar-section-toggle" type="button" onClick={() => setExpandedSections((current) => ({ ...current, [section.title]: !current[section.title] }))} aria-expanded={expandedSections[section.title]}>
-              <span><i className={`bi ${section.icon}`} /> {section.title}</span><i className={`bi bi-chevron-${expandedSections[section.title] ? 'up' : 'down'}`} />
+  const activeItems = useMemo(() => navigation.flatMap((section) => section.items).filter((item) => isActivePath(pathname, item.href)), [pathname]);
+
+  return <>
+    {open && <button className="sidebar-backdrop" type="button" onClick={() => setOpen(false)} aria-label="Close navigation" />}
+    <aside id="main-sidebar" className={`sidebar ${open ? 'is-open' : ''} ${collapsed ? 'is-collapsed' : ''}`} aria-label="Application sidebar">
+      <div className="sidebar-brand-row">
+        <Link href="/dashboard" className="sidebar-brand" aria-label="Astro Market Analytics dashboard" title={collapsed ? 'Dashboard' : undefined}>
+          <span className="brand-star">✦</span><span className="sidebar-brand-copy"><strong>ASTRO</strong><small>MARKET ANALYTICS</small></span>
+        </Link>
+        <button type="button" className="sidebar-collapse-button" onClick={() => setCollapsed((value) => !value)} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}><i className={`bi bi-chevron-${collapsed ? 'right' : 'left'}`} /></button>
+      </div>
+      <nav aria-label="Main navigation" className="sidebar-navigation">
+        {navigation.map((section) => {
+          const sectionActive = section.items.some((item) => activeItems.includes(item));
+          const isExpanded = expandedSections[section.title];
+          return <div className="sidebar-navigation-group" key={section.title}>
+            <button className={`sidebar-section-toggle ${sectionActive ? 'is-active' : ''}`} type="button" onClick={() => setExpandedSections((current) => ({ ...current, [section.title]: !current[section.title] }))} aria-expanded={isExpanded} title={collapsed ? section.title : undefined}>
+              <span><i className={`bi ${section.icon}`} aria-hidden="true" /><span className="sidebar-label">{section.title}</span></span><i className={`bi bi-chevron-${isExpanded ? 'up' : 'down'} sidebar-section-chevron`} aria-hidden="true" />
             </button>
-            <div className={`sidebar-section-items ${expandedSections[section.title] ? 'is-expanded' : 'is-collapsed'}`}>
-              {section.items.map(([label, href]) => (
-                <Link href={href} className={`sidebar-link ${pathname === href ? 'active' : ''}`} key={href} onClick={() => setOpen(false)} aria-current={pathname === href ? 'page' : undefined}>{label}</Link>
-              ))}
+            <div className={`sidebar-section-items ${isExpanded ? 'is-expanded' : 'is-collapsed'}`}>
+              {section.items.map((item) => { const active = isActivePath(pathname, item.href); return <Link href={item.href} className={`sidebar-link ${active ? 'active' : ''}`} key={item.href} onClick={() => setOpen(false)} aria-current={active ? 'page' : undefined} title={collapsed ? item.label : undefined}><i className={`bi ${item.icon}`} aria-hidden="true" /><span className="sidebar-label">{item.label}</span></Link>; })}
             </div>
-          </div>
-        ))}
+          </div>;
+        })}
       </nav>
+      <div className="sidebar-bottom"><i className="bi bi-shield-check" aria-hidden="true" /><span className="sidebar-label">Research console</span></div>
     </aside>
-  );
+  </>;
 }

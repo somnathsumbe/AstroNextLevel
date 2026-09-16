@@ -1,11 +1,14 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import shukraData from '@/data/shukra-gochar.json';
+import { shukraService } from '@/lib/data/services/astrology/shukra.service';
+import { getIndiaToday } from '@/lib/date/date-utils';
 import { SHUKRA_MONTHS, buildShukraRow, dateKey, formatDisplayDate, parseDateOnly } from '@/lib/shukra-utils';
 
+const shukraData = shukraService.getData();
+
 const PAGE_SIZE = 10;
-const todayKey = () => new Date().toISOString().slice(0, 10);
+const todayKey = () => getIndiaToday();
 
 function downloadCsv(rows, year) {
   const headers = ['Date', 'Previous Date', 'Next Date', 'Day', 'Planet', 'Event', 'Rashi', 'Time', 'Vakri'];

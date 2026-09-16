@@ -2,18 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  ANGLES,
-  IMPORTANT_ANGLES,
-  readStockData,
-  saveStockData,
-  STOCK_DATA,
-  STOCK_DATA_VERSION,
-  normalizeStockData,
-} from "./stockMaster";
+import { calculateStockPressureDates, e2eNormalizeDate, getReference, inputDate, parseInputDate } from "@/lib/calculators/stock-timing";
+import { stockMasterService } from "@/lib/data/services/stock-master.service";
 
 const DEFAULT_TIME = "09:15";
 const DAY_MS = 86400000;
+const STOCK_MASTER = stockMasterService.getStockMasterData();
+const { angles: ANGLES, importantAngles: IMPORTANT_ANGLES, version: STOCK_DATA_VERSION } = stockMasterService.getStockCalculationConfig();
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("en-IN", {
@@ -30,32 +25,13 @@ function dayName(value) {
   }).format(value);
 }
 function displayReferenceDate(value) {
-  const [year, month, day] = (value || "").split("-");
-  return year && month && day ? `${day}-${month}-${year}` : value || "—";
-}
-function inputDate(value) {
-  const parts = (value || "").split("-");
-  return parts[0]?.length === 2
-    ? `${parts[2]}-${parts[1]}-${parts[0]}`
-    : value || "";
+  return e2eNormalizeDate(value);
 }
 function referenceFor(stock, type) {
-  const low = type === "Major Low";
-  return {
-    date: low ? stock?.referenceDateLow : stock?.referenceDateHigh,
-    value: low ? stock?.low : stock?.high,
-  };
+  return getReference(stock, type);
 }
 function parseBase(date, time) {
-  if (!date || date === "VERIFY_REQUIRED") return null;
-  const rawParts = date.split("-").map(Number);
-  const [year, month, day] =
-    rawParts[0] > 31 ? rawParts : [rawParts[2], rawParts[1], rawParts[0]];
-  const [hour, minute] = (time || DEFAULT_TIME).split(":").map(Number);
-  if (![year, month, day, hour, minute].every(Number.isFinite)) return null;
-  return new Date(
-    Date.UTC(year, month - 1, day, hour || 0, minute || 0) - 19800000,
-  );
+  return parseInputDate(date, time || DEFAULT_TIME);
 }
 function calculatePressureDates(
   stock,
@@ -65,28 +41,15 @@ function calculatePressureDates(
   timeframe,
   windowDays,
 ) {
-  const base = parseBase(referenceDate, referenceTime);
-  if (!base) return [];
-  return ANGLES.map((angle) => {
-    const days = (angle / 360) * 365.25;
-    const pressureDate = new Date(base.getTime() + days * DAY_MS);
-    return {
-      id: `${stock.stock}-${angle}`,
-      angle,
-      pressureDate,
-      priority: IMPORTANT_ANGLES.has(angle) ? "IMPORTANT" : "SECONDARY",
-      indiaTime: referenceTime || DEFAULT_TIME,
-      stock: stock.stock,
-      sector: stock.sector,
-      normalDailyMovement: stock.normalDailyMovement || "—",
-      planet: stock.planet || "Not provided",
-      planetIcon: stock.planetIcon || "—",
-      referenceDate,
-      referenceType,
-      referenceValue: referenceType === "Major Low" ? stock.low : stock.high,
-      timeframe,
-    };
-  });
+  return calculateStockPressureDates({
+    stock,
+    referenceDate,
+    referenceTime,
+    referenceType,
+    angles: ANGLES,
+    importantAngles: IMPORTANT_ANGLES,
+    defaultTime: DEFAULT_TIME,
+  }).map((row) => ({ ...row, timeframe, windowDays }));
 }
 function downloadJson(stocks) {
   const link = document.createElement("a");
@@ -145,7 +108,7 @@ function exportExcel(rows) {
 }
 
 export default function StocksTimesPage() {
-  const [stocks, setStocks] = useState(() => normalizeStockData(STOCK_DATA));
+  const [stocks, setStocks] = useState(() => STOCK_MASTER);
   const [stockSymbol, setStockSymbol] = useState("360ONE");
   const [search, setSearch] = useState("");
   const [referenceDate, setReferenceDate] = useState("2026-01-16");
@@ -177,14 +140,14 @@ export default function StocksTimesPage() {
       "gann_stock_data_version",
     );
     if (currentVersion !== STOCK_DATA_VERSION) {
-      saveStockData(normalizeStockData(STOCK_DATA));
+      stockMasterService.saveStockMasterData(STOCK_MASTER);
       window.localStorage.setItem(
         "gann_stock_data_version",
         STOCK_DATA_VERSION,
       );
     }
     const saved =
-      currentVersion === STOCK_DATA_VERSION ? readStockData() : normalizeStockData(STOCK_DATA);
+      currentVersion === STOCK_DATA_VERSION ? stockMasterService.readStockMasterData() : STOCK_MASTER;
     setStocks(saved);
     const last = window.localStorage.getItem(
       "gann_stocks_times_last_selection",
@@ -202,10 +165,7 @@ export default function StocksTimesPage() {
     stocks.find((stock) => stock.stock === stockSymbol) || stocks[0];
   const activeReference = referenceFor(selectedStock, referenceType);
   const filteredStocks = useMemo(
-    () =>
-      stocks.filter((stock) =>
-        stock.stock.toLowerCase().includes(search.toLowerCase()),
-      ),
+    () => stockMasterService.searchStocks(stocks, search),
     [stocks, search],
   );
   const visibleResults = useMemo(
@@ -308,9 +268,9 @@ export default function StocksTimesPage() {
         normalDailyMovement: newStock.normalDailyMovement.trim() || "Not provided",
       },
     ].sort((a, b) => a.stock.localeCompare(b.stock));
-    const enrichedNext = normalizeStockData(next);
+    const enrichedNext = stockMasterService.normalizeStockMasterData(next);
     setStocks(enrichedNext);
-    saveStockData(enrichedNext);
+    stockMasterService.saveStockMasterData(enrichedNext);
     setShowAddStock(false);
     setNewStock({ stock: "", sector: "", referenceDateHigh: "", high: "", referenceDateLow: "", low: "", planet: "", planetIcon: "", normalDailyMovement: "" });
     setMessage("Stock added successfully");
@@ -326,11 +286,11 @@ export default function StocksTimesPage() {
       const invalid = records.find((record) => !String(record.stock || "").trim() || !String(record.sector || "").trim() || record.referenceDateHigh === undefined || record.high === undefined || Number.isNaN(Number(record.high)));
       if (invalid) throw new Error("Each JSON stock requires stock, sector, referenceDateHigh and numeric high.");
       const importedRecords = records.map((record) => ({ ...record, stock: String(record.stock).trim().toUpperCase(), high: Number(record.high), low: record.low === undefined || record.low === "" ? null : Number(record.low), referenceTypeHigh: record.referenceTypeHigh || "Major High", referenceDateLow: record.referenceDateLow || "VERIFY_REQUIRED", referenceTypeLow: record.referenceTypeLow || "Major Low", planetIcon: record.planetIcon || "", normalDailyMovement: record.normalDailyMovement || "Not provided" }));
-      const normalizedImportedRecords = normalizeStockData(importedRecords);
+      const normalizedImportedRecords = stockMasterService.normalizeStockMasterData(importedRecords);
       const importedSymbols = new Set(normalizedImportedRecords.map((record) => record.stock));
       const next = [...stocks.filter((stock) => !importedSymbols.has(stock.stock)), ...normalizedImportedRecords];
-      const enrichedNext = normalizeStockData(next);
-      setStocks(enrichedNext); saveStockData(enrichedNext); setStockSymbol(normalizedImportedRecords[0].stock); setReferenceType("Major High"); setReferenceDate(inputDate(normalizedImportedRecords[0].referenceDateHigh)); setJsonStockInput(""); setShowAddStock(false); setMessage(`${normalizedImportedRecords.length} stock${normalizedImportedRecords.length === 1 ? "" : "s"} added/updated successfully`);
+      const enrichedNext = stockMasterService.normalizeStockMasterData(next);
+      setStocks(enrichedNext); stockMasterService.saveStockMasterData(enrichedNext); setStockSymbol(normalizedImportedRecords[0].stock); setReferenceType("Major High"); setReferenceDate(inputDate(normalizedImportedRecords[0].referenceDateHigh)); setJsonStockInput(""); setShowAddStock(false); setMessage(`${normalizedImportedRecords.length} stock${normalizedImportedRecords.length === 1 ? "" : "s"} added/updated successfully`);
     } catch (jsonError) {
       setError(jsonError.message || "Invalid stock JSON.");
     }

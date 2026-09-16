@@ -1,0 +1,3 @@
+export default function Select({ label, id, options = [], placeholder, className = '', ...props }) {
+  return <div className="ui-field"><label htmlFor={id}>{label}{props.required && <span aria-hidden="true"> *</span>}</label><select id={id} className={`ui-input ui-select ${className}`.trim()} {...props}>{placeholder && <option value="">{placeholder}</option>}{options.map((option) => { const item = typeof option === 'string' ? { value: option, label: option } : option; return <option value={item.value} key={item.value}>{item.label}</option>; })}</select></div>;
+}

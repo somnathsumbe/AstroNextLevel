@@ -31,7 +31,12 @@ export default function GannTable({ rows, total, todayKey, todayFilter }) {
         </div>
         {todayFilter === 'today' && (
           <div className="gann-result-note">
-            <i className="bi bi-check-circle" /> Today's Pressure Stocks: {new Set(rows.map((row) => row.stock || row.Stock)).size}
+            <i className="bi bi-check-circle" /> Today&apos;s Pressure Stocks: {new Set(rows.map((row) => row.stock || row.Stock)).size}
+          </div>
+        )}
+        {todayFilter === 'upcoming' && (
+          <div className="gann-result-note">
+            <i className="bi bi-calendar-event" /> Next available pressure date
           </div>
         )}
       </div>

@@ -45,7 +45,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="login-page">
+    <main id="main-content" className="login-page">
       <div className="login-stars" />
       <div className="login-container">
         <div className="login-intro">
@@ -65,17 +65,17 @@ export default function LoginPage() {
           <div className="panel-kicker">SECURE ACCESS <span>•</span> ADMIN CONSOLE</div>
           <h2 id="login-heading">Welcome back</h2>
           <p className="panel-subtitle">Sign in to your intelligence workspace.</p>
-          <form onSubmit={handleSubmit} noValidate>
-            <div className="login-field"><label htmlFor="username">Username</label><div className="input-wrap"><i className="bi bi-person" /><input id="username" value={form.username} onChange={(event) => setForm({ ...form, username: event.target.value })} autoComplete="username" placeholder="Enter username" /></div></div>
-            <div className="login-field"><label htmlFor="password">Password</label><div className="input-wrap"><i className="bi bi-lock" /><input id="password" type={showPassword ? 'text' : 'password'} value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} autoComplete="current-password" placeholder="Enter password" /><button type="button" className="password-toggle" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? 'Hide password' : 'Show password'}><i className={`bi bi-eye${showPassword ? '-slash' : ''}`} /></button></div></div>
-            <label className="remember-login"><input type="checkbox" checked={rememberMe} onChange={(event) => setRememberMe(event.target.checked)} /> <span>Remember Me</span></label>
+          <form onSubmit={handleSubmit} noValidate aria-labelledby="login-heading" aria-describedby="login-help-text">
+            <div className="login-field"><label htmlFor="username">Username</label><div className="input-wrap"><i className="bi bi-person" aria-hidden="true" /><input id="username" name="username" value={form.username} onChange={(event) => setForm({ ...form, username: event.target.value })} autoComplete="username" placeholder="Enter username" aria-invalid={Boolean(message && message.type === 'error')} /></div></div>
+            <div className="login-field"><label htmlFor="password">Password</label><div className="input-wrap"><i className="bi bi-lock" aria-hidden="true" /><input id="password" name="password" type={showPassword ? 'text' : 'password'} value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} autoComplete="current-password" placeholder="Enter password" aria-invalid={Boolean(message && message.type === 'error')} /><button type="button" className="password-toggle" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? 'Hide password' : 'Show password'}><i className={`bi bi-eye${showPassword ? '-slash' : ''}`} aria-hidden="true" /></button></div></div>
+            <label className="remember-login" htmlFor="remember-login"><input id="remember-login" type="checkbox" checked={rememberMe} onChange={(event) => setRememberMe(event.target.checked)} /> <span>Remember Me</span></label>
             <button className="login-submit" type="submit" disabled={loading}>{loading ? <><span className="spinner-border spinner-border-sm" /> Signing in...</> : <>LOGIN <i className="bi bi-arrow-up-right" /></>}</button>
           </form>
           <div className="panel-footer"><i className="bi bi-shield-check" /> Protected local workspace <span>v1.0</span></div>
         </section>
       </div>
       <div className="login-bottomline">ASTROLOGY × MARKET INTELLIGENCE <span>•</span> RESEARCH CONSOLE</div>
-      {message && <div className="toast-message error" role="alert"><i className="bi bi-exclamation-circle" /> {message.text}</div>}
+      {message && <div className="toast-message error" role="alert" aria-live="assertive"><i className="bi bi-exclamation-circle" aria-hidden="true" /> {message.text}</div>}
     </main>
   );
 }

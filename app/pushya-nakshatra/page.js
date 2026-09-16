@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import pushyaData from '@/data/pushya-nakshatra.json';
+import { pushyaService } from '@/lib/data/services/astrology/pushya.service';
 import { PUSHYA_MONTHS, buildPushyaRecord, dateKey, formatPushyaDate, parsePushyaDateTime } from '@/lib/pushya-utils';
+
+const pushyaData = pushyaService.getData();
 
 const PAGE_SIZE = 10;
 const INDIA_TIME_ZONE = 'Asia/Kolkata';

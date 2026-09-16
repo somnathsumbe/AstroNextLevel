@@ -10,6 +10,28 @@
   --astro-link: #83b9f2;
   --astro-success: #4bd49b;
   --astro-contrast: #f5f8fb;
+
+  --color-primary: var(--astro-primary);
+  --color-secondary: var(--astro-sidebar);
+  --color-accent: var(--astro-accent);
+  --color-background: var(--astro-page);
+  --color-surface: var(--astro-panel);
+  --color-border: var(--line);
+  --color-text: var(--astro-contrast);
+  --color-text-muted: var(--muted);
+  --color-success: var(--astro-success);
+  --color-warning: #f0a36f;
+  --color-danger: #f3a0a0;
+  --color-info: #73b7df;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
 }
 
 [data-theme='professional-blue'] {

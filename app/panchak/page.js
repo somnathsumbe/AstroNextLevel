@@ -1,11 +1,14 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import panchakData from '@/data/panchak.json';
+import { panchakService } from '@/lib/data/services/astrology/panchak.service';
+import { getIndiaToday } from '@/lib/date/date-utils';
+
+const panchakData = panchakService.getData();
 import { PANCHAK_MONTHS, buildPanchakRow, dateKey, formatDisplayDate, parseDateOnly } from '@/lib/panchak-utils';
 
 const PAGE_SIZE = 5;
-const todayKey = () => new Date().toISOString().slice(0, 10);
+const todayKey = () => getIndiaToday();
 
 function downloadCsv(rows, year) {
   const headers = ['Year', 'Month', 'Start Date', 'Start Time', 'End Date', 'End Time', 'Day', 'Market Status', 'Test Date'];

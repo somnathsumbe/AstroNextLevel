@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { publicDataService } from '@/lib/data/services/public-data.service';
 
 export default function ReversalTimeData() {
   const [state, setState] = useState({ loading: true, error: false, records: [], total: 0 });
@@ -11,11 +12,7 @@ export default function ReversalTimeData() {
 
   useEffect(() => {
     let active = true;
-    fetch('/data/reversal-time.json')
-      .then((response) => {
-        if (!response.ok) throw new Error('Unable to load reversal data');
-        return response.json();
-      })
+    publicDataService.getReversalTimeData()
       .then((payload) => {
         if (active) setState({ loading: false, error: false, records: Array.isArray(payload.data) ? payload.data : [], total: payload.recordsTotal || 0 });
       })

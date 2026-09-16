@@ -1,0 +1,3 @@
+export default function StatCard({ label, value, caption, icon, tone = '', className = '' }) {
+  return <article className={`metric-card ui-stat-card ${className}`.trim()}><div className={`metric-icon ${tone}`.trim()}>{icon && <i className={`bi ${icon}`} aria-hidden="true" />}</div><div className="metric-label">{label}</div><div className="metric-value">{value}</div>{caption && <div className="metric-caption">{caption}</div>}</article>;
+}

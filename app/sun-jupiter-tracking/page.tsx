@@ -2,14 +2,14 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import rawData from '@/src/data/sun-jupiter-tracking.json';
+import { sunJupiterService } from '@/lib/data/services/market/sun-jupiter.service';
 import { exportSunJupiterCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, getNextMonday, getWeekFriday, getWeekMonday, monthName, isWeekend } from '@/src/lib/date-utils';
 import type { SunJupiterData, SunJupiterEvent, SunJupiterRecord } from '@/src/types/sun-jupiter';
 
 const PAGE_SIZE = 10;
 const MONTHS = ['All Months', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const DATA = rawData as SunJupiterData;
+const DATA = sunJupiterService.getData() as SunJupiterData;
 
 function buildRecord(event: SunJupiterEvent, index: number): SunJupiterRecord {
   const testDate = getNextMonday(event.date);

@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import Link from "next/link";
+import { stockService } from "@/lib/data/services/stock.service";
 import type { GenerateResponse, GannInputStock, GannPressureRecord } from "@/lib/stocks/stock-types";
 
 const SAMPLE: GannInputStock[] = [{ stock: "360ONE", referenceDateHigh: "16-01-2026", high: 1235.65, referenceTypeHigh: "Major High", referenceDateLow: "07-04-2026", low: 906.2, referenceTypeLow: "Major Low", sector: "Financial Services", planet: "Jupiter", planetIcon: "🟡", normalDailyMovement: "30-50 points" }, { stock: "RELIANCE", referenceDateHigh: "10-01-2026", high: 1500, referenceTypeHigh: "Major High", referenceDateLow: "15-03-2026", low: 1300, referenceTypeLow: "Major Low", sector: "Oil & Gas", planet: "Saturn", planetIcon: "🪐", normalDailyMovement: "30-60 points" }];
@@ -36,9 +37,7 @@ export default function StockGannPressurePage() {
   async function generate() {
     setBusy(true); setMessage(""); setError("");
     try {
-      const response = await fetch("/api/stocks/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ stocks: parseInput(), referenceType, referenceTime }) });
-      const payload = await response.json() as GenerateResponse;
-      if (!response.ok || !payload.success) throw new Error(payload.error?.message || "Unable to generate stock data.");
+      const payload = await stockService.generateStockRecords({ stocks: parseInput(), referenceType, referenceTime }) as GenerateResponse;
       setRecords(payload.data || []); setSummary(payload.summary); setMessage(`Successfully processed ${payload.summary?.validStocks || 0} stocks.`);
       if (payload.errors?.length) setError(payload.errors.map((item) => `${item.stock || "Stock"}: ${item.message}`).join(" "));
     } catch (generationError) { setError(generationError instanceof Error ? generationError.message : "Unable to process JSON."); }

@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import weeklyData from '@/data/weekly-market-tracking.json';
+import { weeklyMarketService } from '@/lib/data/services/market/weekly.service';
 import { MARKET_MONTHS, buildMarketRow, formatLongDate, parseDateOnly } from '@/lib/weekly-market-utils';
+
+const weeklyData = weeklyMarketService.getData();
 
 const PAGE_SIZE = 10;
 const todayKey = () => new Date().toISOString().slice(0, 10);

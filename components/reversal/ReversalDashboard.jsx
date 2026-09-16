@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { PLANETS, PLANET_META, formatDateLabel, getDateRange, getDegreeCategory, getStats, latestByPlanet, parseReversalData, recordsForDate } from '@/lib/reversal/parser';
+import { publicDataService } from '@/lib/data/services/public-data.service';
 
 const initialFilters = { search: '', planet: 'All', session: 'All', minDegree: '', maxDegree: '', fromDate: '', toDate: '' };
 
@@ -41,7 +42,7 @@ export default function ReversalDashboard() {
   const [compareB, setCompareB] = useState('Mercury');
 
   useEffect(() => {
-    fetch('/data/reversal-time.json').then((response) => { if (!response.ok) throw new Error('load'); return response.json(); }).then((payload) => {
+    publicDataService.getReversalTimeData().then((payload) => {
       const parsed = parseReversalData(payload);
       const params = new URLSearchParams(window.location.search);
       const dates = getDateRange(parsed);

@@ -1,0 +1,17 @@
+{
+  "appName": "Astro Market Analytics",
+  "environment": "development",
+  "defaultTheme": "dark-navy",
+  "timezone": "Asia/Kolkata",
+  "dateLocale": "en-IN",
+  "features": {
+    "rememberLogin": true,
+    "showMarketPills": true,
+    "enableProfile": true
+  },
+  "userPreferences": {
+    "theme": "dark-navy",
+    "sidebarCollapsed": false,
+    "compactMode": false
+  }
+}

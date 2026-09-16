@@ -1,0 +1,3 @@
+export default function SearchBox({ value, onChange, placeholder = 'Search', id = 'search', className = '' }) {
+  return <div className={`ui-search-box ${className}`.trim()}><i className="bi bi-search" aria-hidden="true" /><label className="visually-hidden" htmlFor={id}>{placeholder}</label><input id={id} value={value} onChange={(event) => onChange(event.target.value)} placeholder={placeholder} type="search" />{value && <button type="button" onClick={() => onChange('')} aria-label="Clear search" title="Clear search"><i className="bi bi-x-lg" /></button>}</div>;
+}

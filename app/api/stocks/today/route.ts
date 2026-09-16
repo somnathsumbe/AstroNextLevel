@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { formatIndianDate, getIndiaToday, pressureDateKey } from "@/lib/date/date-utils";
-import { getAllStockRecords } from "@/lib/stocks/stock-storage";
+import { getAllStockRecords } from "@/lib/data/repositories/stock.repository";
 import type { TodayStockResponse } from "@/lib/stocks/stock-types";
 
 export const runtime = "nodejs";
@@ -15,8 +15,8 @@ export async function GET(request: Request) {
     const data = all ? records : records.filter((record) => pressureDateKey(record.PressureDate) === today);
     data.sort((left, right) => Number(right.Priority === "HIGH") - Number(left.Priority === "HIGH") || left.IndiaTime.localeCompare(right.IndiaTime) || left.Angle - right.Angle || left.Stock.localeCompare(right.Stock));
     const response: TodayStockResponse = { success: true, date: formatIndianDate(new Date(`${today}T00:00:00Z`)), total: data.length, data };
-    return NextResponse.json(response);
+    return NextResponse.json(response, { headers: { "Cache-Control": "no-store" } });
   } catch {
-    return NextResponse.json({ success: false, error: { code: "STORAGE_ERROR", message: "Unable to load stock pressure data." } }, { status: 500 });
+    return NextResponse.json({ success: false, error: { code: "STORAGE_ERROR", message: "Unable to load stock pressure data." } }, { status: 500, headers: { "Cache-Control": "no-store" } });
   }
 }

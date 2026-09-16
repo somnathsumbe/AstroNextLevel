@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import bhadraData from '@/data/bhadra-dosh.json';
+import { bhadraService } from '@/lib/data/services/astrology/bhadra.service';
+
+const bhadraData = bhadraService.getData();
 import { MONTHS, buildBhadraRecord } from '@/lib/bhadra-utils';
 
 const PAGE_SIZE = 5;
