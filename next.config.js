@@ -6,7 +6,7 @@ const nextConfig = {
   ...(isStaticExport ? { output: 'export' } : {}),
   basePath,
   assetPrefix: isStaticExport ? `${basePath}/` : undefined,
-  trailingSlash: isStaticExport,
+  trailingSlash: false,
   async headers() {
     return [
       {

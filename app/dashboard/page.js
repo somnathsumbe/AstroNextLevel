@@ -6,7 +6,7 @@ import CurrentDayStock from '@/components/gann/CurrentDayStock';
 import DashboardLunarSections from '@/components/dashboard/DashboardLunarSections';
 import DashboardQuickActions from '@/components/dashboard/DashboardQuickActions';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 
 function formatToday(date) {
   return new Intl.DateTimeFormat('en-IN', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }).format(date);
