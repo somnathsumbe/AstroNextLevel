@@ -258,6 +258,40 @@ html[data-theme] .bhadra-table.table tbody tr:hover td { background: color-mix(i
 .weekly-filter-actions { justify-content: flex-start; margin-top: 0; }.next-degree-card { margin-bottom: 19px; padding: 21px 24px; border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 30%, var(--line)); border-left: 3px solid var(--astro-accent, var(--gold)); background: linear-gradient(125deg, color-mix(in srgb, var(--astro-panel, #0f2238) 92%, var(--astro-accent, var(--gold)) 8%), var(--astro-panel, #0f2238)); }.next-degree-card h2 { font-size: 18px; margin: 7px 0; }.next-degree-card h2 i { color: var(--astro-accent, var(--gold)); font-size: 15px; }.next-degree-card p { color: var(--muted); font-size: 12px; margin: 0; }.degree-badge { display: inline-block; padding: 4px 7px; color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 13%, transparent); border: 1px solid color-mix(in srgb, var(--astro-accent, var(--gold)) 25%, transparent); font: 10px 'DM Mono', monospace; }.weekly-table tbody tr.weekend-row td { background: rgba(220,53,69,.055); }.weekly-table tbody tr.weekend-row:hover td { background: rgba(220,53,69,.1); }.weekly-observation { margin-top: 18px; }.weekly-observation .data-panel-heading > i { color: var(--astro-accent, var(--gold)); font-size: 20px; }
 @media (max-width: 767.98px) { .dashboard-welcome { display: block; }.dashboard-date { margin-top: 18px; text-align: left; }.astro-section-heading { align-items: flex-start; }.astro-date-label { margin-top: 5px; }.astro-event-card { min-height: 0; }.upcoming-event-row { gap: 9px; padding: 13px 11px; }.upcoming-date { width: 51px; font-size: 9px; }.upcoming-title { font-size: 11px; } }
 
+.dashboard-live-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 22px; padding: 22px 25px 21px; border: 1px solid rgba(232,184,92,.27); border-left: 3px solid var(--gold); background: linear-gradient(105deg, rgba(232,184,92,.1), rgba(13,34,55,.88) 46%, rgba(8,27,44,.76)); box-shadow: 0 16px 35px rgba(0,0,0,.14); }
+.dashboard-live-copy { min-width: 0; }
+.dashboard-live-kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font: 10px 'DM Mono', monospace; letter-spacing: .16em; }
+.dashboard-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(75,212,155,.13); }
+.dashboard-live-copy > strong { margin-left: 14px; color: #9eb2c2; font: 10px 'DM Mono', monospace; letter-spacing: .12em; }
+.dashboard-live-copy h1 { margin: 12px 0 4px; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.04em; }
+.dashboard-live-copy p { margin: 0; color: var(--muted); font-size: 12px; }
+.dashboard-live-date { min-width: 150px; color: var(--gold); font: 11px 'DM Mono', monospace; text-align: right; }
+.dashboard-live-date i { margin-right: 6px; }
+.dashboard-live-date small { display: block; margin-top: 7px; color: var(--muted); font-size: 9px; }
+.dashboard-event-focus { display: grid; gap: 18px; }
+.dashboard-event-focus .astro-events-section { margin: 0; padding: 22px 24px 23px; border: 1px solid var(--line); background: rgba(13,34,55,.72); }
+.dashboard-event-focus .astro-summary-section { margin: 0; }
+.dashboard-event-focus .upcoming-events-section { margin: 0; padding: 22px 24px 24px; border: 1px solid var(--line); background: rgba(13,34,55,.5); }
+.dashboard-event-focus .astro-section-heading { margin-bottom: 19px; }
+.dashboard-event-focus .astro-section-heading h2 { font-size: 20px; }
+.dashboard-event-focus .astro-empty-state { min-height: 150px; border-style: dashed; background: rgba(8,27,44,.45); }
+.dashboard-secondary { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
+.dashboard-secondary-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; color: var(--muted); font: 10px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.dashboard-secondary-heading .eyebrow { font-size: 10px; }
+.dashboard-secondary .dashboard-lunar-wrap { gap: 18px; margin-bottom: 18px; }
+.dashboard-secondary .dashboard-lunar-section { padding: 17px 19px; background: rgba(13,34,55,.48); }
+
+@media (max-width: 767.98px) {
+	.dashboard-live-header { display: block; padding: 19px 17px; }
+	.dashboard-live-copy > strong { margin-left: 10px; }
+	.dashboard-live-copy h1 { font-size: 27px; }
+	.dashboard-live-date { margin-top: 17px; text-align: left; }
+	.dashboard-event-focus .astro-events-section, .dashboard-event-focus .upcoming-events-section { padding: 18px 15px; }
+	.dashboard-event-focus .astro-section-heading h2 { font-size: 17px; }
+	.dashboard-secondary { margin-top: 28px; }
+	.dashboard-secondary-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
+}
+
 .grah-records-page { min-width: 0; max-width: 100%; overflow-x: hidden; }
 .grah-summary-panel, .grah-record-card, .grah-detail-panel { background: linear-gradient(145deg, color-mix(in srgb, var(--astro-panel, #0f2238) 97%, white 3%), var(--astro-panel, #0f2238)); border: 1px solid var(--line); }
 .grah-summary-panel { margin-bottom: 25px; padding: 21px; }

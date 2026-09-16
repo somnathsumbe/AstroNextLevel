@@ -147,36 +147,41 @@ export default function DashboardPage() {
 
   return (
     <div className="dashboard-page astro-dashboard">
-      <div className="dashboard-welcome">
-        <div>
-          <div className="eyebrow">ASTROLOGY × MARKET OBSERVATION</div>
-          <h1 className="page-title">Astro Market Analytics</h1>
-          <p className="page-subtitle">Astrology-based calendar &amp; market observation</p>
+      <section className="dashboard-live-header" aria-label="Live calendar status">
+        <div className="dashboard-live-copy">
+          <span className="dashboard-live-kicker"><span className="dashboard-live-dot" /> LIVE CALENDAR</span>
+          <strong>ASIA-KOLKATA</strong>
+          <h1>Astro Market Analytics</h1>
+          <p>Astrology-based calendar &amp; market observation</p>
         </div>
-        <div className="dashboard-date"><i className="bi bi-calendar3" /> {now ? formatToday(now) : 'Loading date'}<small>India · Asia/Kolkata</small></div>
+        <div className="dashboard-live-date"><i className="bi bi-calendar3" /><span>{now ? formatToday(now) : 'Loading date'}</span><small>India Standard Time</small></div>
+      </section>
+
+      <div className="dashboard-event-focus">
+        <TodayAstroEvents events={todayEvents} dateLabel={todayKey ? formatToday(now) : 'Loading'} />
+        <AstroEventSummary events={todayEvents} />
+        <UpcomingAstroEvents events={upcomingEvents} />
       </div>
 
-      <div className="dashboard-lunar-wrap">
-        {renderLunarSection({
-          title: 'Amavasya',
-          dates: lunar.amavasya.recent,
-          selectedDate: selectedAmavasyaDate,
-          onSelect: (dateKey) => setSelectedAmavasyaDate(dateKey),
-        })}
+      <section className="dashboard-secondary" aria-label="Market and lunar observations">
+        <div className="dashboard-secondary-heading"><span className="eyebrow">REFERENCE DATA</span><span>Market &amp; lunar cycles</span></div>
+        <div className="dashboard-lunar-wrap">
+          {renderLunarSection({
+            title: 'Amavasya',
+            dates: lunar.amavasya.recent,
+            selectedDate: selectedAmavasyaDate,
+            onSelect: (dateKey) => setSelectedAmavasyaDate(dateKey),
+          })}
 
-        {renderLunarSection({
-          title: 'Purnima',
-          dates: lunar.purnima.recent,
-          selectedDate: selectedPurnimaDate,
-          onSelect: (dateKey) => setSelectedPurnimaDate(dateKey),
-        })}
-      </div>
-
-      <CurrentDayStock />
-
-      <TodayAstroEvents events={todayEvents} dateLabel={todayKey ? formatToday(now) : 'Loading'} />
-      <AstroEventSummary events={todayEvents} />
-      <UpcomingAstroEvents events={upcomingEvents} />
+          {renderLunarSection({
+            title: 'Purnima',
+            dates: lunar.purnima.recent,
+            selectedDate: selectedPurnimaDate,
+            onSelect: (dateKey) => setSelectedPurnimaDate(dateKey),
+          })}
+        </div>
+        <CurrentDayStock />
+      </section>
     </div>
   );
 }
