@@ -1,1 +1,113 @@
-[]
+[
+  {
+    "id": "TRD-20260917- 142942-5341",
+    "stock": "TRENT",
+    "tradeType": "BUY",
+    "tradeDate": "2026-09-17",
+    "tradeTime": "14:27:00",
+    "entryPrice": 2781,
+    "quantity": 100,
+    "targetPrice": 3343,
+    "stopLoss": 2650,
+    "notes": "Gann Angle: 360°",
+    "notification": {
+      "enabled": true,
+      "duration": "7D",
+      "notificationDateTime": "2026-09-24T14:27:00.000+05:30",
+      "status": "PENDING",
+      "intervals": [
+        7
+      ],
+      "events": [
+        {
+          "id": "TRD-20260917- 142942-5341-7",
+          "tradeId": "TRD-20260917- 142942-5341",
+          "interval": 7,
+          "scheduledAt": "2026-09-24T14:27:00.000+05:30",
+          "status": "scheduled"
+        }
+      ]
+    },
+    "review": {
+      "exitType": null,
+      "exitPrice": null,
+      "exitDate": null
+    },
+    "result": {
+      "status": "PENDING",
+      "profitLoss": null,
+      "profitLossPercent": null
+    },
+    "marketReference": {
+      "gannAngle": 360,
+      "pressureDate": "17 Sept 2026",
+      "planet": "Venus",
+      "sector": "Retail / Luxury / Lifestyle",
+      "referenceType": "Major High"
+    },
+    "createdAt": "2026-09-17T14:29:42.046+05:30",
+    "updatedAt": "2026-09-17T14:29:42.046+05:30"
+  },
+  {
+    "id": "TRD-20260917- 144228-4329",
+    "stock": "KEI",
+    "tradeType": "BUY",
+    "tradeDate": "2026-09-17",
+    "tradeTime": "14:31:00",
+    "entryPrice": 4484,
+    "quantity": 100,
+    "targetPrice": 5400,
+    "stopLoss": 4405,
+    "notes": "Gann Angle: 30°",
+    "notification": {
+      "enabled": true,
+      "duration": "7D",
+      "notificationDateTime": "2026-09-24T14:31:00.000+05:30",
+      "status": "PENDING",
+      "intervals": [
+        7,
+        14
+      ],
+      "events": []
+    },
+    "review": {
+      "exitType": null,
+      "exitPrice": null,
+      "exitDate": null
+    },
+    "result": {
+      "status": "PENDING",
+      "profitLoss": null,
+      "profitLossPercent": null
+    },
+    "marketReference": {
+      "gannAngle": 30,
+      "pressureDate": "17 Sept 2026",
+      "planet": "Mars",
+      "sector": "Industrial Products",
+      "referenceType": "Major High"
+    },
+    "createdAt": "2026-09-17T14:42:28.521+05:30",
+    "updatedAt": "2026-09-17T14:42:28.521+05:30"
+  }
+]
+tType": null,
+      "exitPrice": null,
+      "exitDate": null
+    },
+    "result": {
+      "status": "PENDING",
+      "profitLoss": null,
+      "profitLossPercent": null
+    },
+    "marketReference": {
+      "gannAngle": 30,
+      "pressureDate": "17 Sept 2026",
+      "planet": "Mars",
+      "sector": "Industrial Products",
+      "referenceType": "Major High"
+    },
+    "createdAt": "2026-09-17T14:42:28.521+05:30",
+    "updatedAt": "2026-09-17T14:42:28.521+05:30"
+  }
+]
