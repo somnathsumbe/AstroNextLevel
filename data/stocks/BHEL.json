@@ -2,9 +2,9 @@
   "stock": "BHEL",
   "metadata": {
     "sector": "Capital Goods",
-    "planet": "Saturn",
-    "planetIcon": "♄",
-    "normalDailyMovement": "VERIFY_REQUIRED"
+    "planet": "Mars",
+    "planetIcon": "🔴",
+    "normalDailyMovement": "30-40 points"
   },
   "references": {
     "high": {
@@ -13,8 +13,8 @@
       "type": "Major High"
     },
     "low": {
-      "date": "11-09-2025",
-      "value": 219.42,
+      "date": "09-04-2026",
+      "value": 239.25,
       "type": "Major Low"
     }
   },
@@ -26,15 +26,15 @@
       "Priority": "SECONDARY",
       "Angle": 30,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -43,15 +43,15 @@
       "Priority": "HIGH",
       "Angle": 45,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -60,15 +60,15 @@
       "Priority": "SECONDARY",
       "Angle": 60,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -77,15 +77,15 @@
       "Priority": "HIGH",
       "Angle": 90,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -94,15 +94,15 @@
       "Priority": "SECONDARY",
       "Angle": 120,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -111,15 +111,15 @@
       "Priority": "HIGH",
       "Angle": 135,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -128,15 +128,15 @@
       "Priority": "SECONDARY",
       "Angle": 144,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -145,15 +145,15 @@
       "Priority": "HIGH",
       "Angle": 180,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -162,15 +162,15 @@
       "Priority": "SECONDARY",
       "Angle": 216,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -179,15 +179,15 @@
       "Priority": "HIGH",
       "Angle": 225,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -196,15 +196,15 @@
       "Priority": "SECONDARY",
       "Angle": 240,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -213,15 +213,15 @@
       "Priority": "HIGH",
       "Angle": 270,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -230,15 +230,15 @@
       "Priority": "HIGH",
       "Angle": 315,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     },
     {
       "Stock": "BHEL",
@@ -247,15 +247,15 @@
       "Priority": "HIGH",
       "Angle": 360,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
       "Sector": "Capital Goods",
       "ReferenceValue": 446.5,
       "ReferenceDate": "17-07-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "11-09-2025",
-      "Low": 219.42
+      "Movement": "30-40 points",
+      "LowDate": "09-04-2026",
+      "Low": 239.25
     }
   ]
 }

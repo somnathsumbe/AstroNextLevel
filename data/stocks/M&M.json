@@ -1,10 +1,10 @@
 {
   "stock": "M&M",
   "metadata": {
-    "sector": "Automobile / Agriculture Equipment",
-    "planet": "Saturn",
-    "planetIcon": "♄",
-    "normalDailyMovement": "VERIFY_REQUIRED"
+    "sector": "Automobiles - Passenger Cars & Utility Vehicles",
+    "planet": "Mars",
+    "planetIcon": "🔴",
+    "normalDailyMovement": "40-55 points"
   },
   "references": {
     "high": {
@@ -13,8 +13,8 @@
       "type": "Major High"
     },
     "low": {
-      "date": "VERIFY_REQUIRED",
-      "value": 2896,
+      "date": "30-03-2026",
+      "value": 2896.3,
       "type": "Major Low"
     }
   },
@@ -26,15 +26,15 @@
       "Priority": "SECONDARY",
       "Angle": 30,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -43,15 +43,15 @@
       "Priority": "HIGH",
       "Angle": 45,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -60,15 +60,15 @@
       "Priority": "SECONDARY",
       "Angle": 60,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -77,15 +77,15 @@
       "Priority": "HIGH",
       "Angle": 90,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -94,15 +94,15 @@
       "Priority": "SECONDARY",
       "Angle": 120,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -111,15 +111,15 @@
       "Priority": "HIGH",
       "Angle": 135,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -128,15 +128,15 @@
       "Priority": "SECONDARY",
       "Angle": 144,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -145,15 +145,15 @@
       "Priority": "HIGH",
       "Angle": 180,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -162,15 +162,15 @@
       "Priority": "SECONDARY",
       "Angle": 216,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -179,15 +179,15 @@
       "Priority": "HIGH",
       "Angle": 225,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -196,15 +196,15 @@
       "Priority": "SECONDARY",
       "Angle": 240,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -213,15 +213,15 @@
       "Priority": "HIGH",
       "Angle": 270,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -230,15 +230,15 @@
       "Priority": "HIGH",
       "Angle": 315,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     },
     {
       "Stock": "M&M",
@@ -247,15 +247,15 @@
       "Priority": "HIGH",
       "Angle": 360,
       "IndiaTime": "09:15",
-      "Planet": "Saturn",
-      "PlanetIcon": "♄",
-      "Sector": "Automobile / Agriculture Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Automobiles - Passenger Cars & Utility Vehicles",
       "ReferenceValue": 3839.9,
       "ReferenceDate": "05-01-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "VERIFY_REQUIRED",
-      "Low": 2896
+      "Movement": "40-55 points",
+      "LowDate": "30-03-2026",
+      "Low": 2896.3
     }
   ]
 }

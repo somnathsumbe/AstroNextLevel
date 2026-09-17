@@ -1,10 +1,10 @@
 {
   "stock": "GVT&D",
   "metadata": {
-    "sector": "Power / Heavy Electrical Equipment",
-    "planet": "Sun",
-    "planetIcon": "☀️",
-    "normalDailyMovement": "VERIFY_REQUIRED"
+    "sector": "Capital Goods",
+    "planet": "Mars",
+    "planetIcon": "🔴",
+    "normalDailyMovement": "50-80 points"
   },
   "references": {
     "high": {
@@ -13,8 +13,8 @@
       "type": "Major High"
     },
     "low": {
-      "date": "14-07-2025",
-      "value": 2265,
+      "date": "21-01-2026",
+      "value": 2523.2,
       "type": "Major Low"
     }
   },
@@ -26,15 +26,15 @@
       "Priority": "SECONDARY",
       "Angle": 30,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -43,15 +43,15 @@
       "Priority": "HIGH",
       "Angle": 45,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -60,15 +60,15 @@
       "Priority": "SECONDARY",
       "Angle": 60,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -77,15 +77,15 @@
       "Priority": "HIGH",
       "Angle": 90,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -94,15 +94,15 @@
       "Priority": "SECONDARY",
       "Angle": 120,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -111,15 +111,15 @@
       "Priority": "HIGH",
       "Angle": 135,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -128,15 +128,15 @@
       "Priority": "SECONDARY",
       "Angle": 144,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -145,15 +145,15 @@
       "Priority": "HIGH",
       "Angle": 180,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -162,15 +162,15 @@
       "Priority": "SECONDARY",
       "Angle": 216,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -179,15 +179,15 @@
       "Priority": "HIGH",
       "Angle": 225,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -196,15 +196,15 @@
       "Priority": "SECONDARY",
       "Angle": 240,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -213,15 +213,15 @@
       "Priority": "HIGH",
       "Angle": 270,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -230,15 +230,15 @@
       "Priority": "HIGH",
       "Angle": 315,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     },
     {
       "Stock": "GVT&D",
@@ -247,15 +247,15 @@
       "Priority": "HIGH",
       "Angle": 360,
       "IndiaTime": "09:15",
-      "Planet": "Sun",
-      "PlanetIcon": "☀️",
-      "Sector": "Power / Heavy Electrical Equipment",
+      "Planet": "Mars",
+      "PlanetIcon": "🔴",
+      "Sector": "Capital Goods",
       "ReferenceValue": 5650,
       "ReferenceDate": "23-06-2026",
       "ReferenceType": "Major High",
-      "Movement": "VERIFY_REQUIRED",
-      "LowDate": "14-07-2025",
-      "Low": 2265
+      "Movement": "50-80 points",
+      "LowDate": "21-01-2026",
+      "Low": 2523.2
     }
   ]
 }
