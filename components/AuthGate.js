@@ -8,7 +8,7 @@ import { getRoutePath } from '@/lib/site-path';
 export default function AuthGate({ children }) {
   const pathname = getRoutePath(usePathname());
   const router = useRouter();
-  const isPublicRoute = pathname === '/login' || pathname === '/register';
+  const isPublicRoute = pathname === '/' || pathname === '/login' || pathname === '/register';
   const [ready, setReady] = useState(isPublicRoute);
 
   useEffect(() => {

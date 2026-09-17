@@ -16,6 +16,7 @@ import { purnimaService } from "@/lib/data/services/astrology/purnima.service";
 import { parsePurnimaDate } from "@/lib/purnima-utils";
 import { publicDataService } from "@/lib/data/services/public-data.service";
 import { stockService } from "@/lib/data/services/stock.service";
+import TradeFormModal from "@/components/trades/TradeFormModal";
 
 const amavasyaData = amavasyaService.getData();
 const purnimaData = purnimaService.getData();
@@ -102,6 +103,7 @@ export default function TodayStockPage() {
       ? "all"
       : relativeDateKey(todayKey, filters.dateOffset);
   const [lunarDates, setLunarDates] = useState(getRecentLunarDates);
+  const [tradeRecord, setTradeRecord] = useState(null);
 
   useEffect(() => {
     stockService.getAllStockRecords()
@@ -319,8 +321,10 @@ export default function TodayStockPage() {
           total={data.length}
           todayKey={todayKey}
           todayFilter={filters.dateOffset === 0 ? "today" : ""}
+          onConfigureTrade={setTradeRecord}
         />
       )}
+      <TradeFormModal record={tradeRecord} onClose={() => setTradeRecord(null)} />
       {!loading && !error && filteredData.length > TABLE_PAGE_SIZE && <div className="stock-table-pagination" aria-label="Stock pressure pagination"><span>Showing {(tablePage - 1) * TABLE_PAGE_SIZE + 1}–{Math.min(tablePage * TABLE_PAGE_SIZE, filteredData.length)} of {filteredData.length}</span><div><button className="subtle-action" type="button" disabled={tablePage === 1} onClick={() => setTablePage((page) => page - 1)} aria-label="Previous pressure records">Previous</button><span aria-live="polite">Page {tablePage} of {totalTablePages}</span><button className="subtle-action" type="button" disabled={tablePage === totalTablePages} onClick={() => setTablePage((page) => page + 1)} aria-label="Next pressure records">Next</button></div></div>}
     </main>
   );

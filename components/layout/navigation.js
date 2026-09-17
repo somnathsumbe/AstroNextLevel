@@ -39,6 +39,7 @@ export const navigation = [
       { label: 'Gann Pressure Generator', href: '/market-analysis/stock-gann-pressure', icon: 'bi-lightning-charge' },
       { label: 'Today Stock', href: '/today-stock', icon: 'bi-bar-chart-line' },
       { label: 'Stocks Times', href: '/stocks-times', icon: 'bi-clock' },
+      { label: 'Stock Backtesting', href: '/stock-backtesting', icon: 'bi-clipboard-data' },
     ],
   },
 ];

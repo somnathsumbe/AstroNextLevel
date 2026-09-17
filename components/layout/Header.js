@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getLoggedUser, logout } from '@/lib/auth';
 import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
+import NotificationCenter from '@/components/trades/NotificationCenter';
 import { getRoutePath } from '@/lib/site-path';
 
 export default function Header() {
@@ -45,6 +46,7 @@ export default function Header() {
           <div className="d-none d-sm-block"><strong>{user?.name || 'User'}</strong><small>{user?.username || ''}</small></div>
         </Link>
         <ThemeSwitcher />
+        <NotificationCenter />
         <button type="button" className="logout-button" onClick={handleLogout}>
           <i className="bi bi-box-arrow-right" /> <span>Logout</span>
         </button>

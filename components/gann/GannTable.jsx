@@ -10,7 +10,7 @@ function copyToClipboard(value) {
   navigator.clipboard.writeText(text);
 }
 
-export default function GannTable({ rows, total, todayKey, todayFilter }) {
+export default function GannTable({ rows, total, todayKey, todayFilter, onConfigureTrade, tradeByStock, onToggleNotification }) {
   const [copiedHighDate, setCopiedHighDate] = useState('');
 
   async function copyHighDate(stock, date) {
@@ -41,11 +41,17 @@ export default function GannTable({ rows, total, todayKey, todayFilter }) {
         )}
       </div>
 
-      {rows.length === 0 ? (
+      {rows.length === 0 && !onConfigureTrade ? (
         <div className="state-panel">
           <i className="bi bi-search" />
           <strong>No pressure dates match these filters.</strong>
           <span>Try resetting one or more filters.</span>
+        </div>
+      ) : rows.length === 0 ? (
+        <div className="state-panel">
+          <i className="bi bi-database-exclamation" />
+          <strong>No stock records are available yet.</strong>
+          <span>Load stock pressure data before creating a trade notification.</span>
         </div>
       ) : (
         <div className="table-responsive">
@@ -55,6 +61,7 @@ export default function GannTable({ rows, total, todayKey, todayFilter }) {
               <tr>
                 <th>#</th>
                 <th>Stock</th>
+                {onConfigureTrade && <th>Notification</th>}
                 <th>Pressure Date</th>
                 <th>Angle</th>
                 <th>Day</th>
@@ -104,6 +111,14 @@ export default function GannTable({ rows, total, todayKey, todayFilter }) {
                         </button>
                       </div>
                     </td>
+                    {onConfigureTrade && (
+                      <td data-label="Notification">
+                        <div className="form-check form-switch trade-notification-switch">
+                          <input className="form-check-input" type="checkbox" id={`notification-${stockValue}-${index}`} checked={Boolean(tradeByStock?.[stockValue]?.notification?.enabled)} onChange={(event) => onToggleNotification ? onToggleNotification(row, event.target.checked) : event.target.checked && onConfigureTrade(row)} aria-label={`Enable notifications for ${stockValue}`} />
+                          <label className="form-check-label" htmlFor={`notification-${stockValue}-${index}`}>{tradeByStock?.[stockValue]?.notification?.enabled ? 'ON' : 'OFF'}</label>
+                        </div>
+                      </td>
+                    )}
                     <td data-label="Pressure Date">
                       <strong>{pressureDateValue}</strong>
                       {today && <span className="badge bg-success ms-1">TODAY</span>}
