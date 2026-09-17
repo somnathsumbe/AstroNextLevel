@@ -16,8 +16,13 @@ export default function StockBacktestingPage() {
   async function loadTrades() {
     try {
       const response = await fetch('/api/stock-trades', { cache: 'no-store' });
+      const contentType = response.headers.get('content-type') || '';
+      if (!response.ok || !contentType.includes('application/json')) {
+        setTrades([]);
+        return;
+      }
       const payload = await response.json();
-      if (!response.ok || !payload.success) throw new Error(payload.error?.message || 'Unable to load trades.');
+      if (!payload.success) throw new Error(payload.error?.message || 'Unable to load trades.');
       setTrades(payload.data || []);
     } catch (loadError) {
       setError(loadError.message);

@@ -891,6 +891,10 @@ html[data-theme] .bhadra-table.table tbody tr:hover td { background: color-mix(i
 .stock-backtesting-page .backtest-empty-state { display: flex; min-height: 150px; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--muted); text-align: center; }
 .stock-backtesting-page .backtest-empty-state i { color: var(--astro-accent, var(--gold)); font-size: 24px; }
 .stock-backtesting-page .backtest-empty-state strong { color: var(--astro-contrast, var(--white)); }
+.astro-dashboard .dashboard-lunar-card { border: 1px solid transparent; border-radius: 5px; transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
+.astro-dashboard .dashboard-lunar-card.is-selected { border-color: var(--astro-accent, var(--gold)); background: color-mix(in srgb, var(--astro-accent, var(--gold)) 14%, transparent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--astro-accent, var(--gold)) 28%, transparent), inset 0 0 0 1px color-mix(in srgb, var(--astro-accent, var(--gold)) 40%, transparent); }
+.astro-dashboard .dashboard-lunar-card.is-selected .dashboard-lunar-date { color: var(--astro-accent, var(--gold)); font-weight: 800; }
+.astro-dashboard .dashboard-lunar-card.is-selected .dashboard-lunar-date-button:focus-visible { outline: 2px solid var(--astro-accent, var(--gold)); outline-offset: 3px; }
 .stock-backtesting-page .summary-card { min-height: 105px; }
 .stock-backtesting-page .summary-card strong, .stock-backtesting-page .summary-card .metric-label { display: block; }
 .stock-backtesting-page .summary-card strong { margin-top: 8px; font-size: 22px; }

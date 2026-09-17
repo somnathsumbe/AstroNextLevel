@@ -24,6 +24,18 @@ export default function CurrentDayStock() {
   const [trades, setTrades] = useState([]);
   const [existingTrade, setExistingTrade] = useState(null);
 
+  async function loadTradeData() {
+    try {
+      const response = await fetch('/api/stock-trades', { cache: 'no-store' });
+      const contentType = response.headers.get('content-type') || '';
+      if (!response.ok || !contentType.includes('application/json')) return [];
+      const payload = await response.json();
+      return payload.data || [];
+    } catch {
+      return [];
+    }
+  }
+
   useEffect(() => {
     Promise.all([
       stockService.getTodayStockRecords()
@@ -35,11 +47,11 @@ export default function CurrentDayStock() {
           return;
         }
 
-        const allPayload = await stockService.getAllStockRecords();
+        const allPayload = await stockService.getAllStockRecords().catch(() => publicDataService.getGannPressureData());
         setData(normalizePressureRecords(allPayload.data || allPayload || []));
         setShowingUpcoming(true);
       }),
-      fetch('/api/stock-trades', { cache: 'no-store' }).then((response) => response.json()).then((payload) => setTrades(payload.data || [])),
+      loadTradeData().then(setTrades),
     ])
       .catch((loadError) => setError(loadError.message))
       .finally(() => setLoading(false));
