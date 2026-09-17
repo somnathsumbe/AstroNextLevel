@@ -1,8 +1,8 @@
 export type TradeType = 'BUY' | 'SELL';
-export type NotificationDuration = '7D' | '14D';
+export type NotificationDuration = '1M' | '2M' | '7D' | '14D' | '21D';
 export type NotificationStatus = 'PENDING' | 'TRIGGERED' | 'EXPIRED' | 'DISABLED';
 export type ResultStatus = 'PENDING' | 'SUCCESS' | 'FAILED';
-export type NotificationInterval = 7 | 14;
+export type NotificationInterval = 1 | 2 | 7 | 14 | 21;
 export type TradeNotificationState = 'scheduled' | 'triggered' | 'read' | 'exit-saved';
 
 export interface MarketReference {

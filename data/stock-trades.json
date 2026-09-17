@@ -68,7 +68,22 @@
         7,
         14
       ],
-      "events": []
+      "events": [
+        {
+          "id": "TRD-20260917- 144228-4329-7",
+          "tradeId": "TRD-20260917- 144228-4329",
+          "interval": 7,
+          "scheduledAt": "2026-09-24T14:31:00.000+05:30",
+          "status": "scheduled"
+        },
+        {
+          "id": "TRD-20260917- 144228-4329-14",
+          "tradeId": "TRD-20260917- 144228-4329",
+          "interval": 14,
+          "scheduledAt": "2026-10-01T14:31:00.000+05:30",
+          "status": "scheduled"
+        }
+      ]
     },
     "review": {
       "exitType": null,
@@ -89,25 +104,66 @@
     },
     "createdAt": "2026-09-17T14:42:28.521+05:30",
     "updatedAt": "2026-09-17T14:42:28.521+05:30"
-  }
-]
-tType": null,
-      "exitPrice": null,
-      "exitDate": null
+  },
+  {
+    "id": "TRD-20260917- 164551-2497",
+    "stock": "BALKRISIND",
+    "tradeType": "BUY",
+    "tradeDate": "2026-09-17",
+    "tradeTime": "16:45:00",
+    "entryPrice": 2244,
+    "quantity": 100,
+    "targetPrice": 2520,
+    "stopLoss": 2200,
+    "notes": "Gann Angle: 216°",
+    "notification": {
+      "enabled": false,
+      "duration": "7D",
+      "notificationDateTime": "2026-09-24T16:45:00.000+05:30",
+      "status": "DISABLED",
+      "intervals": [
+        1,
+        2
+      ],
+      "events": [
+        {
+          "id": "TRD-20260917- 164551-2497-1",
+          "tradeId": "TRD-20260917- 164551-2497",
+          "interval": 1,
+          "scheduledAt": "2026-09-17T16:46:00.000+05:30",
+          "status": "read",
+          "triggeredAt": "2026-09-17T16:46:07.836+05:30",
+          "readAt": "2026-09-17T16:47:06.824+05:30"
+        },
+        {
+          "id": "TRD-20260917- 164551-2497-2",
+          "tradeId": "TRD-20260917- 164551-2497",
+          "interval": 2,
+          "scheduledAt": "2026-09-17T16:47:00.000+05:30",
+          "status": "read",
+          "triggeredAt": "2026-09-17T16:47:06.821+05:30",
+          "readAt": "2026-09-17T16:47:18.900+05:30"
+        }
+      ]
+    },
+    "review": {
+      "exitType": "BUY",
+      "exitPrice": 2400,
+      "exitDate": "2026-09-17"
     },
     "result": {
-      "status": "PENDING",
-      "profitLoss": null,
-      "profitLossPercent": null
+      "status": "SUCCESS",
+      "profitLoss": 15600,
+      "profitLossPercent": 6.95
     },
     "marketReference": {
-      "gannAngle": 30,
+      "gannAngle": 216,
       "pressureDate": "17 Sept 2026",
       "planet": "Mars",
-      "sector": "Industrial Products",
+      "sector": "Automobiles - Tyres",
       "referenceType": "Major High"
     },
-    "createdAt": "2026-09-17T14:42:28.521+05:30",
-    "updatedAt": "2026-09-17T14:42:28.521+05:30"
+    "createdAt": "2026-09-17T16:45:51.660+05:30",
+    "updatedAt": "2026-09-17T16:47:21.799+05:30"
   }
 ]

@@ -1,12 +1,15 @@
 import type { CreateTradeInput, NotificationInterval, ReviewTradeInput, StockTrade, TradeNotification, TradeNotificationConfigInput, TradeNotificationReviewInput } from '@/lib/trades/trade-types';
 
 export const TRADE_DURATIONS = {
+  '1M': 1,
+  '2M': 2,
   '7D': 7,
   '14D': 14,
+  '21D': 21,
 } as const;
 
 const IST_OFFSET_MINUTES = 330;
-export const NOTIFICATION_INTERVALS: NotificationInterval[] = [7, 14];
+export const NOTIFICATION_INTERVALS: NotificationInterval[] = [1, 2, 7, 14, 21];
 
 export function normalizeIntervals(values: unknown, fallback: NotificationInterval[] = [7]) {
   const intervals = Array.isArray(values)
@@ -42,9 +45,10 @@ export function formatIndiaDateTime(date = new Date()) {
 
 export function notificationDateTime(tradeDate: string, tradeTime: string, duration: keyof typeof TRADE_DURATIONS) {
   const date = parseLocalDateTime(tradeDate, tradeTime);
-  const days = TRADE_DURATIONS[duration];
-  if (!days) throw new Error('Notification duration is invalid.');
-  return formatIndiaDateTime(new Date(date.getTime() + days * 24 * 60 * 60_000));
+  const value = TRADE_DURATIONS[duration];
+  if (!value) throw new Error('Notification duration is invalid.');
+  const milliseconds = duration.endsWith('M') ? value * 60_000 : value * 24 * 60 * 60_000;
+  return formatIndiaDateTime(new Date(date.getTime() + milliseconds));
 }
 
 export function calculateResult(trade: Pick<StockTrade, 'tradeType' | 'entryPrice' | 'quantity'>, exitPrice: number) {
@@ -66,7 +70,8 @@ function tradeStartTime(trade: Pick<StockTrade, 'tradeDate' | 'tradeTime'>) {
 }
 
 function eventFor(trade: StockTrade, interval: NotificationInterval, now: Date): TradeNotification {
-  const scheduledAt = formatIndiaDateTime(new Date(tradeStartTime(trade).getTime() + interval * 24 * 60 * 60_000));
+  const milliseconds = interval <= 2 ? interval * 60_000 : interval * 24 * 60 * 60_000;
+  const scheduledAt = formatIndiaDateTime(new Date(tradeStartTime(trade).getTime() + milliseconds));
   const existing = trade.notification.events?.find((event) => event.id === `${trade.id}-${interval}`);
   return existing || { id: `${trade.id}-${interval}`, tradeId: trade.id, interval, scheduledAt, status: 'scheduled' };
 }
@@ -90,7 +95,8 @@ export function reconcileNotifications(trade: StockTrade, now = new Date()): Sto
 export function configureNotifications(trade: StockTrade, input: TradeNotificationConfigInput, now = new Date()) {
   const intervals = normalizeIntervals(input.intervals, []);
   if (input.enabled && !intervals.length) throw new Error('Select at least one notification interval.');
-  const next: StockTrade = { ...trade, notification: { ...trade.notification, enabled: input.enabled, intervals, duration: intervals.includes(14) ? '14D' : '7D', status: input.enabled ? 'PENDING' : 'DISABLED', events: input.enabled ? intervals.map((interval) => eventFor({ ...trade, notification: { ...trade.notification, intervals } }, interval, now)) : trade.notification.events || [] }, updatedAt: formatIndiaDateTime(now) };
+  const duration = intervals.includes(21) ? '21D' : intervals.includes(14) ? '14D' : intervals.includes(7) ? '7D' : intervals.includes(2) ? '2M' : '1M';
+  const next: StockTrade = { ...trade, notification: { ...trade.notification, enabled: input.enabled, intervals, duration, status: input.enabled ? 'PENDING' : 'DISABLED', events: input.enabled ? intervals.map((interval) => eventFor({ ...trade, notification: { ...trade.notification, intervals } }, interval, now)) : trade.notification.events || [] }, updatedAt: formatIndiaDateTime(now) };
   return reconcileNotifications(next, now);
 }
 
@@ -116,7 +122,7 @@ export function createTrade(input: CreateTradeInput, now = new Date()): StockTra
   const duration = input.duration || '7D';
   const notificationEnabled = input.enabled !== false;
   if (input.intervals && !normalizeIntervals(input.intervals, []).length && notificationEnabled) throw new Error('Select at least one notification interval.');
-  const intervals = normalizeIntervals(input.intervals, duration === '14D' ? [14] : [7]);
+  const intervals = normalizeIntervals(input.intervals, duration === '21D' ? [21] : duration === '14D' ? [14] : duration === '2M' ? [2] : duration === '1M' ? [1] : [7]);
   const createdAt = formatIndiaDateTime(now);
   return {
     id: '',

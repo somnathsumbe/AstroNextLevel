@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest';
+import { parseTradeFile } from '@/lib/data/repositories/trade.repository';
 import { calculatePriceChange, calculateResult, createTrade, normalizeIntervals, reconcileNotifications } from '@/lib/trades/trade-utils';
 
-const input = { stock: 'TCS', tradeType: 'BUY' as const, tradeDate: '2026-09-16', tradeTime: '10:00', entryPrice: 3500, quantity: 10, intervals: [7, 14] as const };
+const input = { stock: 'TCS', tradeType: 'BUY' as const, tradeDate: '2026-09-16', tradeTime: '10:00', entryPrice: 3500, quantity: 10, intervals: [1, 2, 7, 14, 21] as const };
 
 describe('trade notification intervals', () => {
   it('normalizes, deduplicates, and validates supported intervals', () => {
-    expect(normalizeIntervals([14, 7, 14])).toEqual([7, 14]);
+    expect(normalizeIntervals([21, 1, 14, 1])).toEqual([1, 14, 21]);
     expect(normalizeIntervals([5, 0], [])).toEqual([]);
   });
 
@@ -22,9 +23,9 @@ describe('trade notification intervals', () => {
 
   it('reconciles each selected interval once when due', () => {
     const trade = { ...createTrade(input, new Date('2026-09-16T04:30:00.000Z')), id: 'TRD-TEST-1' };
-    const first = reconcileNotifications(trade, new Date('2026-09-23T04:32:00.000Z'));
-    expect(first.notification.events?.map((event) => [event.interval, event.status])).toEqual([[7, 'triggered'], [14, 'scheduled']]);
-    const second = reconcileNotifications(first, new Date('2026-09-23T04:32:30.000Z'));
+    const first = reconcileNotifications(trade, new Date('2026-09-16T04:32:00.000Z'));
+    expect(first.notification.events?.map((event) => [event.interval, event.status])).toEqual([[1, 'triggered'], [2, 'triggered'], [7, 'scheduled'], [14, 'scheduled'], [21, 'scheduled']]);
+    const second = reconcileNotifications(first, new Date('2026-09-16T04:32:30.000Z'));
     expect(second.notification.events?.map((event) => event.id)).toEqual(first.notification.events?.map((event) => event.id));
   });
 
@@ -32,15 +33,22 @@ describe('trade notification intervals', () => {
     const trade = { ...createTrade(input, new Date('2026-09-16T04:30:00.000Z')), id: 'TRD-TEST-3' };
     const afterSevenDays = reconcileNotifications(trade, new Date('2026-09-23T04:31:00.000Z'));
 
-    expect(afterSevenDays.notification.events?.map((event) => [event.interval, event.status])).toEqual([[7, 'triggered'], [14, 'scheduled']]);
+    expect(afterSevenDays.notification.events?.map((event) => [event.interval, event.status])).toEqual([[1, 'triggered'], [2, 'triggered'], [7, 'triggered'], [14, 'scheduled'], [21, 'scheduled']]);
   });
 
   it('automatically disables the dashboard notification after all intervals finish', () => {
     const trade = { ...createTrade(input, new Date('2026-09-16T04:30:00.000Z')), id: 'TRD-TEST-2' };
-    const complete = reconcileNotifications(trade, new Date('2026-09-30T04:36:00.000Z'));
+    const complete = reconcileNotifications(trade, new Date('2026-10-08T04:36:00.000Z'));
 
     expect(complete.notification.enabled).toBe(false);
     expect(complete.notification.status).toBe('DISABLED');
     expect(complete.notification.events?.every((event) => event.status === 'triggered')).toBe(true);
+  });
+
+  it('recovers valid trade data when a trailing corrupted fragment is appended', () => {
+    const validTrade = { id: 'TRD-RECOVER-1', stock: 'BALKRISIND', tradeType: 'BUY', tradeDate: '2026-09-17', tradeTime: '14:00', entryPrice: 100, quantity: 10, targetPrice: 120, stopLoss: 90, notes: 'Recovered', notification: { enabled: true, duration: '7D', notificationDateTime: '2026-09-24T14:00:00+05:30', status: 'PENDING', intervals: [7], events: [] }, review: { exitType: null, exitPrice: null, exitDate: null }, result: { status: 'PENDING', profitLoss: null, profitLossPercent: null }, createdAt: '2026-09-17T14:00:00+05:30', updatedAt: '2026-09-17T14:00:00+05:30' };
+    const malformed = `${JSON.stringify([validTrade], null, 2)}\n]\n"Date": "17 Sept 2026"\n`;
+
+    expect(parseTradeFile(malformed)).toEqual([validTrade]);
   });
 });
