@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import MonthNavigator from '@/components/common/MonthNavigator';
+import { defaultMonthOption, matchesMonthFilter, shiftMonthOption } from '@/lib/month-navigation';
 import { jupiterVenusService } from '@/lib/data/services/market/jupiter-venus.service';
 import { getIndiaToday } from '@/lib/date/date-utils';
 import { exportMarketCsv } from '@/src/lib/export-utils';
@@ -28,7 +30,7 @@ export default function JupiterVenusTrackingPage() {
   const years = useMemo(() => DATA.map(({ year }) => year), []);
   const initialYear = years.includes(new Date().getFullYear()) ? new Date().getFullYear() : years[years.length - 1];
   const [selectedYear, setSelectedYear] = useState(initialYear);
-  const [month, setMonth] = useState('All Months');
+  const [month, setMonth] = useState(defaultMonthOption());
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -56,7 +58,8 @@ export default function JupiterVenusTrackingPage() {
     const query = search.trim().toLowerCase();
     return yearRecords.filter((record) => {
       const searchable = [record.targetDegree, record.crossingDate, record.dateLabel, record.day, record.observationTime, record.observedDegree].join(' ').toLowerCase();
-      return (month === 'All Months' || record.month === month) && (!query || searchable.includes(query));
+      const monthMatches = matchesMonthFilter(record.month, month);
+      return monthMatches && (!query || searchable.includes(query));
     });
   }, [yearRecords, month, search]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
@@ -68,9 +71,7 @@ export default function JupiterVenusTrackingPage() {
   function changeYear(value: string) { setSelectedYear(Number(value)); resetPage(); }
   function changeMonth(value: string) { setMonth(value); resetPage(); }
   function shiftMonth(direction: number) {
-    const current = MONTHS.indexOf(month);
-    const next = current === 0 ? (direction > 0 ? 1 : 12) : ((current - 1 + direction + 12) % 12) + 1;
-    setMonth(MONTHS[next]);
+    setMonth((current) => shiftMonthOption(current || defaultMonthOption(), direction, MONTHS));
     resetPage();
   }
 
@@ -94,9 +95,9 @@ export default function JupiterVenusTrackingPage() {
         <div className="filter-title"><span><i className="bi bi-sliders2" /> Market Event Filters</span><span className="filter-count">{filteredRecords.length} records</span></div>
         <div className="row g-3 align-items-end">
           <div className="col-12 col-md-3"><label htmlFor="market-year">Year</label><select id="market-year" value={selectedYear} onChange={(event) => changeYear(event.target.value)}>{years.map((year) => <option key={year} value={year}>{year}</option>)}</select></div>
-          <div className="col-12 col-md-3"><label htmlFor="market-month">Month</label><div className="month-navigation"><button type="button" onClick={() => shiftMonth(-1)} aria-label="Previous month"><i className="bi bi-chevron-left" /></button><select id="market-month" value={month} onChange={(event) => changeMonth(event.target.value)}>{MONTHS.map((item) => <option key={item}>{item}</option>)}</select><button type="button" onClick={() => shiftMonth(1)} aria-label="Next month"><i className="bi bi-chevron-right" /></button></div></div>
+          <div className="col-12 col-md-3"><label htmlFor="market-month">Month</label><MonthNavigator id="market-month" value={month} options={MONTHS} onChange={changeMonth} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div>
           <div className="col-12 col-md-4"><label htmlFor="market-search">Search degree, date, day...</label><div className="filter-search"><i className="bi bi-search" /><input id="market-search" value={search} onChange={(event) => { setSearch(event.target.value); resetPage(); }} placeholder="Search degree, date, day..." /></div></div>
-          <div className="col-12 col-md-2"><div className="filter-actions weekly-filter-actions"><button className="gold-action" type="submit" disabled={loading}><i className="bi bi-search" /> {loading ? 'Loading...' : 'Show Details'}</button><button className="subtle-action" type="button" onClick={() => { setSearch(''); setMonth('All Months'); resetPage(); }}>Clear</button></div></div>
+          <div className="col-12 col-md-2"><div className="filter-actions weekly-filter-actions"><button className="gold-action" type="submit" disabled={loading}><i className="bi bi-search" /> {loading ? 'Loading...' : 'Show Details'}</button><button className="subtle-action" type="button" onClick={() => { setSearch(''); setMonth(defaultMonthOption()); resetPage(); }}>Clear</button></div></div>
         </div>
       </form>
 
@@ -107,7 +108,7 @@ export default function JupiterVenusTrackingPage() {
       <section className="next-degree-card" aria-labelledby="next-crossing-title"><div><span className="eyebrow">UPCOMING DEGREE CROSSING</span><h2 id="next-crossing-title"><i className="bi bi-bullseye" /> Next Degree Crossing</h2>{nextEvent ? <div className="detail-grid compact"><div><small>TARGET DEGREE</small><strong>{nextEvent.targetDegree}°</strong></div><div><small>CROSSING DATE</small><strong>{nextEvent.dateLabel}</strong></div><div><small>DAY</small><strong>{nextEvent.day}</strong></div><div><small>OBSERVATION TIME</small><strong>{nextEvent.observationTime}</strong></div><div><small>OBSERVED DEGREE</small><strong>{nextEvent.observedDegree.toFixed(6)}°</strong></div></div> : <p>No upcoming event available for this year.</p>}</div></section>
 
       <section className="data-panel" aria-labelledby="events-title"><div className="data-panel-heading"><div><span className="eyebrow">MARKET EVENTS / REFERENCE CALENDAR</span><h2 id="events-title">Market events for {selectedYear}</h2></div><span className="location-note">Degree crossing observation data</span></div>
-        {error ? <div className="state-panel" role="alert"><i className="bi bi-exclamation-triangle" /><strong>Weekly market data could not be loaded.</strong><button className="subtle-action" type="button" onClick={() => setError(false)}>Retry</button></div> : loading ? <div className="state-panel" role="status"><span className="spinner-border spinner-border-sm" /> Loading market data...</div> : visibleRecords.length === 0 ? <div className="state-panel"><i className="bi bi-calendar-x" /><strong>Jupiter Venus Tracking</strong><span>No market events available for the selected year.</span><button className="subtle-action" type="button" onClick={() => { setSearch(''); setMonth('All Months'); resetPage(); }}>Clear Filters</button></div> : <>
+        {error ? <div className="state-panel" role="alert"><i className="bi bi-exclamation-triangle" /><strong>Weekly market data could not be loaded.</strong><button className="subtle-action" type="button" onClick={() => setError(false)}>Retry</button></div> : loading ? <div className="state-panel" role="status"><span className="spinner-border spinner-border-sm" /> Loading market data...</div> : visibleRecords.length === 0 ? <div className="state-panel"><i className="bi bi-calendar-x" /><strong>Jupiter Venus Tracking</strong><span>No market events available for the selected year.</span><button className="subtle-action" type="button" onClick={() => { setSearch(''); setMonth(defaultMonthOption()); resetPage(); }}>Clear Filters</button></div> : <>
           <div className="table-responsive"><table className="analysis-table weekly-table"><caption className="visually-hidden">Market events for {selectedYear}</caption><thead><tr><th>#</th><th>Target Degree</th><th>Crossing Date</th><th>Day</th><th>Observation Time</th><th>Observed Degree</th><th>Action</th></tr></thead><tbody>{visibleRecords.map((record, index) => <tr className={record.weekend ? 'weekend-row' : ''} key={record.id}><td>{(page - 1) * PAGE_SIZE + index + 1}</td><td><span className="degree-badge">{record.targetDegree}°</span></td><td><strong>{record.dateLabel}</strong></td><td>{record.day} {record.weekend && <span className="status-badge weekend-status">Weekend</span>}</td><td>{record.observationTime}</td><td>{record.observedDegree.toFixed(6)}°</td><td><button className="view-button" type="button" onClick={() => setDetails(record)} aria-label={`View details for ${record.dateLabel}`}><i className="bi bi-eye" /></button></td></tr>)}</tbody></table></div>
           <div className="pagination-row"><span>Showing {(page - 1) * PAGE_SIZE + 1}-{Math.min(page * PAGE_SIZE, filteredRecords.length)} of {filteredRecords.length}</span><div className="pagination-controls"><button className="subtle-action" type="button" disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>{Array.from({ length: totalPages }, (_, index) => index + 1).map((item) => <button className={`subtle-action ${page === item ? 'current-page' : ''}`} type="button" key={item} onClick={() => setPage(item)} aria-current={page === item ? 'page' : undefined}>{item}</button>)}<button className="subtle-action" type="button" disabled={page === totalPages} onClick={() => setPage(page + 1)}>Next</button></div></div>
         </>}

@@ -1,6 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import MonthNavigator from '@/components/common/MonthNavigator';
+import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
 import { marchEquinoxService } from '@/lib/data/services/master/march-equinox.service';
 
 const marchEquinox = marchEquinoxService.getData();
@@ -38,7 +40,7 @@ export default function DegreeCalculatorPage() {
   const [zeroDate, setZeroDate] = useState(defaultZeroDate);
   const [calculatedZeroDate, setCalculatedZeroDate] = useState(defaultZeroDate);
   const [results, setResults] = useState(() => buildDegreeResults(parseUtcDate(defaultZeroDate)));
-  const [month, setMonth] = useState('All months');
+  const [month, setMonth] = useState(defaultMonthOption());
   const [page, setPage] = useState(1);
   const [gannVisible, setGannVisible] = useState(false);
   const [gannPage, setGannPage] = useState(1);
@@ -46,7 +48,7 @@ export default function DegreeCalculatorPage() {
   const [error, setError] = useState('');
   const [toast, setToast] = useState(null);
 
-  const filteredResults = useMemo(() => results.filter((result) => month === 'All months' || result.month === month), [results, month]);
+  const filteredResults = useMemo(() => results.filter((result) => result.month === month), [results, month]);
   const totalPages = Math.max(1, Math.ceil(filteredResults.length / PAGE_SIZE));
   const visibleResults = filteredResults.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const gannRows = marchEquinox.entries;
@@ -76,15 +78,13 @@ export default function DegreeCalculatorPage() {
     const nextResults = buildDegreeResults(parseUtcDate(zeroDate));
     setCalculatedZeroDate(zeroDate);
     setResults(nextResults);
-    setMonth('All months');
+    setMonth(defaultMonthOption());
     setPage(1);
     showReversalToast(nextResults);
   }
 
   function shiftMonth(direction) {
-    const current = month === 'All months' ? -1 : parseMonth(month);
-    const next = current + direction;
-    setMonth(next < 0 || next > 11 ? 'All months' : getMonthOptions()[next + 1]);
+    setMonth((current) => shiftMonthOption(current || defaultMonthOption(), direction, MONTHS));
     setPage(1);
   }
 
@@ -92,7 +92,7 @@ export default function DegreeCalculatorPage() {
     setZeroDate(defaultZeroDate);
     setCalculatedZeroDate(defaultZeroDate);
     setResults(buildDegreeResults(parseUtcDate(defaultZeroDate)));
-    setMonth('All months');
+    setMonth(defaultMonthOption());
     setPage(1);
     setError('');
   }
@@ -105,7 +105,7 @@ export default function DegreeCalculatorPage() {
 
       <div className="row g-3 summary-row">{[['ZERO DATE', formatDate(parseUtcDate(calculatedZeroDate)), 'bi-calendar-event', 'gold'], ['TOTAL DEGREE LEVELS', results.length, 'bi-grid-3x3-gap', 'blue'], ['TRADING DAYS', tradingDays, 'bi-graph-up-arrow', 'green'], ['WEEKEND DAYS', weekendDays, 'bi-calendar-week', 'purple'], ['NEXT REVERSAL DATE', nextReversal ? formatDate(nextReversal.calendarDate) : '—', 'bi-arrow-right-circle', 'orange']].map(([label, value, icon, tone]) => <div className="col-6 col-md-4 col-xl" key={label}><div className="summary-card"><i className={`bi ${icon} summary-icon ${tone}`} /><div className="summary-label">{label}</div><strong>{value}</strong></div></div>)}</div>
 
-      <section className="data-panel"><div className="data-panel-heading"><div><span className="eyebrow">CALCULATED LEVELS</span><h2>Reversal Day Dates</h2></div><div className="month-navigation"><button type="button" onClick={() => shiftMonth(-1)} aria-label="Previous month"><i className="bi bi-chevron-left" /></button><select value={month} onChange={(event) => { setMonth(event.target.value); setPage(1); }} aria-label="Filter by month">{MONTHS.map((item) => <option key={item}>{item}</option>)}</select><button type="button" onClick={() => shiftMonth(1)} aria-label="Next month"><i className="bi bi-chevron-right" /></button></div></div><div className="table-responsive"><table className="analysis-table degree-table"><thead><tr><th>#</th><th>Target Degree</th><th>Days</th><th>Calendar Date</th><th>Day</th><th>Market Status</th><th>Test Date</th><th>Actual Degree</th></tr></thead><tbody>{visibleResults.map((result, index) => <tr className={result.isWeekend ? 'weekend-row' : ''} key={result.id}><td>{(page - 1) * PAGE_SIZE + index + 1}</td><td><strong>{result.targetDegree}°</strong></td><td>{result.days}</td><td>{formatDate(result.calendarDate)}</td><td>{result.day}</td><td><span className={`status-badge ${result.isWeekend ? 'weekend-status' : 'trading-status'}`}>{result.marketStatus}</span></td><td>{result.isWeekend ? result.testDate : '—'}</td><td>{result.actualDegree.toFixed(4)}°</td></tr>)}</tbody></table></div><div className="pagination-row"><span>Showing {filteredResults.length ? (page - 1) * PAGE_SIZE + 1 : 0}–{Math.min(page * PAGE_SIZE, filteredResults.length)} of {filteredResults.length} records</span><div className="pagination-controls"><button type="button" disabled={page === 1} onClick={() => setPage(page - 1)} aria-label="Previous page"><i className="bi bi-chevron-left" /></button><span>{page} / {totalPages}</span><button type="button" disabled={page === totalPages} onClick={() => setPage(page + 1)} aria-label="Next page"><i className="bi bi-chevron-right" /></button></div></div></section>
+      <section className="data-panel"><div className="data-panel-heading"><div><span className="eyebrow">CALCULATED LEVELS</span><h2>Reversal Day Dates</h2></div><MonthNavigator id="degree-month" value={month} options={MONTHS} onChange={(value) => { setMonth(value); setPage(1); }} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div><div className="table-responsive"><table className="analysis-table degree-table"><thead><tr><th>#</th><th>Target Degree</th><th>Days</th><th>Calendar Date</th><th>Day</th><th>Market Status</th><th>Test Date</th><th>Actual Degree</th></tr></thead><tbody>{visibleResults.map((result, index) => <tr className={result.isWeekend ? 'weekend-row' : ''} key={result.id}><td>{(page - 1) * PAGE_SIZE + index + 1}</td><td><strong>{result.targetDegree}°</strong></td><td>{result.days}</td><td>{formatDate(result.calendarDate)}</td><td>{result.day}</td><td><span className={`status-badge ${result.isWeekend ? 'weekend-status' : 'trading-status'}`}>{result.marketStatus}</span></td><td>{result.isWeekend ? result.testDate : '—'}</td><td>{result.actualDegree.toFixed(4)}°</td></tr>)}</tbody></table></div><div className="pagination-row"><span>Showing {filteredResults.length ? (page - 1) * PAGE_SIZE + 1 : 0}–{Math.min(page * PAGE_SIZE, filteredResults.length)} of {filteredResults.length} records</span><div className="pagination-controls"><button type="button" disabled={page === 1} onClick={() => setPage(page - 1)} aria-label="Previous page"><i className="bi bi-chevron-left" /></button><span>{page} / {totalPages}</span><button type="button" disabled={page === totalPages} onClick={() => setPage(page + 1)} aria-label="Next page"><i className="bi bi-chevron-right" /></button></div></div></section>
 
       {gannVisible && <section className="data-panel gann-panel"><div className="data-panel-heading"><div><span className="eyebrow">SUPPLIED JSON DATES</span><h2>Gann-Zilla Dates</h2></div><span className="location-note">March Equinox · {marchEquinox.location}</span></div><div className="table-responsive"><table className="analysis-table"><thead><tr><th>Year</th><th>Date</th><th>Software</th><th>Indian Time</th></tr></thead><tbody>{visibleGannRows.map((entry) => <tr key={`${entry.year}-${entry.date}`}><td><strong>{entry.year}</strong></td><td>{entry.date}</td><td>{entry.softwareTime}</td><td>{entry.indianTime}</td></tr>)}</tbody></table></div><div className="pagination-row"><span>Showing {(gannPage - 1) * GANN_PAGE_SIZE + 1}–{Math.min(gannPage * GANN_PAGE_SIZE, gannRows.length)} of {gannRows.length} dates</span><div className="pagination-controls"><button type="button" disabled={gannPage === 1} onClick={() => setGannPage(gannPage - 1)} aria-label="Previous Gann-Zilla page"><i className="bi bi-chevron-left" /></button><span>{gannPage} / {gannTotalPages}</span><button type="button" disabled={gannPage === gannTotalPages} onClick={() => setGannPage(gannPage + 1)} aria-label="Next Gann-Zilla page"><i className="bi bi-chevron-right" /></button></div></div></section>}
 

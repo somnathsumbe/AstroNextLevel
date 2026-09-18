@@ -1,5 +1,5 @@
 ﻿import { useState } from 'react';
-import { formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
+import { formatDisplayDate, formatNumber, isTodayPressureDate, planetIcon } from './GannUtils';
 
 function copyToClipboard(value) {
   const text = String(value ?? '').trim();
@@ -14,7 +14,7 @@ export default function GannTable({ rows, total, todayKey, todayFilter, onConfig
   const [copiedHighDate, setCopiedHighDate] = useState('');
 
   async function copyHighDate(stock, date) {
-    const value = String(date ?? '').trim();
+    const value = formatDisplayDate(date);
     if (!value || typeof navigator === 'undefined' || !navigator.clipboard?.writeText) return;
 
     await navigator.clipboard.writeText(value);
@@ -132,19 +132,19 @@ export default function GannTable({ rows, total, todayKey, todayFilter, onConfig
                     </td>
                     <td data-label="Reference">{referenceTypeValue}</td>
                     <td data-label="High">{formatNumber(highValue)}</td>
-                    <td data-label="High Date" className={copiedHighDate === `${stockValue}-${referenceDateHighValue}` ? 'high-date-copied' : ''}>
-                      <strong>{referenceDateHighValue}</strong>
+                    <td data-label="High Date" className={copiedHighDate === `${stockValue}-${formatDisplayDate(referenceDateHighValue)}` ? 'high-date-copied' : ''}>
+                      <strong>{formatDisplayDate(referenceDateHighValue)}</strong>
                       <button
                         type="button"
                         className="high-date-copy-btn"
-                        title={`Copy high date ${referenceDateHighValue}`}
-                        aria-label={`Copy high date ${referenceDateHighValue}`}
+                        title={`Copy high date ${formatDisplayDate(referenceDateHighValue)}`}
+                        aria-label={`Copy high date ${formatDisplayDate(referenceDateHighValue)}`}
                         onClick={() => copyHighDate(stockValue, referenceDateHighValue)}
                       >
-                        <i className={`bi bi-${copiedHighDate === `${stockValue}-${referenceDateHighValue}` ? 'check2' : 'clipboard'}`} />
+                        <i className={`bi bi-${copiedHighDate === `${stockValue}-${formatDisplayDate(referenceDateHighValue)}` ? 'check2' : 'clipboard'}`} />
                       </button>
                     </td>
-                    <td data-label="Low Date">{lowDateValue}</td>
+                    <td data-label="Low Date">{formatDisplayDate(lowDateValue)}</td>
                     <td data-label="Low">{formatNumber(lowValue)}</td>
                     <td data-label="Movement"><span className="movement-pill">{movementValue}</span></td>
                     <td data-label="Planet + Icon">

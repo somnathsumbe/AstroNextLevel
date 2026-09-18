@@ -123,6 +123,34 @@ export function isTodayPressureDate(value, todayKey = getIndiaTodayKey()) {
   return pressureDateKey(value) === todayKey;
 }
 
+export function formatDisplayDate(value) {
+  if (value === null || value === undefined || value === '') return '';
+
+  const raw = String(value).trim();
+  if (!raw) return '';
+
+  const direct = raw.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
+  if (direct) {
+    const day = String(direct[1]).padStart(2, '0');
+    const month = String(direct[2]).padStart(2, '0');
+    const year = direct[3];
+    return `${year}-${month}-${day}`;
+  }
+
+  const iso = raw.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
+  if (iso) {
+    const year = iso[1];
+    const month = String(iso[2]).padStart(2, '0');
+    const day = String(iso[3]).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  const parsed = parseDateValue(raw);
+  if (!parsed) return raw;
+
+  return `${parsed.getFullYear()}-${String(parsed.getMonth() + 1).padStart(2, '0')}-${String(parsed.getDate()).padStart(2, '0')}`;
+}
+
 export function formatNumber(value) {
   if (value === null || value === undefined || value === '') return '-';
   const numericValue = Number(String(value).replace(/,/g, ''));

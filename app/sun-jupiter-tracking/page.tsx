@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import MonthNavigator from '@/components/common/MonthNavigator';
+import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
 import { sunJupiterService } from '@/lib/data/services/market/sun-jupiter.service';
 import { exportSunJupiterCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, getNextMonday, getWeekFriday, getWeekMonday, monthName, isWeekend } from '@/src/lib/date-utils';
@@ -45,7 +47,7 @@ export default function SunJupiterTrackingPage() {
   const [selectedYear, setSelectedYear] = useState(initialYear);
   const [search, setSearch] = useState('');
   const [angle, setAngle] = useState('All Angles');
-  const [month, setMonth] = useState('All Months');
+  const [month, setMonth] = useState(defaultMonthOption());
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -74,7 +76,7 @@ export default function SunJupiterTrackingPage() {
       const searchable = [record.date, record.dateLabel, record.day, record.timeIST, record.angle, record.aspect].join(' ').toLowerCase();
       return (!query || searchable.includes(query))
         && (angle === 'All Angles' || record.angle === Number(angle))
-        && (month === 'All Months' || record.month === month);
+        && record.month === month;
     });
   }, [yearRecords, search, angle, month]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
@@ -92,15 +94,13 @@ export default function SunJupiterTrackingPage() {
     window.setTimeout(() => setLoading(false), 250);
   }
   function shiftMonth(direction: number) {
-    const current = MONTHS.indexOf(month);
-    const next = current === 0 ? (direction > 0 ? 1 : 12) : ((current - 1 + direction + 12) % 12) + 1;
-    setMonth(MONTHS[next]);
+    setMonth((current) => shiftMonthOption(current || defaultMonthOption(), direction, MONTHS));
     resetPage();
   }
   function clearFilters() {
     setSearch('');
     setAngle('All Angles');
-    setMonth('All Months');
+    setMonth(defaultMonthOption());
     resetPage();
   }
 
@@ -126,7 +126,7 @@ export default function SunJupiterTrackingPage() {
         <div className="row g-3 align-items-end">
           <div className="col-12 col-md-3"><label htmlFor="sun-jupiter-year">Year</label><select id="sun-jupiter-year" value={yearSelection} onChange={(event) => { setYearSelection(Number(event.target.value)); resetPage(); }}>{years.map((year) => <option key={year} value={year}>{year}</option>)}</select></div>
           <div className="col-12 col-md-3"><label htmlFor="sun-jupiter-angle">Angle</label><select id="sun-jupiter-angle" value={angle} onChange={(event) => { setAngle(event.target.value); resetPage(); }}><option>All Angles</option>{DATA.targetAngles.map((target) => <option key={target} value={target}>{target}° - {DATA.aspects[String(target)]}</option>)}</select></div>
-          <div className="col-12 col-md-3"><label htmlFor="sun-jupiter-month">Month</label><div className="month-navigation"><button type="button" onClick={() => shiftMonth(-1)} aria-label="Previous month"><i className="bi bi-chevron-left" /></button><select id="sun-jupiter-month" value={month} onChange={(event) => { setMonth(event.target.value); resetPage(); }}>{MONTHS.map((item) => <option key={item}>{item}</option>)}</select><button type="button" onClick={() => shiftMonth(1)} aria-label="Next month"><i className="bi bi-chevron-right" /></button></div></div>
+          <div className="col-12 col-md-3"><label htmlFor="sun-jupiter-month">Month</label><MonthNavigator id="sun-jupiter-month" value={month} options={MONTHS} onChange={(value) => { setMonth(value); resetPage(); }} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div>
           <div className="col-12 col-md-3"><div className="filter-actions weekly-filter-actions"><button className="gold-action" type="submit" disabled={loading}><i className="bi bi-search" /> {loading ? 'Loading...' : 'Show Details'}</button><button className="subtle-action" type="button" onClick={clearFilters}>Clear</button></div></div>
           <div className="col-12"><label htmlFor="sun-jupiter-search">Search date, angle, aspect, day...</label><div className="filter-search"><i className="bi bi-search" /><input id="sun-jupiter-search" value={search} onChange={(event) => { setSearch(event.target.value); resetPage(); }} placeholder="Search date, angle, aspect, day..." /></div></div>
         </div>

@@ -64,7 +64,7 @@ function getRecentLunarDates() {
     )
     .filter((entry) => entry.date <= today)
     .sort((a, b) => b.date - a.date)
-    .slice(0, 5);
+    .slice(0, 10);
   const purnima = Object.entries(purnimaData.years || {})
     .flatMap(([year, entries]) =>
       entries.map((entry) => ({
@@ -75,7 +75,7 @@ function getRecentLunarDates() {
     )
     .filter((entry) => entry.date <= today)
     .sort((a, b) => b.date - a.date)
-    .slice(0, 5);
+    .slice(0, 10);
 
   return {
     amavasya: amavasya.map((entry) => ({
@@ -92,7 +92,7 @@ function getRecentLunarDates() {
 export default function TodayStockPage() {
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState(initialFilters);
-  const [showLunarDates, setShowLunarDates] = useState(false);
+  const [showLunarDates, setShowLunarDates] = useState(true);
   const [copiedDate, setCopiedDate] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -104,6 +104,7 @@ export default function TodayStockPage() {
       : relativeDateKey(todayKey, filters.dateOffset);
   const [lunarDates, setLunarDates] = useState(getRecentLunarDates);
   const [tradeRecord, setTradeRecord] = useState(null);
+  const lunarSlotCount = Math.max(10, lunarDates.amavasya.length, lunarDates.purnima.length);
 
   useEffect(() => {
     stockService.getAllStockRecords()
@@ -232,7 +233,7 @@ export default function TodayStockPage() {
         <div className="lunar-dates-heading">
           <div>
             <span className="eyebrow">LUNAR CYCLE / RECENT HISTORY</span>
-            <h2 id="lunar-dates-title">Last 5 Amavasya &amp; Purnima</h2>
+            <h2 id="lunar-dates-title">Last 10 Amavasya &amp; Purnima</h2>
           </div>
           <button
             className="outline-action"
@@ -247,60 +248,64 @@ export default function TodayStockPage() {
         </div>
         {showLunarDates && (
           <div id="lunar-dates-table" className="lunar-dates-table-wrap">
-            <table className="lunar-dates-table">
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <i className="bi bi-moon" /> Amavasya
-                  </th>
-                  {lunarDates.amavasya.map((entry) => (
-                    <td
-                      className={copiedDate === entry.label ? "is-copied" : ""}
-                      key={entry.date.toISOString()}
-                      title={entry.festival || "Amavasya"}
-                    >
-                      <span>{entry.label}</span>
-                      <button
-                        type="button"
-                        className="lunar-copy-button"
-                        onClick={() => copyLunarDate(entry.label)}
-                        aria-label={`Copy Amavasya date ${entry.label}`}
-                        title={`Copy ${entry.label}`}
-                      >
-                        <i
-                          className={`bi bi-${copiedDate === entry.label ? "check2" : "clipboard"}`}
-                        />
-                      </button>
-                    </td>
-                  ))}
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <i className="bi bi-moon-stars" /> Purnima
-                  </th>
-                  {lunarDates.purnima.map((entry) => (
-                    <td
-                      className={copiedDate === entry.label ? "is-copied" : ""}
-                      key={`${entry.date.toISOString()}-${entry.name}`}
-                      title={entry.name}
-                    >
-                      <span>{entry.label}</span>
-                      <button
-                        type="button"
-                        className="lunar-copy-button"
-                        onClick={() => copyLunarDate(entry.label)}
-                        aria-label={`Copy Purnima date ${entry.label}`}
-                        title={`Copy ${entry.label}`}
-                      >
-                        <i
-                          className={`bi bi-${copiedDate === entry.label ? "check2" : "clipboard"}`}
-                        />
-                      </button>
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+            <div className="table-responsive">
+              <table className="table table-sm table-bordered align-middle mb-0 lunar-dates-table">
+                <thead>
+                  <tr>
+                    <th scope="col" className="text-nowrap"><i className="bi bi-moon" /> Amavasya</th>
+                    {Array.from({ length: lunarSlotCount }, (_, index) => {
+                      const entry = lunarDates.amavasya[index];
+                      if (!entry) {
+                        return <th key={`amavasya-empty-${index}`} scope="col" className="text-muted">—</th>;
+                      }
+
+                      return (
+                        <th key={`amavasya-head-${entry.date.toISOString()}`} scope="col" className={copiedDate === entry.label ? "lunar-date-selected" : ""}>
+                          <div className="d-flex align-items-center justify-content-between gap-2">
+                            <span>{entry.label}</span>
+                            <button
+                              type="button"
+                              className="lunar-copy-button"
+                              onClick={() => copyLunarDate(entry.label)}
+                              aria-label={`Copy Amavasya date ${entry.label}`}
+                              title={`Copy ${entry.label}`}
+                            >
+                              <i className={`bi bi-${copiedDate === entry.label ? "check2" : "clipboard"}`} />
+                            </button>
+                          </div>
+                        </th>
+                      );
+                    })}
+                  </tr>
+                  <tr>
+                    <th scope="col" className="text-nowrap"><i className="bi bi-moon-stars" /> Purnima</th>
+                    {Array.from({ length: lunarSlotCount }, (_, index) => {
+                      const entry = lunarDates.purnima[index];
+                      if (!entry) {
+                        return <th key={`purnima-empty-${index}`} scope="col" className="text-muted">—</th>;
+                      }
+
+                      return (
+                        <th key={`purnima-head-${entry.date.toISOString()}`} scope="col" className={copiedDate === entry.label ? "lunar-date-selected" : ""}>
+                          <div className="d-flex align-items-center justify-content-between gap-2">
+                            <span>{entry.label}</span>
+                            <button
+                              type="button"
+                              className="lunar-copy-button"
+                              onClick={() => copyLunarDate(entry.label)}
+                              aria-label={`Copy Purnima date ${entry.label}`}
+                              title={`Copy ${entry.label}`}
+                            >
+                              <i className={`bi bi-${copiedDate === entry.label ? "check2" : "clipboard"}`} />
+                            </button>
+                          </div>
+                        </th>
+                      );
+                    })}
+                  </tr>
+                </thead>
+              </table>
+            </div>
           </div>
         )}
       </section>

@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import MonthNavigator from '@/components/common/MonthNavigator';
+import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
 import { panchakService } from '@/lib/data/services/astrology/panchak.service';
 import { getIndiaToday } from '@/lib/date/date-utils';
 
@@ -27,7 +29,7 @@ export default function PanchakPage() {
   const currentYear = new Date().getFullYear();
   const defaultYear = years.includes(currentYear) ? currentYear : years[years.length - 1];
   const [year, setYear] = useState(defaultYear);
-  const [month, setMonth] = useState('All Months');
+  const [month, setMonth] = useState(defaultMonthOption());
   const [search, setSearch] = useState('');
   const [appliedSearch, setAppliedSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -46,7 +48,7 @@ export default function PanchakPage() {
   const filteredRecords = useMemo(() => records.filter((record) => {
     const query = appliedSearch.trim().toLowerCase();
     const searchable = [record.year, record.month, record.start, record.end, record.startDateFormatted, record.startTimeFormatted, record.startDay].join(' ').toLowerCase();
-    return record.year === Number(year) && (month === 'All Months' || record.month === month) && (!query || searchable.includes(query));
+    return record.year === Number(year) && record.month === month && (!query || searchable.includes(query));
   }), [records, year, month, appliedSearch]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
   const visibleRecords = filteredRecords.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -59,17 +61,15 @@ export default function PanchakPage() {
   function submitSearch(event) { event.preventDefault(); setAppliedSearch(search); setPage(1); }
   function clearSearch() { setSearch(''); setAppliedSearch(''); setPage(1); }
   function shiftMonth(direction) {
-    const currentIndex = month === 'All Months' ? (direction < 0 ? 0 : 12) : PANCHAK_MONTHS.indexOf(month) - 1;
-    const nextIndex = (currentIndex + direction + 12) % 12;
-    setMonth(PANCHAK_MONTHS[nextIndex + 1]);
+    setMonth((current) => shiftMonthOption(current || defaultMonthOption(), direction, PANCHAK_MONTHS));
     setPage(1);
   }
-  function resetFilters() { setYear(defaultYear); setMonth('All Months'); clearSearch(); }
+  function resetFilters() { setYear(defaultYear); setMonth(defaultMonthOption()); clearSearch(); }
 
   return (
     <div className="panchak-page">
       <div className="page-heading-row"><div><div className="eyebrow">ASTRO TOOL</div><h1 className="page-title">Panchak</h1><p className="page-subtitle">Panchak Start Timings &amp; Market Observation</p><div className="breadcrumb-line"><i className="bi bi-house" /> Dashboard <span>/</span> Panchak</div></div><div className="page-actions"><button className="outline-action" type="button" onClick={() => setModal('use')}><i className="bi bi-question-circle" /> Use</button><button className="outline-action" type="button" onClick={() => window.print()}><i className="bi bi-printer" /> Print</button><button className="outline-action" type="button" onClick={() => downloadCsv(filteredRecords, year)}><i className="bi bi-download" /> Export CSV</button></div></div>
-      <form className="filter-panel" onSubmit={submitSearch}><div className="filter-title"><span><i className="bi bi-sliders2" /> Panchak Filters</span><span className="filter-count">{filteredRecords.length} records</span></div><div className="row g-3 align-items-end"><div className="col-12 col-md-3"><label htmlFor="panchak-year">Year</label><select id="panchak-year" value={year} onChange={(event) => changeYear(event.target.value)}>{years.map((item) => <option key={item} value={item}>{item}</option>)}</select></div><div className="col-12 col-md-3"><label htmlFor="panchak-month">Month</label><div className="month-navigation"><button type="button" onClick={() => shiftMonth(-1)} aria-label="Previous month"><i className="bi bi-chevron-left" /></button><select id="panchak-month" value={month} onChange={(event) => changeMonth(event.target.value)}>{PANCHAK_MONTHS.map((item) => <option key={item}>{item}</option>)}</select><button type="button" onClick={() => shiftMonth(1)} aria-label="Next month"><i className="bi bi-chevron-right" /></button></div></div><div className="col-12 col-md-4"><label htmlFor="panchak-search">Search Panchak...</label><div className="filter-search"><i className="bi bi-search" /><input id="panchak-search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Year, month, date, time or day" /></div></div><div className="col-12 col-md-2"><div className="filter-actions panchak-filter-actions"><button className="gold-action" type="submit"><i className="bi bi-eye" /> Show Details</button><button className="subtle-action" type="button" onClick={clearSearch}>Clear</button></div></div></div></form>
+      <form className="filter-panel" onSubmit={submitSearch}><div className="filter-title"><span><i className="bi bi-sliders2" /> Panchak Filters</span><span className="filter-count">{filteredRecords.length} records</span></div><div className="row g-3 align-items-end"><div className="col-12 col-md-3"><label htmlFor="panchak-year">Year</label><select id="panchak-year" value={year} onChange={(event) => changeYear(event.target.value)}>{years.map((item) => <option key={item} value={item}>{item}</option>)}</select></div><div className="col-12 col-md-3"><label htmlFor="panchak-month">Month</label><MonthNavigator id="panchak-month" value={month} options={PANCHAK_MONTHS} onChange={changeMonth} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div><div className="col-12 col-md-4"><label htmlFor="panchak-search">Search Panchak...</label><div className="filter-search"><i className="bi bi-search" /><input id="panchak-search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Year, month, date, time or day" /></div></div><div className="col-12 col-md-2"><div className="filter-actions panchak-filter-actions"><button className="gold-action" type="submit"><i className="bi bi-eye" /> Show Details</button><button className="subtle-action" type="button" onClick={clearSearch}>Clear</button></div></div></div></form>
 
       <div className="row g-3 summary-row">{[['SELECTED YEAR', year, 'bi-calendar3', 'gold'], ['PANCHAK EVENTS', filteredRecords.length, 'bi-calendar-event', 'blue'], ['WEEKEND STARTS', weekendStarts, 'bi-calendar-week', 'orange'], ['WEEKDAY STARTS', filteredRecords.length - weekendStarts, 'bi-calendar-check', 'green'], ['NEXT PANCHAK', nextPanchak ? nextPanchak.startDateFormatted : '—', 'bi-arrow-right-circle', 'purple']].map(([label, value, icon, tone]) => <div className="col-6 col-md-4 col-xl" key={label}><div className="summary-card"><i className={`bi ${icon} summary-icon ${tone}`} /><div className="summary-label">{label}</div><strong>{value}</strong></div></div>)}</div>
 

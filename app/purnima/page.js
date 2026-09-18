@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
+import MonthNavigator from '@/components/common/MonthNavigator';
 import { purnimaService } from '@/lib/data/services/astrology/purnima.service';
 
 const purnimaData = purnimaService.getData();
@@ -52,8 +54,8 @@ function downloadCsv(rows) {
 export default function PurnimaPage() {
   const allRecords = useMemo(createRecords, []);
   const years = useMemo(() => [...new Set(allRecords.map((record) => record.year))].sort((a, b) => b - a), [allRecords]);
-  const defaultYear = years.includes(2026) ? 2026 : years[0] || '';
-  const [filters, setFilters] = useState({ year: defaultYear, month: 'All months', search: '', dayType: 'All' });
+  const defaultYear = years.includes(new Date().getFullYear()) ? new Date().getFullYear() : years[0] || '';
+  const [filters, setFilters] = useState({ year: defaultYear, month: defaultMonthOption(), search: '', dayType: 'All' });
   const [appliedFilters, setAppliedFilters] = useState(filters);
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [modal, setModal] = useState(null);
@@ -71,7 +73,7 @@ export default function PurnimaPage() {
     const query = appliedFilters.search.trim().toLowerCase();
     const matchesSearch = !query || [record.name, record.month, record.dateLabel, record.day].some((value) => value.toLowerCase().includes(query));
     const matchesDay = appliedFilters.dayType === 'All' || (appliedFilters.dayType === 'Weekend' ? record.isWeekend : !record.isWeekend);
-    return (!appliedFilters.year || record.year === Number(appliedFilters.year)) && (appliedFilters.month === 'All months' || record.month === appliedFilters.month) && matchesDay && matchesSearch;
+    return (!appliedFilters.year || record.year === Number(appliedFilters.year)) && record.month === appliedFilters.month && matchesDay && matchesSearch;
   }), [allRecords, appliedFilters]);
 
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / pageSize));
@@ -82,14 +84,21 @@ export default function PurnimaPage() {
 
   function updateFilter(name, value) { setFilters((current) => ({ ...current, [name]: value })); }
   function applyFilters(event) { event.preventDefault(); setPage(1); setAppliedFilters(filters); }
-  function resetFilters() { const next = { year: defaultYear, month: 'All months', search: '', dayType: 'All' }; setFilters(next); setAppliedFilters(next); setPage(1); }
+  function resetFilters() { const next = { year: defaultYear, month: defaultMonthOption(), search: '', dayType: 'All' }; setFilters(next); setAppliedFilters(next); setPage(1); }
+  function shiftMonth(direction) {
+    setFilters((current) => ({
+      ...current,
+      month: shiftMonthOption(current.month || defaultMonthOption(), direction, MONTHS),
+    }));
+    setPage(1);
+  }
   function changePage(nextPage) { setPage(Math.min(totalPages, Math.max(1, nextPage))); }
 
   return (
     <div className="purnima-page">
       <div className="page-heading-row"><div><div className="eyebrow">LUNAR CYCLE / MARKET OBSERVATION</div><h1 className="page-title">Purnima Analysis</h1><p className="page-subtitle">Purnima Calendar &amp; Market Observation</p><div className="breadcrumb-line"><i className="bi bi-house" /> Home <span>/</span> Purnima</div><div className="location-note purnima-location"><i className="bi bi-geo-alt" /> {LOCATION} · {purnimaData.timezone}</div></div><div className="page-actions"><button className="outline-action" type="button" onClick={() => window.print()}><i className="bi bi-printer" /> Print</button><button className="outline-action" type="button" onClick={() => downloadCsv(filteredRecords)}><i className="bi bi-download" /> Export CSV</button><button className="outline-action" type="button" onClick={() => setModal('rules')}><i className="bi bi-journal-text" /> Trading Rules</button></div></div>
 
-      <form className="filter-panel" onSubmit={applyFilters}><div className="filter-title"><span><i className="bi bi-sliders2" /> Filters</span><span className="filter-count">{filteredRecords.length} records</span></div><div className="row g-3"><div className="col-6 col-md-3"><label htmlFor="purnima-year">Year</label><select id="purnima-year" value={filters.year} onChange={(event) => updateFilter('year', event.target.value)}>{years.map((year) => <option key={year} value={year}>{year}</option>)}</select></div><div className="col-6 col-md-3"><label htmlFor="purnima-month">Month</label><select id="purnima-month" value={filters.month} onChange={(event) => updateFilter('month', event.target.value)}>{MONTHS.map((month) => <option key={month}>{month}</option>)}</select></div><div className="col-12 col-md-3"><label htmlFor="purnima-search">Purnima / Festival / Event</label><div className="filter-search"><i className="bi bi-search" /><input id="purnima-search" value={filters.search} onChange={(event) => updateFilter('search', event.target.value)} placeholder="Search events" /></div></div><div className="col-6 col-md-3"><label htmlFor="purnima-day">Day Type</label><select id="purnima-day" value={filters.dayType} onChange={(event) => updateFilter('dayType', event.target.value)}><option>All</option><option>Weekday</option><option>Weekend</option></select></div></div><div className="filter-actions"><button className="gold-action" type="submit"><i className="bi bi-check2" /> Apply</button><button className="subtle-action" type="button" onClick={resetFilters}><i className="bi bi-arrow-counterclockwise" /> Reset</button></div></form>
+      <form className="filter-panel" onSubmit={applyFilters}><div className="filter-title"><span><i className="bi bi-sliders2" /> Filters</span><span className="filter-count">{filteredRecords.length} records</span></div><div className="row g-3 align-items-end"><div className="col-6 col-md-3"><label htmlFor="purnima-year">Year</label><select id="purnima-year" value={filters.year} onChange={(event) => updateFilter('year', event.target.value)}>{years.map((year) => <option key={year} value={year}>{year}</option>)}</select></div><div className="col-6 col-md-3"><label htmlFor="purnima-month">Month</label><MonthNavigator id="purnima-month" value={filters.month} options={MONTHS} onChange={(value) => updateFilter('month', value)} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div><div className="col-12 col-md-3"><label htmlFor="purnima-search">Purnima / Festival / Event</label><div className="filter-search"><i className="bi bi-search" /><input id="purnima-search" value={filters.search} onChange={(event) => updateFilter('search', event.target.value)} placeholder="Search events" /></div></div><div className="col-6 col-md-3"><label htmlFor="purnima-day">Day Type</label><select id="purnima-day" value={filters.dayType} onChange={(event) => updateFilter('dayType', event.target.value)}><option>All</option><option>Weekday</option><option>Weekend</option></select></div></div><div className="filter-actions"><button className="gold-action" type="submit"><i className="bi bi-check2" /> Apply</button><button className="subtle-action" type="button" onClick={resetFilters}><i className="bi bi-arrow-counterclockwise" /> Reset</button></div></form>
 
       <div className="row g-3 summary-row">{[['TOTAL PURNIMA EVENTS', filteredRecords.length, 'bi-moon-stars', 'gold'], ['SELECTED YEAR', appliedFilters.year || 'All', 'bi-calendar3', 'blue'], ['FESTIVAL / VRAT EVENTS', festivalEvents, 'bi-stars', 'green'], ['WEEKEND EVENTS', weekendEvents, 'bi-calendar-week', 'purple'], ['TEST DAYS', testDays, 'bi-bezier2', 'orange']].map(([label, value, icon, tone]) => <div className="col-6 col-md-4 col-xl" key={label}><div className="summary-card"><i className={`bi ${icon} summary-icon ${tone}`} /><div className="summary-label">{label}</div><strong>{value}</strong></div></div>)}</div>
 

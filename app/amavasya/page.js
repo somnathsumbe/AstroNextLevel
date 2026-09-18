@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
+import MonthNavigator from '@/components/common/MonthNavigator';
 import { amavasyaService } from '@/lib/data/services/astrology/amavasya.service';
 
 const amavasyaData = amavasyaService.getData();
@@ -71,8 +73,8 @@ function downloadCsv(rows) {
 export default function AmavasyaPage() {
   const allRecords = useMemo(createRecords, []);
   const years = useMemo(() => [...new Set(allRecords.map((record) => record.year))].sort((a, b) => b - a), [allRecords]);
-  const defaultYear = years.includes(2026) ? 2026 : years[0] || '';
-  const [filters, setFilters] = useState({ year: defaultYear, month: 'All months', festival: '', dayType: 'All', search: '' });
+  const defaultYear = years.includes(new Date().getFullYear()) ? new Date().getFullYear() : years[0] || '';
+  const [filters, setFilters] = useState({ year: defaultYear, month: defaultMonthOption(), festival: '', dayType: 'All', search: '' });
   const [appliedFilters, setAppliedFilters] = useState(filters);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -109,9 +111,17 @@ export default function AmavasyaPage() {
   }
 
   function resetFilters() {
-    const next = { year: defaultYear, month: 'All months', festival: '', dayType: 'All', search: '' };
+    const next = { year: defaultYear, month: defaultMonthOption(), festival: '', dayType: 'All', search: '' };
     setFilters(next);
     setAppliedFilters(next);
+    setPage(1);
+  }
+
+  function shiftMonth(direction) {
+    setFilters((current) => ({
+      ...current,
+      month: shiftMonthOption(current.month || defaultMonthOption(), direction, MONTHS),
+    }));
     setPage(1);
   }
 
@@ -128,9 +138,9 @@ export default function AmavasyaPage() {
 
       <form className="filter-panel" onSubmit={applyFilters}>
         <div className="filter-title"><span><i className="bi bi-sliders2" /> Filters</span><span className="filter-count">{filteredRecords.length} records</span></div>
-        <div className="row g-3">
+        <div className="row g-3 align-items-end">
           <div className="col-6 col-md-2"><label htmlFor="amavasya-year">Year</label><select id="amavasya-year" value={filters.year} onChange={(event) => updateFilter('year', event.target.value)}>{years.map((year) => <option key={year} value={year}>{year}</option>)}</select></div>
-          <div className="col-6 col-md-2"><label htmlFor="amavasya-month">Month</label><select id="amavasya-month" value={filters.month} onChange={(event) => updateFilter('month', event.target.value)}>{MONTHS.map((month) => <option key={month}>{month}</option>)}</select></div>
+          <div className="col-6 col-md-2"><label htmlFor="amavasya-month">Month</label><MonthNavigator id="amavasya-month" value={filters.month} options={MONTHS} onChange={(value) => updateFilter('month', value)} onPrev={() => shiftMonth(-1)} onNext={() => shiftMonth(1)} /></div>
           <div className="col-12 col-md-3"><label htmlFor="amavasya-festival">Festival</label><input id="amavasya-festival" value={filters.festival} onChange={(event) => updateFilter('festival', event.target.value)} placeholder="Search festival" /></div>
           <div className="col-6 col-md-2"><label htmlFor="amavasya-day">Day Type</label><select id="amavasya-day" value={filters.dayType} onChange={(event) => updateFilter('dayType', event.target.value)}><option>All</option><option>Weekday</option><option>Weekend</option></select></div>
           <div className="col-6 col-md-3"><label htmlFor="amavasya-search">Search</label><div className="filter-search"><i className="bi bi-search" /><input id="amavasya-search" value={filters.search} onChange={(event) => updateFilter('search', event.target.value)} placeholder="Search records" /></div></div>

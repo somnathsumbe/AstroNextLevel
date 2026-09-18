@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { getDashboardData } from '@/lib/data/services/dashboard.service';
 import TodayAstroEvents from '@/components/astrology/TodayAstroEvents';
 import UpcomingAstroEvents from '@/components/astrology/UpcomingAstroEvents';
@@ -6,14 +9,18 @@ import CurrentDayStock from '@/components/gann/CurrentDayStock';
 import DashboardLunarSections from '@/components/dashboard/DashboardLunarSections';
 import DashboardQuickActions from '@/components/dashboard/DashboardQuickActions';
 
-export const dynamic = 'force-static';
-
 function formatToday(date) {
   return new Intl.DateTimeFormat('en-IN', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }).format(date);
 }
 
 export default function DashboardPage() {
-  const dashboard = getDashboardData(new Date());
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    setNow(new Date());
+  }, []);
+
+  const dashboard = getDashboardData(now);
   const currentMonthKey = `${dashboard.now.getFullYear()}-${String(dashboard.now.getMonth() + 1).padStart(2, '0')}`;
   const nextMonthDate = new Date(dashboard.now.getFullYear(), dashboard.now.getMonth() + 1, 1);
   const nextMonthKey = `${nextMonthDate.getFullYear()}-${String(nextMonthDate.getMonth() + 1).padStart(2, '0')}`;
