@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import MonthNavigator from '@/components/common/MonthNavigator';
-import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
+import { defaultMonthOption, matchesMonthFilter, shiftMonthOption } from '@/lib/month-navigation';
 import { pushyaService } from '@/lib/data/services/astrology/pushya.service';
 import { PUSHYA_MONTHS, buildPushyaRecord, dateKey, formatPushyaDate, parsePushyaDateTime } from '@/lib/pushya-utils';
 
@@ -53,7 +53,8 @@ export default function PushyaNakshatraPage() {
   const filteredRecords = useMemo(() => records.filter((record) => {
     const query = appliedSearch.trim().toLowerCase();
     const matchesSearch = !query || [record.year, record.month, record.startDateLabel, record.endDateLabel, record.day].some((value) => String(value).toLowerCase().includes(query));
-    return record.year === Number(year) && record.month === month && matchesSearch;
+    const monthMatches = matchesMonthFilter(record.month, month);
+    return record.year === Number(year) && monthMatches && matchesSearch;
   }), [records, year, month, appliedSearch]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
   const visibleRecords = filteredRecords.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);

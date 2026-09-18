@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import MonthNavigator from '@/components/common/MonthNavigator';
-import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
+import { defaultMonthOption, matchesMonthFilter, shiftMonthOption } from '@/lib/month-navigation';
 import { sunJupiterService } from '@/lib/data/services/market/sun-jupiter.service';
 import { exportSunJupiterCsv } from '@/src/lib/export-utils';
 import { dateKey, formatLongDate, getNextMonday, getWeekFriday, getWeekMonday, monthName, isWeekend } from '@/src/lib/date-utils';
@@ -74,9 +74,10 @@ export default function SunJupiterTrackingPage() {
     const query = search.trim().toLowerCase();
     return yearRecords.filter((record) => {
       const searchable = [record.date, record.dateLabel, record.day, record.timeIST, record.angle, record.aspect].join(' ').toLowerCase();
+      const monthMatches = matchesMonthFilter(record.month, month);
       return (!query || searchable.includes(query))
         && (angle === 'All Angles' || record.angle === Number(angle))
-        && record.month === month;
+        && monthMatches;
     });
   }, [yearRecords, search, angle, month]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));

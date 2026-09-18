@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import MonthNavigator from '@/components/common/MonthNavigator';
-import { defaultMonthOption, shiftMonthOption } from '@/lib/month-navigation';
+import { defaultMonthOption, matchesMonthFilter, shiftMonthOption } from '@/lib/month-navigation';
 import { mangalService } from '@/lib/data/services/astrology/mangal.service';
 import { getIndiaToday } from '@/lib/date/date-utils';
 
@@ -48,7 +48,8 @@ export default function MangalGocharPage() {
   const filteredRecords = useMemo(() => records.filter((record) => {
     const query = appliedSearch.trim().toLowerCase();
     const searchable = [record.dateLabel, record.day, record.planet, record.eventLabel, record.rashi, record.time].join(' ').toLowerCase();
-    return record.year === Number(year) && record.month === month && (!query || searchable.includes(query));
+    const monthMatches = matchesMonthFilter(record.month, month);
+    return record.year === Number(year) && monthMatches && (!query || searchable.includes(query));
   }), [records, year, month, appliedSearch]);
   const totalPages = Math.max(1, Math.ceil(filteredRecords.length / PAGE_SIZE));
   const visibleRecords = filteredRecords.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);

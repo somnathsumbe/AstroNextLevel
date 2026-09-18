@@ -140,7 +140,10 @@ html[data-theme] .metric-card,
 html[data-theme] .analytics-card,
 html[data-theme] .filter-panel,
 html[data-theme] .data-panel,
-html[data-theme] .summary-card { background: linear-gradient(140deg, color-mix(in srgb, var(--astro-panel) 96%, white 4%), var(--astro-panel)); }
+html[data-theme] .summary-card,
+html[data-theme] .page-card,
+html[data-theme] .profile-summary-card,
+html[data-theme] .profile-form-card { background: linear-gradient(140deg, color-mix(in srgb, var(--astro-panel) 96%, white 4%), var(--astro-panel)); }
 html[data-theme] .brand-star,
 html[data-theme] .header-context,
 html[data-theme] .eyebrow,
@@ -149,11 +152,15 @@ html[data-theme] .outline-action i,
 html[data-theme] .breadcrumb-line i,
 html[data-theme] .location-note i,
 html[data-theme] .summary-icon.gold,
-html[data-theme] .metric-icon.gold { color: var(--astro-accent); }
+html[data-theme] .metric-icon.gold,
+html[data-theme] .profile-role-badge,
+html[data-theme] .profile-meta-list i { color: var(--astro-accent); }
 html[data-theme] .login-submit,
-html[data-theme] .gold-action { background: var(--astro-accent); color: #101820; }
+html[data-theme] .gold-action,
+html[data-theme] .profile-primary-btn { background: var(--astro-accent); color: #101820; }
 html[data-theme] .login-submit:hover,
-html[data-theme] .gold-action:hover { background: var(--astro-accent-soft); }
+html[data-theme] .gold-action:hover,
+html[data-theme] .profile-primary-btn:hover { background: var(--astro-accent-soft); }
 html[data-theme] .sidebar-link:hover,
 html[data-theme] .sidebar-link.active { border-left-color: var(--astro-accent); background: linear-gradient(90deg, color-mix(in srgb, var(--astro-accent) 15%, transparent), transparent); }
 html[data-theme] .sidebar-link.active i,
@@ -163,8 +170,177 @@ html[data-theme] .chart-area path { stroke: var(--astro-accent); }
 html[data-theme] a:not(.brand-mark):not(.login-logo) { color: var(--astro-link); }
 html[data-theme] .input-wrap:focus-within,
 html[data-theme] .filter-panel input:focus,
-html[data-theme] .filter-panel select:focus { border-color: var(--astro-accent); }
+html[data-theme] .filter-panel select:focus,
+html[data-theme] .profile-form-control:focus,
+html[data-theme] .profile-form-select:focus { border-color: var(--astro-accent); }
 html[data-theme] .theme-trigger { color: var(--astro-accent); border-color: color-mix(in srgb, var(--astro-accent) 45%, transparent); }
+
+.page-card {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--astro-panel) 97%, white 3%), var(--astro-panel));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  padding: clamp(18px, 2.5vw, 32px);
+}
+
+.profile-page-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.profile-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.profile-summary-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 24px 20px;
+  border: 1px solid color-mix(in srgb, var(--astro-accent) 35%, var(--line));
+  border-left: 3px solid var(--astro-accent);
+  border-radius: 12px;
+}
+
+.profile-user-name {
+  color: var(--astro-contrast, var(--white));
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.profile-user-handle {
+  color: var(--muted);
+  font: 11px 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.profile-role-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--astro-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--astro-accent) 28%, var(--line));
+  color: var(--astro-accent);
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-meta-list {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.profile-meta-list li {
+  display: flex;
+  align-items: center;
+}
+
+.profile-form-card {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.profile-form-card .form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-form-control,
+.profile-form-select {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--astro-panel) 88%, #040d17 12%);
+  color: var(--astro-contrast);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.profile-form-control::placeholder {
+  color: var(--muted);
+}
+
+.profile-form-control:focus,
+.profile-form-select:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.18rem color-mix(in srgb, var(--astro-accent) 22%, transparent);
+}
+
+.profile-form-select option {
+  background: var(--astro-panel);
+  color: var(--astro-contrast);
+}
+
+.profile-actions {
+  gap: 0.75rem;
+}
+
+.profile-primary-btn,
+.profile-secondary-btn {
+  min-height: 42px;
+  border-radius: 8px;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+.profile-primary-btn {
+  border: 1px solid var(--astro-accent);
+  background: var(--astro-accent);
+  color: #101820;
+  font-weight: 700;
+}
+
+.profile-primary-btn:hover,
+.profile-primary-btn:focus-visible {
+  background: var(--astro-accent-soft);
+  border-color: var(--astro-accent-soft);
+  color: #101820;
+}
+
+.profile-secondary-btn {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--astro-contrast);
+}
+
+.profile-secondary-btn:hover,
+.profile-secondary-btn:focus-visible {
+  border-color: var(--astro-accent);
+  color: var(--astro-accent);
+  background: color-mix(in srgb, var(--astro-accent) 10%, transparent);
+}
+
+.profile-alert {
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 767.98px) {
+  .profile-header {
+    padding-bottom: 0.75rem;
+  }
+
+  .profile-page-shell {
+    width: 100%;
+  }
+
+  .profile-primary-btn,
+  .profile-secondary-btn {
+    width: 100%;
+  }
+}
 
 [data-theme='light-minimal'] .sidebar a { color: #41566b; }
 [data-theme='light-minimal'] .sidebar-section { color: #647b8f; }
