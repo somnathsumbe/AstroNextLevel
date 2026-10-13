@@ -17,8 +17,20 @@ export default function DashboardPage() {
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
-    setNow(new Date());
-  }, []);
+    const refreshNow = () => setNow(new Date());
+    const refreshWhenVisible = () => {
+      if (document.visibilityState === 'visible') refreshNow();
+    };
+    const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime();
+    const timer = window.setTimeout(refreshNow, Math.max(nextMidnight - now.getTime() + 50, 1000));
+    window.addEventListener('focus', refreshNow);
+    document.addEventListener('visibilitychange', refreshWhenVisible);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('focus', refreshNow);
+      document.removeEventListener('visibilitychange', refreshWhenVisible);
+    };
+  }, [now]);
 
   const dashboard = getDashboardData(now);
   const currentMonthKey = `${dashboard.now.getFullYear()}-${String(dashboard.now.getMonth() + 1).padStart(2, '0')}`;

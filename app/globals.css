@@ -57,7 +57,32 @@ a { color: inherit; }
 .pwa-install-banner strong { display: block; }
 .pwa-install-banner span { color: var(--muted); font-size: 12px; }
 .pwa-install-actions { display: flex; gap: 8px; }
+.indra-yoga-table-wrap { width: 100%; min-width: 0; }
+.indra-yoga-table { width: 100%; table-layout: fixed; white-space: normal; }
+.indra-yoga-table th, .indra-yoga-table td { white-space: normal; overflow-wrap: anywhere; }
+.indra-yoga-table th:nth-child(1) { width: 9%; }
+.indra-yoga-table th:nth-child(2) { width: 9%; }
+.indra-yoga-table th:nth-child(3) { width: 17%; }
+.indra-yoga-table th:nth-child(4) { width: 19%; }
+.indra-yoga-table th:nth-child(5) { width: 14%; }
+.indra-yoga-table th:nth-child(6) { width: 18%; }
+.indra-yoga-table th:nth-child(7) { width: 14%; }
+.indra-yoga-today-row { background: rgba(232,184,92,.09); }
+.indra-yoga-today-row td { color: #d5c292; }
+.indra-yoga-today-row td strong { color: var(--gold); }
+.indra-yoga-today-badge { display: inline-block; margin-left: 7px; padding: 3px 5px; border: 1px solid rgba(232,184,92,.35); color: var(--gold); font: 8px 'DM Mono', monospace; vertical-align: middle; }
+.indra-yoga-clear { width: 100%; min-height: 38px; }
 @media (max-width: 767.98px) {
+  .indra-yoga-table { display: block; }
+  .indra-yoga-table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .indra-yoga-table tbody { display: block; }
+  .indra-yoga-table tbody tr { display: block; margin-bottom: 12px; padding: 7px 12px; border: 1px solid var(--line); }
+  .indra-yoga-table tbody td { display: grid; grid-template-columns: minmax(95px, 38%) minmax(0, 1fr); gap: 9px; align-items: center; width: 100%; min-height: 35px; padding: 7px 0; border: 0; }
+  .indra-yoga-table tbody td::before { content: attr(data-label); color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .04em; text-transform: uppercase; }
+  .indra-yoga-table tbody td:first-child { display: none; }
+  .indra-yoga-today-badge { width: fit-content; margin-left: 0; }
+  .pagination-row { align-items: flex-start; flex-direction: column; }
+  .pagination-controls { max-width: 100%; }
   .pwa-status-toast { right: 12px; bottom: 12px; }
   .pwa-install-banner { bottom: 12px; left: 12px; right: 12px; width: auto; transform: none; flex-direction: column; align-items: stretch; }
   .pwa-install-actions { width: 100%; }

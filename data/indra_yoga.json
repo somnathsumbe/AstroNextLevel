@@ -1,0 +1,2636 @@
+{
+  "title": "Indra Yoga",
+  "description": "Indra Yoga timings listed in the provided source text.",
+  "swami": "Pitra",
+  "meaning": "Ruler of gods",
+  "location": "Mumbai, India",
+  "timeFormat": "24-hour",
+  "entries": [
+    {
+      "date": "2022-Jan-15",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Jan-15",
+        "time": "14:34"
+      },
+      "ends": {
+        "date": "2022-Jan-16",
+        "time": "15:21"
+      }
+    },
+    {
+      "date": "2022-Feb-09",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Feb-09",
+        "time": "17:52"
+      },
+      "ends": {
+        "date": "2022-Feb-10",
+        "time": "18:50"
+      }
+    },
+    {
+      "date": "2022-Mar-07",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Mar-07",
+        "time": "00:01"
+      },
+      "ends": {
+        "date": "2022-Mar-08",
+        "time": "00:01"
+      }
+    },
+    {
+      "date": "2022-Apr-01",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Apr-01",
+        "time": "09:37"
+      },
+      "ends": {
+        "date": "2022-Apr-02",
+        "time": "08:31"
+      }
+    },
+    {
+      "date": "2022-Apr-26",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Apr-26",
+        "time": "19:06"
+      },
+      "ends": {
+        "date": "2022-Apr-27",
+        "time": "17:37"
+      }
+    },
+    {
+      "date": "2022-May-22",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-May-22",
+        "time": "05:22"
+      },
+      "ends": {
+        "date": "2022-May-23",
+        "time": "03:00"
+      }
+    },
+    {
+      "date": "2022-Jun-16",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Jun-16",
+        "time": "21:09"
+      },
+      "ends": {
+        "date": "2022-Jun-17",
+        "time": "17:18"
+      }
+    },
+    {
+      "date": "2022-Jul-12",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Jul-12",
+        "time": "16:59"
+      },
+      "ends": {
+        "date": "2022-Jul-13",
+        "time": "12:45"
+      }
+    },
+    {
+      "date": "2022-Aug-07",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Aug-07",
+        "time": "10:03"
+      },
+      "ends": {
+        "date": "2022-Aug-08",
+        "time": "06:56"
+      }
+    },
+    {
+      "date": "2022-Sep-01",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Sep-01",
+        "time": "21:12"
+      },
+      "ends": {
+        "date": "2022-Sep-02",
+        "time": "19:16"
+      }
+    },
+    {
+      "date": "2022-Sep-27",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Sep-27",
+        "time": "06:44"
+      },
+      "ends": {
+        "date": "2022-Sep-28",
+        "time": "05:04"
+      }
+    },
+    {
+      "date": "2022-Oct-22",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Oct-22",
+        "time": "17:13"
+      },
+      "ends": {
+        "date": "2022-Oct-23",
+        "time": "16:07"
+      }
+    },
+    {
+      "date": "2022-Nov-17",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Nov-17",
+        "time": "01:09"
+      },
+      "ends": {
+        "date": "2022-Nov-18",
+        "time": "01:24"
+      }
+    },
+    {
+      "date": "2022-Dec-12",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2022-Dec-12",
+        "time": "05:15"
+      },
+      "ends": {
+        "date": "2022-Dec-13",
+        "time": "06:07"
+      }
+    },
+    {
+      "date": "2023-Jan-06",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Jan-06",
+        "time": "08:11"
+      },
+      "ends": {
+        "date": "2023-Jan-07",
+        "time": "08:55"
+      }
+    },
+    {
+      "date": "2023-Jan-31",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Jan-31",
+        "time": "10:59"
+      },
+      "ends": {
+        "date": "2023-Feb-01",
+        "time": "11:30"
+      }
+    },
+    {
+      "date": "2023-Feb-25",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Feb-25",
+        "time": "17:18"
+      },
+      "ends": {
+        "date": "2023-Feb-26",
+        "time": "16:27"
+      }
+    },
+    {
+      "date": "2023-Mar-23",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Mar-23",
+        "time": "06:16"
+      },
+      "ends": {
+        "date": "2023-Mar-24",
+        "time": "03:43"
+      }
+    },
+    {
+      "date": "2023-Apr-17",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Apr-17",
+        "time": "21:07"
+      },
+      "ends": {
+        "date": "2023-Apr-18",
+        "time": "18:10"
+      }
+    },
+    {
+      "date": "2023-May-13",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-May-13",
+        "time": "09:23"
+      },
+      "ends": {
+        "date": "2023-May-14",
+        "time": "06:35"
+      }
+    },
+    {
+      "date": "2023-Jun-07",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Jun-07",
+        "time": "22:24"
+      },
+      "ends": {
+        "date": "2023-Jun-08",
+        "time": "18:59"
+      }
+    },
+    {
+      "date": "2023-Jul-03",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Jul-03",
+        "time": "15:45"
+      },
+      "ends": {
+        "date": "2023-Jul-04",
+        "time": "11:50"
+      }
+    },
+    {
+      "date": "2023-Jul-29",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Jul-29",
+        "time": "09:34"
+      },
+      "ends": {
+        "date": "2023-Jul-30",
+        "time": "06:34"
+      }
+    },
+    {
+      "date": "2023-Aug-23",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Aug-23",
+        "time": "21:45"
+      },
+      "ends": {
+        "date": "2023-Aug-24",
+        "time": "20:37"
+      }
+    },
+    {
+      "date": "2023-Sep-18",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Sep-18",
+        "time": "04:28"
+      },
+      "ends": {
+        "date": "2023-Sep-19",
+        "time": "04:24"
+      }
+    },
+    {
+      "date": "2023-Oct-13",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Oct-13",
+        "time": "10:06"
+      },
+      "ends": {
+        "date": "2023-Oct-14",
+        "time": "10:25"
+      }
+    },
+    {
+      "date": "2023-Nov-07",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Nov-07",
+        "time": "15:20"
+      },
+      "ends": {
+        "date": "2023-Nov-08",
+        "time": "16:11"
+      }
+    },
+    {
+      "date": "2023-Dec-02",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Dec-02",
+        "time": "20:19"
+      },
+      "ends": {
+        "date": "2023-Dec-03",
+        "time": "20:56"
+      }
+    },
+    {
+      "date": "2023-Dec-28",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2023-Dec-28",
+        "time": "02:41"
+      },
+      "ends": {
+        "date": "2023-Dec-29",
+        "time": "02:24"
+      }
+    },
+    {
+      "date": "2024-Jan-22",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Jan-22",
+        "time": "10:19"
+      },
+      "ends": {
+        "date": "2024-Jan-23",
+        "time": "08:05"
+      }
+    },
+    {
+      "date": "2024-Feb-16",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Feb-16",
+        "time": "15:18"
+      },
+      "ends": {
+        "date": "2024-Feb-17",
+        "time": "13:44"
+      }
+    },
+    {
+      "date": "2024-Mar-13",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Mar-13",
+        "time": "04:08"
+      },
+      "ends": {
+        "date": "2024-Mar-14",
+        "time": "00:49"
+      }
+    },
+    {
+      "date": "2024-Apr-07",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Apr-07",
+        "time": "22:17"
+      },
+      "ends": {
+        "date": "2024-Apr-08",
+        "time": "18:14"
+      }
+    },
+    {
+      "date": "2024-May-03",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-May-03",
+        "time": "14:19"
+      },
+      "ends": {
+        "date": "2024-May-04",
+        "time": "11:04"
+      }
+    },
+    {
+      "date": "2024-May-29",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-May-29",
+        "time": "02:06"
+      },
+      "ends": {
+        "date": "2024-May-29",
+        "time": "23:34"
+      }
+    },
+    {
+      "date": "2024-Jun-23",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Jun-23",
+        "time": "14:27"
+      },
+      "ends": {
+        "date": "2024-Jun-24",
+        "time": "11:52"
+      }
+    },
+    {
+      "date": "2024-Jul-19",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Jul-19",
+        "time": "04:45"
+      },
+      "ends": {
+        "date": "2024-Jul-20",
+        "time": "02:41"
+      }
+    },
+    {
+      "date": "2024-Aug-13",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Aug-13",
+        "time": "16:34"
+      },
+      "ends": {
+        "date": "2024-Aug-14",
+        "time": "16:06"
+      }
+    },
+    {
+      "date": "2024-Sep-07",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Sep-07",
+        "time": "23:17"
+      },
+      "ends": {
+        "date": "2024-Sep-09",
+        "time": "00:05"
+      }
+    },
+    {
+      "date": "2024-Oct-03",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Oct-03",
+        "time": "03:22"
+      },
+      "ends": {
+        "date": "2024-Oct-04",
+        "time": "04:24"
+      }
+    },
+    {
+      "date": "2024-Oct-28",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Oct-28",
+        "time": "06:48"
+      },
+      "ends": {
+        "date": "2024-Oct-29",
+        "time": "07:48"
+      }
+    },
+    {
+      "date": "2024-Nov-22",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Nov-22",
+        "time": "11:34"
+      },
+      "ends": {
+        "date": "2024-Nov-23",
+        "time": "11:42"
+      }
+    },
+    {
+      "date": "2024-Dec-17",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2024-Dec-17",
+        "time": "21:11"
+      },
+      "ends": {
+        "date": "2024-Dec-18",
+        "time": "19:34"
+      }
+    },
+    {
+      "date": "2025-Jan-12",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Jan-12",
+        "time": "09:09"
+      },
+      "ends": {
+        "date": "2025-Jan-13",
+        "time": "06:45"
+      }
+    },
+    {
+      "date": "2025-Feb-06",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Feb-06",
+        "time": "18:42"
+      },
+      "ends": {
+        "date": "2025-Feb-07",
+        "time": "16:17"
+      }
+    },
+    {
+      "date": "2025-Mar-04",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Mar-04",
+        "time": "05:25"
+      },
+      "ends": {
+        "date": "2025-Mar-05",
+        "time": "02:07"
+      }
+    },
+    {
+      "date": "2025-Mar-29",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Mar-29",
+        "time": "22:04"
+      },
+      "ends": {
+        "date": "2025-Mar-30",
+        "time": "17:54"
+      }
+    },
+    {
+      "date": "2025-Apr-24",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Apr-24",
+        "time": "15:56"
+      },
+      "ends": {
+        "date": "2025-Apr-25",
+        "time": "12:31"
+      }
+    },
+    {
+      "date": "2025-May-20",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-May-20",
+        "time": "04:36"
+      },
+      "ends": {
+        "date": "2025-May-21",
+        "time": "02:50"
+      }
+    },
+    {
+      "date": "2025-Jun-14",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Jun-14",
+        "time": "13:13"
+      },
+      "ends": {
+        "date": "2025-Jun-15",
+        "time": "12:20"
+      }
+    },
+    {
+      "date": "2025-Jul-09",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Jul-09",
+        "time": "22:09"
+      },
+      "ends": {
+        "date": "2025-Jul-10",
+        "time": "21:38"
+      }
+    },
+    {
+      "date": "2025-Aug-04",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Aug-04",
+        "time": "07:05"
+      },
+      "ends": {
+        "date": "2025-Aug-05",
+        "time": "07:25"
+      }
+    },
+    {
+      "date": "2025-Aug-29",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Aug-29",
+        "time": "14:13"
+      },
+      "ends": {
+        "date": "2025-Aug-30",
+        "time": "15:10"
+      }
+    },
+    {
+      "date": "2025-Sep-23",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Sep-23",
+        "time": "20:23"
+      },
+      "ends": {
+        "date": "2025-Sep-24",
+        "time": "21:03"
+      }
+    },
+    {
+      "date": "2025-Oct-19",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Oct-19",
+        "time": "01:48"
+      },
+      "ends": {
+        "date": "2025-Oct-20",
+        "time": "02:05"
+      }
+    },
+    {
+      "date": "2025-Nov-13",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Nov-13",
+        "time": "06:58"
+      },
+      "ends": {
+        "date": "2025-Nov-14",
+        "time": "06:28"
+      }
+    },
+    {
+      "date": "2025-Dec-08",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2025-Dec-08",
+        "time": "17:01"
+      },
+      "ends": {
+        "date": "2025-Dec-09",
+        "time": "14:33"
+      }
+    },
+    {
+      "date": "2026-Jan-03",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Jan-03",
+        "time": "09:05"
+      },
+      "ends": {
+        "date": "2026-Jan-04",
+        "time": "05:16"
+      }
+    },
+    {
+      "date": "2026-Jan-28",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Jan-28",
+        "time": "23:54"
+      },
+      "ends": {
+        "date": "2026-Jan-29",
+        "time": "20:27"
+      }
+    },
+    {
+      "date": "2026-Feb-23",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Feb-23",
+        "time": "10:19"
+      },
+      "ends": {
+        "date": "2026-Feb-24",
+        "time": "07:24"
+      }
+    },
+    {
+      "date": "2026-Mar-20",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Mar-20",
+        "time": "22:15"
+      },
+      "ends": {
+        "date": "2026-Mar-21",
+        "time": "19:01"
+      }
+    },
+    {
+      "date": "2026-Apr-15",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Apr-15",
+        "time": "13:25"
+      },
+      "ends": {
+        "date": "2026-Apr-16",
+        "time": "10:38"
+      }
+    },
+    {
+      "date": "2026-May-11",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-May-11",
+        "time": "02:09"
+      },
+      "ends": {
+        "date": "2026-May-12",
+        "time": "01:04"
+      }
+    },
+    {
+      "date": "2026-Jun-05",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Jun-05",
+        "time": "09:43"
+      },
+      "ends": {
+        "date": "2026-Jun-06",
+        "time": "10:05"
+      }
+    },
+    {
+      "date": "2026-Jun-30",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Jun-30",
+        "time": "15:19"
+      },
+      "ends": {
+        "date": "2026-Jul-01",
+        "time": "16:04"
+      }
+    },
+    {
+      "date": "2026-Jul-25",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Jul-25",
+        "time": "21:09"
+      },
+      "ends": {
+        "date": "2026-Jul-26",
+        "time": "22:05"
+      }
+    },
+    {
+      "date": "2026-Aug-20",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Aug-20",
+        "time": "03:44"
+      },
+      "ends": {
+        "date": "2026-Aug-21",
+        "time": "04:25"
+      }
+    },
+    {
+      "date": "2026-Sep-14",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Sep-14",
+        "time": "12:47"
+      },
+      "ends": {
+        "date": "2026-Sep-15",
+        "time": "12:20"
+      }
+    },
+    {
+      "date": "2026-Oct-09",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Oct-09",
+        "time": "23:21"
+      },
+      "ends": {
+        "date": "2026-Oct-10",
+        "time": "22:02"
+      }
+    },
+    {
+      "date": "2026-Nov-04",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Nov-04",
+        "time": "08:01"
+      },
+      "ends": {
+        "date": "2026-Nov-05",
+        "time": "06:26"
+      }
+    },
+    {
+      "date": "2026-Nov-29",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Nov-29",
+        "time": "17:08"
+      },
+      "ends": {
+        "date": "2026-Nov-30",
+        "time": "14:27"
+      }
+    },
+    {
+      "date": "2026-Dec-25",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2026-Dec-25",
+        "time": "08:28"
+      },
+      "ends": {
+        "date": "2026-Dec-26",
+        "time": "04:16"
+      }
+    },
+    {
+      "date": "2027-Jan-20",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Jan-20",
+        "time": "02:27"
+      },
+      "ends": {
+        "date": "2027-Jan-20",
+        "time": "22:23"
+      }
+    },
+    {
+      "date": "2027-Feb-14",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Feb-14",
+        "time": "15:08"
+      },
+      "ends": {
+        "date": "2027-Feb-15",
+        "time": "12:33"
+      }
+    },
+    {
+      "date": "2027-Mar-11",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Mar-11",
+        "time": "23:22"
+      },
+      "ends": {
+        "date": "2027-Mar-12",
+        "time": "21:34"
+      }
+    },
+    {
+      "date": "2027-Apr-06",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Apr-06",
+        "time": "08:51"
+      },
+      "ends": {
+        "date": "2027-Apr-07",
+        "time": "07:26"
+      }
+    },
+    {
+      "date": "2027-May-01",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-May-01",
+        "time": "18:43"
+      },
+      "ends": {
+        "date": "2027-May-02",
+        "time": "18:29"
+      }
+    },
+    {
+      "date": "2027-May-27",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-May-27",
+        "time": "02:02"
+      },
+      "ends": {
+        "date": "2027-May-28",
+        "time": "02:58"
+      }
+    },
+    {
+      "date": "2027-Jun-21",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Jun-21",
+        "time": "07:51"
+      },
+      "ends": {
+        "date": "2027-Jun-22",
+        "time": "08:55"
+      }
+    },
+    {
+      "date": "2027-Jul-16",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Jul-16",
+        "time": "13:36"
+      },
+      "ends": {
+        "date": "2027-Jul-17",
+        "time": "14:23"
+      }
+    },
+    {
+      "date": "2027-Aug-10",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Aug-10",
+        "time": "19:55"
+      },
+      "ends": {
+        "date": "2027-Aug-11",
+        "time": "20:05"
+      }
+    },
+    {
+      "date": "2027-Sep-05",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Sep-05",
+        "time": "06:06"
+      },
+      "ends": {
+        "date": "2027-Sep-06",
+        "time": "04:37"
+      }
+    },
+    {
+      "date": "2027-Sep-30",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Sep-30",
+        "time": "21:08"
+      },
+      "ends": {
+        "date": "2027-Oct-01",
+        "time": "18:11"
+      }
+    },
+    {
+      "date": "2027-Oct-26",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Oct-26",
+        "time": "11:44"
+      },
+      "ends": {
+        "date": "2027-Oct-27",
+        "time": "08:42"
+      }
+    },
+    {
+      "date": "2027-Nov-20",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Nov-20",
+        "time": "22:12"
+      },
+      "ends": {
+        "date": "2027-Nov-21",
+        "time": "19:25"
+      }
+    },
+    {
+      "date": "2027-Dec-16",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2027-Dec-16",
+        "time": "09:42"
+      },
+      "ends": {
+        "date": "2027-Dec-17",
+        "time": "06:10"
+      }
+    },
+    {
+      "date": "2028-Jan-11",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Jan-11",
+        "time": "01:35"
+      },
+      "ends": {
+        "date": "2028-Jan-11",
+        "time": "21:53"
+      }
+    },
+    {
+      "date": "2028-Feb-05",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Feb-05",
+        "time": "15:32"
+      },
+      "ends": {
+        "date": "2028-Feb-06",
+        "time": "13:20"
+      }
+    },
+    {
+      "date": "2028-Mar-01",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Mar-01",
+        "time": "22:52"
+      },
+      "ends": {
+        "date": "2028-Mar-02",
+        "time": "22:21"
+      }
+    },
+    {
+      "date": "2028-Mar-27",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Mar-27",
+        "time": "03:48"
+      },
+      "ends": {
+        "date": "2028-Mar-28",
+        "time": "03:52"
+      }
+    },
+    {
+      "date": "2028-Apr-21",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Apr-21",
+        "time": "09:28"
+      },
+      "ends": {
+        "date": "2028-Apr-22",
+        "time": "10:06"
+      }
+    },
+    {
+      "date": "2028-May-16",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-May-16",
+        "time": "15:35"
+      },
+      "ends": {
+        "date": "2028-May-17",
+        "time": "16:36"
+      }
+    },
+    {
+      "date": "2028-Jun-10",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Jun-10",
+        "time": "23:21"
+      },
+      "ends": {
+        "date": "2028-Jun-11",
+        "time": "23:46"
+      }
+    },
+    {
+      "date": "2028-Jul-06",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Jul-06",
+        "time": "08:36"
+      },
+      "ends": {
+        "date": "2028-Jul-07",
+        "time": "08:15"
+      }
+    },
+    {
+      "date": "2028-Jul-31",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Jul-31",
+        "time": "17:17"
+      },
+      "ends": {
+        "date": "2028-Aug-01",
+        "time": "16:28"
+      }
+    },
+    {
+      "date": "2028-Aug-26",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Aug-26",
+        "time": "03:23"
+      },
+      "ends": {
+        "date": "2028-Aug-27",
+        "time": "01:18"
+      }
+    },
+    {
+      "date": "2028-Sep-20",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Sep-20",
+        "time": "19:05"
+      },
+      "ends": {
+        "date": "2028-Sep-21",
+        "time": "15:17"
+      }
+    },
+    {
+      "date": "2028-Oct-16",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Oct-16",
+        "time": "13:49"
+      },
+      "ends": {
+        "date": "2028-Oct-17",
+        "time": "09:38"
+      }
+    },
+    {
+      "date": "2028-Nov-11",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Nov-11",
+        "time": "04:13"
+      },
+      "ends": {
+        "date": "2028-Nov-12",
+        "time": "01:07"
+      }
+    },
+    {
+      "date": "2028-Dec-06",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Dec-06",
+        "time": "13:21"
+      },
+      "ends": {
+        "date": "2028-Dec-07",
+        "time": "10:58"
+      }
+    },
+    {
+      "date": "2028-Dec-31",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Dec-31",
+        "time": "23:34"
+      },
+      "ends": {
+        "date": "2028-Jan-01",
+        "time": "21:11"
+      }
+    },
+    {
+      "date": "2028-Dec-31",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2028-Dec-31",
+        "time": "23:34"
+      },
+      "ends": {
+        "date": "2028-Jan-01",
+        "time": "21:11"
+      }
+    },
+    {
+      "date": "2029-Jan-26",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Jan-26",
+        "time": "10:46"
+      },
+      "ends": {
+        "date": "2029-Jan-27",
+        "time": "09:26"
+      }
+    },
+    {
+      "date": "2029-Feb-20",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Feb-20",
+        "time": "17:54"
+      },
+      "ends": {
+        "date": "2029-Feb-21",
+        "time": "18:13"
+      }
+    },
+    {
+      "date": "2029-Mar-17",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Mar-17",
+        "time": "21:42"
+      },
+      "ends": {
+        "date": "2029-Mar-18",
+        "time": "22:35"
+      }
+    },
+    {
+      "date": "2029-Apr-12",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Apr-12",
+        "time": "01:27"
+      },
+      "ends": {
+        "date": "2029-Apr-13",
+        "time": "02:22"
+      }
+    },
+    {
+      "date": "2029-May-07",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-May-07",
+        "time": "06:19"
+      },
+      "ends": {
+        "date": "2029-May-08",
+        "time": "07:00"
+      }
+    },
+    {
+      "date": "2029-Jun-01",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Jun-01",
+        "time": "15:10"
+      },
+      "ends": {
+        "date": "2029-Jun-02",
+        "time": "14:34"
+      }
+    },
+    {
+      "date": "2029-Jun-27",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Jun-27",
+        "time": "04:42"
+      },
+      "ends": {
+        "date": "2029-Jun-28",
+        "time": "02:46"
+      }
+    },
+    {
+      "date": "2029-Jul-22",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Jul-22",
+        "time": "18:30"
+      },
+      "ends": {
+        "date": "2029-Jul-23",
+        "time": "16:13"
+      }
+    },
+    {
+      "date": "2029-Aug-17",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Aug-17",
+        "time": "06:01"
+      },
+      "ends": {
+        "date": "2029-Aug-18",
+        "time": "03:32"
+      }
+    },
+    {
+      "date": "2029-Sep-11",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Sep-11",
+        "time": "19:23"
+      },
+      "ends": {
+        "date": "2029-Sep-12",
+        "time": "15:48"
+      }
+    },
+    {
+      "date": "2029-Oct-07",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Oct-07",
+        "time": "13:17"
+      },
+      "ends": {
+        "date": "2029-Oct-08",
+        "time": "09:01"
+      }
+    },
+    {
+      "date": "2029-Nov-02",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Nov-02",
+        "time": "06:15"
+      },
+      "ends": {
+        "date": "2029-Nov-03",
+        "time": "03:01"
+      }
+    },
+    {
+      "date": "2029-Nov-27",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Nov-27",
+        "time": "16:04"
+      },
+      "ends": {
+        "date": "2029-Nov-28",
+        "time": "14:37"
+      }
+    },
+    {
+      "date": "2029-Dec-22",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2029-Dec-22",
+        "time": "21:37"
+      },
+      "ends": {
+        "date": "2029-Dec-23",
+        "time": "20:54"
+      }
+    },
+    {
+      "date": "2030-Jan-17",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Jan-17",
+        "time": "03:38"
+      },
+      "ends": {
+        "date": "2030-Jan-18",
+        "time": "03:31"
+      }
+    },
+    {
+      "date": "2030-Feb-11",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Feb-11",
+        "time": "08:54"
+      },
+      "ends": {
+        "date": "2030-Feb-12",
+        "time": "09:43"
+      }
+    },
+    {
+      "date": "2030-Mar-08",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Mar-08",
+        "time": "13:36"
+      },
+      "ends": {
+        "date": "2030-Mar-09",
+        "time": "14:25"
+      }
+    },
+    {
+      "date": "2030-Apr-02",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Apr-02",
+        "time": "19:22"
+      },
+      "ends": {
+        "date": "2030-Apr-03",
+        "time": "19:35"
+      }
+    },
+    {
+      "date": "2030-Apr-28",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Apr-28",
+        "time": "01:26"
+      },
+      "ends": {
+        "date": "2030-Apr-29",
+        "time": "01:14"
+      }
+    },
+    {
+      "date": "2030-May-23",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-May-23",
+        "time": "10:15"
+      },
+      "ends": {
+        "date": "2030-May-24",
+        "time": "08:48"
+      }
+    },
+    {
+      "date": "2030-Jun-18",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Jun-18",
+        "time": "01:27"
+      },
+      "ends": {
+        "date": "2030-Jun-18",
+        "time": "22:18"
+      }
+    },
+    {
+      "date": "2030-Jul-13",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Jul-13",
+        "time": "19:53"
+      },
+      "ends": {
+        "date": "2030-Jul-14",
+        "time": "16:12"
+      }
+    },
+    {
+      "date": "2030-Aug-08",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Aug-08",
+        "time": "11:16"
+      },
+      "ends": {
+        "date": "2030-Aug-09",
+        "time": "08:13"
+      }
+    },
+    {
+      "date": "2030-Sep-02",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Sep-02",
+        "time": "23:01"
+      },
+      "ends": {
+        "date": "2030-Sep-03",
+        "time": "20:15"
+      }
+    },
+    {
+      "date": "2030-Sep-28",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Sep-28",
+        "time": "12:17"
+      },
+      "ends": {
+        "date": "2030-Sep-29",
+        "time": "09:07"
+      }
+    },
+    {
+      "date": "2030-Oct-24",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Oct-24",
+        "time": "03:13"
+      },
+      "ends": {
+        "date": "2030-Oct-25",
+        "time": "00:38"
+      }
+    },
+    {
+      "date": "2030-Nov-18",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Nov-18",
+        "time": "13:45"
+      },
+      "ends": {
+        "date": "2030-Nov-19",
+        "time": "13:00"
+      }
+    },
+    {
+      "date": "2030-Dec-13",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2030-Dec-13",
+        "time": "18:09"
+      },
+      "ends": {
+        "date": "2030-Dec-14",
+        "time": "18:36"
+      }
+    },
+    {
+      "date": "2031-Jan-07",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Jan-07",
+        "time": "20:46"
+      },
+      "ends": {
+        "date": "2031-Jan-08",
+        "time": "21:32"
+      }
+    },
+    {
+      "date": "2031-Feb-01",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Feb-01",
+        "time": "23:32"
+      },
+      "ends": {
+        "date": "2031-Feb-03",
+        "time": "00:33"
+      }
+    },
+    {
+      "date": "2031-Feb-27",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Feb-27",
+        "time": "04:39"
+      },
+      "ends": {
+        "date": "2031-Feb-28",
+        "time": "04:52"
+      }
+    },
+    {
+      "date": "2031-Mar-24",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Mar-24",
+        "time": "14:12"
+      },
+      "ends": {
+        "date": "2031-Mar-25",
+        "time": "13:04"
+      }
+    },
+    {
+      "date": "2031-Apr-19",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Apr-19",
+        "time": "00:48"
+      },
+      "ends": {
+        "date": "2031-Apr-19",
+        "time": "23:09"
+      }
+    },
+    {
+      "date": "2031-May-14",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-May-14",
+        "time": "10:44"
+      },
+      "ends": {
+        "date": "2031-May-15",
+        "time": "08:35"
+      }
+    },
+    {
+      "date": "2031-Jun-09",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Jun-09",
+        "time": "00:30"
+      },
+      "ends": {
+        "date": "2031-Jun-09",
+        "time": "21:01"
+      }
+    },
+    {
+      "date": "2031-Jul-04",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Jul-04",
+        "time": "19:36"
+      },
+      "ends": {
+        "date": "2031-Jul-05",
+        "time": "15:19"
+      }
+    },
+    {
+      "date": "2031-Jul-30",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Jul-30",
+        "time": "14:16"
+      },
+      "ends": {
+        "date": "2031-Jul-31",
+        "time": "10:45"
+      }
+    },
+    {
+      "date": "2031-Aug-25",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Aug-25",
+        "time": "03:02"
+      },
+      "ends": {
+        "date": "2031-Aug-26",
+        "time": "00:59"
+      }
+    },
+    {
+      "date": "2031-Sep-19",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Sep-19",
+        "time": "12:01"
+      },
+      "ends": {
+        "date": "2031-Sep-20",
+        "time": "10:33"
+      }
+    },
+    {
+      "date": "2031-Oct-14",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Oct-14",
+        "time": "21:37"
+      },
+      "ends": {
+        "date": "2031-Oct-15",
+        "time": "20:29"
+      }
+    },
+    {
+      "date": "2031-Nov-09",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Nov-09",
+        "time": "06:09"
+      },
+      "ends": {
+        "date": "2031-Nov-10",
+        "time": "06:10"
+      }
+    },
+    {
+      "date": "2031-Dec-04",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Dec-04",
+        "time": "11:08"
+      },
+      "ends": {
+        "date": "2031-Dec-05",
+        "time": "11:59"
+      }
+    },
+    {
+      "date": "2031-Dec-29",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2031-Dec-29",
+        "time": "14:32"
+      },
+      "ends": {
+        "date": "2031-Dec-30",
+        "time": "15:14"
+      }
+    },
+    {
+      "date": "2032-Jan-23",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Jan-23",
+        "time": "17:28"
+      },
+      "ends": {
+        "date": "2032-Jan-24",
+        "time": "17:59"
+      }
+    },
+    {
+      "date": "2032-Feb-17",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Feb-17",
+        "time": "22:16"
+      },
+      "ends": {
+        "date": "2032-Feb-18",
+        "time": "21:48"
+      }
+    },
+    {
+      "date": "2032-Mar-14",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Mar-14",
+        "time": "09:44"
+      },
+      "ends": {
+        "date": "2032-Mar-15",
+        "time": "07:23"
+      }
+    },
+    {
+      "date": "2032-Apr-09",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Apr-09",
+        "time": "01:26"
+      },
+      "ends": {
+        "date": "2032-Apr-09",
+        "time": "22:14"
+      }
+    },
+    {
+      "date": "2032-May-04",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-May-04",
+        "time": "15:05"
+      },
+      "ends": {
+        "date": "2032-May-05",
+        "time": "12:09"
+      }
+    },
+    {
+      "date": "2032-May-30",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-May-30",
+        "time": "03:15"
+      },
+      "ends": {
+        "date": "2032-May-31",
+        "time": "00:08"
+      }
+    },
+    {
+      "date": "2032-Jun-24",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Jun-24",
+        "time": "18:51"
+      },
+      "ends": {
+        "date": "2032-Jun-25",
+        "time": "15:07"
+      }
+    },
+    {
+      "date": "2032-Jul-20",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Jul-20",
+        "time": "12:47"
+      },
+      "ends": {
+        "date": "2032-Jul-21",
+        "time": "09:30"
+      }
+    },
+    {
+      "date": "2032-Aug-15",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Aug-15",
+        "time": "02:47"
+      },
+      "ends": {
+        "date": "2032-Aug-16",
+        "time": "01:17"
+      }
+    },
+    {
+      "date": "2032-Sep-09",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Sep-09",
+        "time": "10:27"
+      },
+      "ends": {
+        "date": "2032-Sep-10",
+        "time": "10:24"
+      }
+    },
+    {
+      "date": "2032-Oct-04",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Oct-04",
+        "time": "15:40"
+      },
+      "ends": {
+        "date": "2032-Oct-05",
+        "time": "16:03"
+      }
+    },
+    {
+      "date": "2032-Oct-29",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Oct-29",
+        "time": "20:40"
+      },
+      "ends": {
+        "date": "2032-Oct-30",
+        "time": "21:27"
+      }
+    },
+    {
+      "date": "2032-Nov-24",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Nov-24",
+        "time": "01:27"
+      },
+      "ends": {
+        "date": "2032-Nov-25",
+        "time": "02:12"
+      }
+    },
+    {
+      "date": "2032-Dec-19",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2032-Dec-19",
+        "time": "07:57"
+      },
+      "ends": {
+        "date": "2032-Dec-20",
+        "time": "07:42"
+      }
+    },
+    {
+      "date": "2033-Jan-13",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Jan-13",
+        "time": "16:55"
+      },
+      "ends": {
+        "date": "2033-Jan-14",
+        "time": "14:17"
+      }
+    },
+    {
+      "date": "2033-Feb-07",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Feb-07",
+        "time": "21:24"
+      },
+      "ends": {
+        "date": "2033-Feb-08",
+        "time": "20:04"
+      }
+    },
+    {
+      "date": "2033-Mar-05",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Mar-05",
+        "time": "07:56"
+      },
+      "ends": {
+        "date": "2033-Mar-06",
+        "time": "05:01"
+      }
+    },
+    {
+      "date": "2033-Mar-31",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Mar-31",
+        "time": "01:17"
+      },
+      "ends": {
+        "date": "2033-Mar-31",
+        "time": "21:10"
+      }
+    },
+    {
+      "date": "2033-Apr-25",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Apr-25",
+        "time": "18:57"
+      },
+      "ends": {
+        "date": "2033-Apr-26",
+        "time": "15:18"
+      }
+    },
+    {
+      "date": "2033-May-21",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-May-21",
+        "time": "07:49"
+      },
+      "ends": {
+        "date": "2033-May-22",
+        "time": "05:14"
+      }
+    },
+    {
+      "date": "2033-Jun-15",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Jun-15",
+        "time": "19:03"
+      },
+      "ends": {
+        "date": "2033-Jun-16",
+        "time": "16:42"
+      }
+    },
+    {
+      "date": "2033-Jul-11",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Jul-11",
+        "time": "08:17"
+      },
+      "ends": {
+        "date": "2033-Jul-12",
+        "time": "06:12"
+      }
+    },
+    {
+      "date": "2033-Aug-05",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Aug-05",
+        "time": "20:47"
+      },
+      "ends": {
+        "date": "2033-Aug-06",
+        "time": "20:00"
+      }
+    },
+    {
+      "date": "2033-Aug-31",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Aug-31",
+        "time": "04:43"
+      },
+      "ends": {
+        "date": "2033-Sep-01",
+        "time": "05:24"
+      }
+    },
+    {
+      "date": "2033-Sep-25",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Sep-25",
+        "time": "09:17"
+      },
+      "ends": {
+        "date": "2033-Sep-26",
+        "time": "10:22"
+      }
+    },
+    {
+      "date": "2033-Oct-20",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Oct-20",
+        "time": "12:52"
+      },
+      "ends": {
+        "date": "2033-Oct-21",
+        "time": "13:53"
+      }
+    },
+    {
+      "date": "2033-Nov-14",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Nov-14",
+        "time": "16:54"
+      },
+      "ends": {
+        "date": "2033-Nov-15",
+        "time": "17:19"
+      }
+    },
+    {
+      "date": "2033-Dec-10",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2033-Dec-10",
+        "time": "01:20"
+      },
+      "ends": {
+        "date": "2033-Dec-10",
+        "time": "23:59"
+      }
+    },
+    {
+      "date": "2034-Jan-04",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Jan-04",
+        "time": "14:02"
+      },
+      "ends": {
+        "date": "2034-Jan-05",
+        "time": "11:26"
+      }
+    },
+    {
+      "date": "2034-Jan-30",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Jan-30",
+        "time": "01:07"
+      },
+      "ends": {
+        "date": "2034-Jan-30",
+        "time": "22:33"
+      }
+    },
+    {
+      "date": "2034-Feb-24",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Feb-24",
+        "time": "10:45"
+      },
+      "ends": {
+        "date": "2034-Feb-25",
+        "time": "07:49"
+      }
+    },
+    {
+      "date": "2034-Mar-22",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Mar-22",
+        "time": "01:16"
+      },
+      "ends": {
+        "date": "2034-Mar-22",
+        "time": "21:19"
+      }
+    },
+    {
+      "date": "2034-Apr-16",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Apr-16",
+        "time": "19:20"
+      },
+      "ends": {
+        "date": "2034-Apr-17",
+        "time": "15:36"
+      }
+    },
+    {
+      "date": "2034-May-12",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-May-12",
+        "time": "09:47"
+      },
+      "ends": {
+        "date": "2034-May-13",
+        "time": "07:40"
+      }
+    },
+    {
+      "date": "2034-Jun-06",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Jun-06",
+        "time": "18:52"
+      },
+      "ends": {
+        "date": "2034-Jun-07",
+        "time": "18:02"
+      }
+    },
+    {
+      "date": "2034-Jul-02",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Jul-02",
+        "time": "02:55"
+      },
+      "ends": {
+        "date": "2034-Jul-03",
+        "time": "02:30"
+      }
+    },
+    {
+      "date": "2034-Jul-27",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Jul-27",
+        "time": "11:29"
+      },
+      "ends": {
+        "date": "2034-Jul-28",
+        "time": "11:42"
+      }
+    },
+    {
+      "date": "2034-Aug-21",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Aug-21",
+        "time": "18:54"
+      },
+      "ends": {
+        "date": "2034-Aug-22",
+        "time": "19:49"
+      }
+    },
+    {
+      "date": "2034-Sep-16",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Sep-16",
+        "time": "01:31"
+      },
+      "ends": {
+        "date": "2034-Sep-17",
+        "time": "02:13"
+      }
+    },
+    {
+      "date": "2034-Oct-11",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Oct-11",
+        "time": "07:50"
+      },
+      "ends": {
+        "date": "2034-Oct-12",
+        "time": "08:01"
+      }
+    },
+    {
+      "date": "2034-Nov-05",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Nov-05",
+        "time": "13:10"
+      },
+      "ends": {
+        "date": "2034-Nov-06",
+        "time": "12:50"
+      }
+    },
+    {
+      "date": "2034-Nov-30",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Nov-30",
+        "time": "21:22"
+      },
+      "ends": {
+        "date": "2034-Dec-01",
+        "time": "19:22"
+      }
+    },
+    {
+      "date": "2034-Dec-26",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2034-Dec-26",
+        "time": "12:27"
+      },
+      "ends": {
+        "date": "2034-Dec-27",
+        "time": "08:41"
+      }
+    },
+    {
+      "date": "2035-Jan-21",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Jan-21",
+        "time": "05:00"
+      },
+      "ends": {
+        "date": "2035-Jan-22",
+        "time": "01:11"
+      }
+    },
+    {
+      "date": "2035-Feb-15",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Feb-15",
+        "time": "16:41"
+      },
+      "ends": {
+        "date": "2035-Feb-16",
+        "time": "13:44"
+      }
+    },
+    {
+      "date": "2035-Mar-13",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Mar-13",
+        "time": "03:04"
+      },
+      "ends": {
+        "date": "2035-Mar-14",
+        "time": "00:08"
+      }
+    },
+    {
+      "date": "2035-Apr-07",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Apr-07",
+        "time": "16:55"
+      },
+      "ends": {
+        "date": "2035-Apr-08",
+        "time": "14:04"
+      }
+    },
+    {
+      "date": "2035-May-03",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-May-03",
+        "time": "06:27"
+      },
+      "ends": {
+        "date": "2035-May-04",
+        "time": "05:00"
+      }
+    },
+    {
+      "date": "2035-May-28",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-May-28",
+        "time": "15:11"
+      },
+      "ends": {
+        "date": "2035-May-29",
+        "time": "15:24"
+      }
+    },
+    {
+      "date": "2035-Jun-22",
+      "weekday": "Fri",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Jun-22",
+        "time": "20:51"
+      },
+      "ends": {
+        "date": "2035-Jun-23",
+        "time": "21:40"
+      }
+    },
+    {
+      "date": "2035-Jul-18",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Jul-18",
+        "time": "02:22"
+      },
+      "ends": {
+        "date": "2035-Jul-19",
+        "time": "03:18"
+      }
+    },
+    {
+      "date": "2035-Aug-12",
+      "weekday": "Sun",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Aug-12",
+        "time": "08:27"
+      },
+      "ends": {
+        "date": "2035-Aug-13",
+        "time": "09:16"
+      }
+    },
+    {
+      "date": "2035-Sep-06",
+      "weekday": "Thu",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Sep-06",
+        "time": "16:54"
+      },
+      "ends": {
+        "date": "2035-Sep-07",
+        "time": "16:40"
+      }
+    },
+    {
+      "date": "2035-Oct-02",
+      "weekday": "Tue",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Oct-02",
+        "time": "04:06"
+      },
+      "ends": {
+        "date": "2035-Oct-03",
+        "time": "02:42"
+      }
+    },
+    {
+      "date": "2035-Oct-27",
+      "weekday": "Sat",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Oct-27",
+        "time": "14:16"
+      },
+      "ends": {
+        "date": "2035-Oct-28",
+        "time": "12:34"
+      }
+    },
+    {
+      "date": "2035-Nov-21",
+      "weekday": "Wed",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Nov-21",
+        "time": "22:50"
+      },
+      "ends": {
+        "date": "2035-Nov-22",
+        "time": "20:30"
+      }
+    },
+    {
+      "date": "2035-Dec-17",
+      "weekday": "Mon",
+      "yoga": "Indra Yoga",
+      "begins": {
+        "date": "2035-Dec-17",
+        "time": "11:57"
+      },
+      "ends": {
+        "date": "2035-Dec-18",
+        "time": "08:04"
+      }
+    }
+  ]
+}

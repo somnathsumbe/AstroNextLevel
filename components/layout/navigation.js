@@ -14,6 +14,7 @@ export const navigation = [
       { label: 'Amavasya', href: '/amavasya', icon: 'bi-moon' },
       { label: 'Purnima', href: '/purnima', icon: 'bi-moon-stars' },
       { label: 'Bhadra Kaal', href: '/bhadra-kaal', icon: 'bi-exclamation-triangle' },
+      { label: 'IndraYog', href: '/indra-yog', icon: 'bi-stars' },
     ],
   },
   {
